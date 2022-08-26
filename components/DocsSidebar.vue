@@ -5,6 +5,9 @@
 				<li>
 					<nuxt-link to="/colors">Colors</nuxt-link>
 				</li>
+				<li>
+					<nuxt-link to="/typography">Typography</nuxt-link>
+				</li>
 			</ul>
 		</nav>
 	</aside>

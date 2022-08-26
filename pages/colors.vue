@@ -6,8 +6,8 @@
 				v-for="(color, index) in colorVarNames"
 				:key="index"
 			>
-				<div
-					class="color-value w-100 p-4 cursor-pointer flex-1"
+				<button
+					class="color-value w-100 p-4 cursor-pointer flex-1 border-0"
 					:class="getColor(colorVars[color])"
 					:style="{ background: `var(${color})` }"
 					@click="copyToClipboard($event)"
@@ -15,7 +15,7 @@
 				>
 					<span class="pointer-events-none">{{ colorVars[color] }}</span>
 					<span class="copy-msg">copied</span>
-				</div>
+				</button>
 				<ul class="p-3 m-0" @click="copyToClipboard($event)">
 					<li class="cursor-pointer" :data-item="color">
 						{{ color }}
