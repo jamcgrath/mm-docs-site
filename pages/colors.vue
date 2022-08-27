@@ -7,8 +7,21 @@
 				:key="index"
 			>
 				<button
-					class="color-value w-100 p-4 cursor-pointer flex-1 border-0"
-					:class="getColor(colorVars[color])"
+					class="
+						color-value
+						w-100
+						p-4
+						cursor-pointer
+						flex-1
+						border-0
+						text-left
+						flex
+						a-items-center
+					"
+					:class="[
+						getColor(colorVars[color]),
+						getColor(colorVars[color]).length > 23 ? 'ws-nowrap' : '',
+					]"
 					:style="{ background: `var(${color})` }"
 					@click="copyToClipboard($event)"
 					:data-item="colorVars[color]"
@@ -17,24 +30,56 @@
 					<span class="copy-msg">copied</span>
 				</button>
 				<ul class="p-3 m-0" @click="copyToClipboard($event)">
-					<li class="cursor-pointer" :data-item="color">
-						{{ color }}
-						<span class="copy-msg">copied</span>
+					<li>
+						<button
+							class="
+								bg-transparent
+								border-0
+								cursor-pointer
+								flex
+								a-items-center
+								ws-nowrap
+							"
+							:data-item="color"
+						>
+							{{ color }}
+							<span class="copy-msg">copied</span>
+						</button>
 					</li>
 					<li
 						v-if="!colorVars[color].includes('gradient')"
-						class="mt-1_5 cursor-pointer"
-						:data-item="colorNames[index]"
+						class="mt-1_5 cursor-pointer flex a-items-center ws-nowrap"
 					>
-						{{ colorNames[index] }}
-						<span class="copy-msg">copied</span>
+						<button
+							class="
+								bg-transparent
+								border-0
+								cursor-pointer
+								flex
+								a-items-center
+								ws-nowrap
+							"
+							:data-item="colorNames[index]"
+						>
+							{{ colorNames[index] }}
+							<span class="copy-msg">copied</span>
+						</button>
 					</li>
-					<li
-						class="cursor-pointer mt-1_5"
-						:data-item="`bg-${colorNames[index]}`"
-					>
-						{{ `bg-${colorNames[index]}` }}
-						<span class="copy-msg">copied</span>
+					<li class="mt-1_5">
+						<button
+							class="
+								bg-transparent
+								border-0
+								cursor-pointer
+								flex
+								a-items-center
+								ws-nowrap
+							"
+							:data-item="`bg-${colorNames[index]}`"
+						>
+							{{ `bg-${colorNames[index]}` }}
+							<span class="copy-msg">copied</span>
+						</button>
 					</li>
 				</ul>
 			</div>
@@ -120,9 +165,12 @@
 	.color-card ul {
 		min-height: 100px;
 	}
+	.color-value:focus {
+		outline-offset: -5px;
+	}
 	.copy-msg {
 		display: none;
-		font-size: 0.9em;
+		font-size: 0.8em;
 		font-family: monospace;
 		text-decoration-line: underline;
 		text-underline-offset: 4px;
