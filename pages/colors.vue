@@ -23,13 +23,13 @@
 						getColor(colorVars[color]).length > 23 ? 'ws-nowrap' : '',
 					]"
 					:style="{ background: `var(${color})` }"
-					@click="copyToClipboard($event)"
+					@click="$copyToClipboard($event)"
 					:data-item="colorVars[color]"
 				>
 					<span class="pointer-events-none">{{ colorVars[color] }}</span>
 					<span class="copy-msg">copied</span>
 				</button>
-				<ul class="p-3 m-0" @click="copyToClipboard($event)">
+				<ul class="p-3 m-0" @click="$copyToClipboard($event)">
 					<li>
 						<button
 							class="
@@ -133,22 +133,7 @@
 				const l = parseInt(color.split(',')[2])
 				return l <= 50 ? 'white' : 'black'
 			},
-			async copyToClipboard(e) {
-				const el = e.target
-				const text = el.dataset.item
-				try {
-					await navigator.clipboard.writeText(text)
-					el.classList.add('copied')
-				} catch (err) {
-					console.error('Failed to copy text: ', err)
-				} finally {
-					setTimeout(() => {
-						el.classList.remove('copied')
-					}, 1000)
-				}
-			},
 		},
-		mounted() {},
 	}
 </script>
 

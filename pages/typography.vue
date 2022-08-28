@@ -9,7 +9,9 @@
 					:key="className"
 					class="card-typography mt-4"
 				>
-					<span :class="className">{{ className.split('_')[0] }}</span>
+					<button>
+						<span :class="className">{{ className.split('_')[0] }}</span>
+					</button>
 				</div>
 			</div>
 		</div>
@@ -18,6 +20,7 @@
 
 <script>
 	import typographyStyles from '~/mm-css/dist/json/typography-styles.json'
+
 	export default {
 		data() {
 			return {
@@ -42,32 +45,11 @@
 		},
 		computed: {
 			cssStyles() {
-				const cssMap = new Map()
-				for (const sel in typographyStyles) {
-					// console.log(sel)
-					const selArray = sel.split(/\n/)
-					const rules = typographyStyles[sel]
-
-					selArray.forEach((s) => {
-						const selector = this.trimClass(s)
-						if (selector.includes('media')) {
-							return
-						}
-						const name = selector.split('_')[0]
-						let updatedRules
-						if (cssMap.has(name)) {
-							updatedRules = cssMap.get(name)
-						}
-						cssMap.set(selector, { ...rules, ...updatedRules })
-					})
-				}
-				return cssMap
+				return this.$mapStyles(typographyStyles)
 			},
 			typographyClasses() {
 				const classNameObj = {}
-				const classType = ''
 				this.cssStyles.forEach((value, key) => {
-					// console.log('KEY', key)
 					const textType = key.split('_')[1] || 'reg'
 					if (!classNameObj[textType]) {
 						classNameObj[textType] = []
