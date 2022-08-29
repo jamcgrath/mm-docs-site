@@ -10,7 +10,25 @@
 			</thead>
 			<tbody>
 				<tr v-for="(rules, index) in cssStyles" :key="index">
-					<td>{{ rules[0] }}</td>
+					<td>
+						<button
+							class="
+								color-value
+								w-100
+								p-4
+								cursor-pointer
+								flex-1
+								border-0
+								text-left
+								flex
+								a-items-center
+								bg-transparent
+							"
+							@click="$copyToClipboard(rules[0])"
+						>
+							{{ rules[0] }} <span class="copy-msg">copied</span>
+						</button>
+					</td>
 					<td>
 						<ul class="list-reset">
 							<li
