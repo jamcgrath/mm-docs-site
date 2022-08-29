@@ -1,6 +1,6 @@
 <template>
 	<div :class="`page-${slug}`">
-		<div class="sm-container p-4">
+		<div class="md-container p-4">
 			<docs-table :filename="slug"></docs-table>
 		</div>
 	</div>
@@ -10,7 +10,7 @@
 	import DocsTable from '~/components/DocsTable.vue'
 	export default {
 		async asyncData({ params }) {
-			const slug = params.slug // When calling /abc the slug will be "abc"
+			const slug = params.slug
 			return { slug }
 		},
 		components: {
