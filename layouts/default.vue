@@ -59,4 +59,17 @@
 	.default-wrap:has(> .open-ocs) .default-offcanvas {
 		transform: translateX(0);
 	}
+
+	.copy-msg {
+		display: none;
+		font-size: 0.8em;
+		font-family: monospace;
+		text-decoration-line: underline;
+		text-underline-offset: 4px;
+		text-transform: capitalize;
+		margin-left: 10px;
+	}
+	.copied > .copy-msg {
+		display: inline-block;
+	}
 </style>

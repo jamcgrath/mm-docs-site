@@ -9,8 +9,24 @@
 					:key="className"
 					class="card-typography mt-4"
 				>
-					<button>
-						<span :class="className">{{ className.split('_')[0] }}</span>
+					<button
+						class="
+							w-100
+							py-4
+							cursor-pointer
+							border-0
+							text-left
+							flex flex-wrap
+							a-items-center
+							bg-transparent
+							ws-nowrap
+						"
+						@click="$copyToClipboard(className)"
+					>
+						<span class="pointer-events-none" :class="className">{{
+							className.split('_')[0]
+						}}</span>
+						<span class="copy-msg block m-0">copied</span>
 					</button>
 				</div>
 			</div>
