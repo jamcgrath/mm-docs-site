@@ -8,9 +8,6 @@
 				<li>
 					<nuxt-link to="/typography">Typography</nuxt-link>
 				</li>
-				<li>
-					<nuxt-link to="/flex">Flex</nuxt-link>
-				</li>
 				<li v-for="(item, index) in filesNamesArray" :key="index">
 					<nuxt-link :to="`/${item}`">{{ item }}</nuxt-link>
 				</li>
@@ -31,7 +28,6 @@
 		computed: {
 			filesNamesArray() {
 				const fileList = []
-
 				Object.values(filenames).forEach((file) => {
 					let isExcluded = false
 					this.excludeList.forEach((excluded) => {
