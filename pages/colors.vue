@@ -23,7 +23,7 @@
 						getColor(colorVars[color]).length > 23 ? 'ws-nowrap' : '',
 					]"
 					:style="{ background: `var(${color})` }"
-					@click="$copyToClipboard($event)"
+					@click="$copyToClipboard()"
 					:data-item="colorVars[color]"
 				>
 					<span class="pointer-events-none">{{ colorVars[color] }}</span>
@@ -139,7 +139,7 @@
 
 <style>
 	.page-content {
-		--col-width: 250px;
+		--col-width: 260px;
 		display: grid;
 	}
 	.color-card {

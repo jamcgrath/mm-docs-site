@@ -35,14 +35,6 @@
 				],
 			}
 		},
-		methods: {
-			trimClass(s) {
-				const sTrimed = s.trim()
-				const end =
-					sTrimed[sTrimed.length - 1] === ',' ? sTrimed.length - 1 : s.length
-				return sTrimed.slice(1, end)
-			},
-		},
 		computed: {
 			cssStyles() {
 				return this.$mapStyles(typographyStyles)

@@ -1,6 +1,6 @@
 export default ({ app }, inject) => {
-  const copyToClipboard = async (e) => {
-    const el = e.target
+  const copyToClipboard = async () => {
+    const el = event.target
     const text = el.dataset.item
     try {
       await navigator.clipboard.writeText(text)
