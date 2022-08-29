@@ -8,7 +8,11 @@
 				</tr>
 			</thead>
 			<tbody>
-				<tr v-for="(rules, index) in cssStyles" :key="index">
+				<tr
+					v-for="(rules, index) in cssStyles"
+					:key="index"
+					class="v-align-baseline"
+				>
 					<td>
 						<button
 							class="
@@ -34,7 +38,7 @@
 								v-for="(value, prop, index) in rules[1]"
 								:key="`${prop}-${index}`"
 							>
-								{{ $kebabCase(prop) }} : {{ value }}
+								{{ $kebabCase(prop) }} : {{ checkValue(value) }}
 							</li>
 						</ul>
 					</td>
@@ -53,10 +57,18 @@
 			},
 		},
 		methods: {
-			name() {},
+			checkValue(value) {
+				return Array.isArray(value) ? value[value.length - 1] : value
+			},
 		},
 	}
 </script>
 
 <style>
+	.docs-table {
+		font-family: monospace;
+	}
+	.docs-table td {
+		min-width: 300px;
+	}
 </style>
