@@ -34,7 +34,7 @@
 								v-for="(value, prop, index) in rules[1]"
 								:key="`${prop}-${index}`"
 							>
-								{{ prop }} : {{ value }}
+								{{ $kebabCase(prop) }} : {{ value }}
 							</li>
 						</ul>
 					</td>
@@ -51,6 +51,9 @@
 			cssStyles() {
 				return this.$mapStyles(require(`~/mm-css/dist/json/${this.filename}`))
 			},
+		},
+		methods: {
+			name() {},
 		},
 	}
 </script>

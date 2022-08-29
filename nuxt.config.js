@@ -18,7 +18,11 @@ export default {
   css: ['~/mm-css/dist/styles.css'],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
-  plugins: ['~/plugins/mapCss.js', '~/plugins/copyToClipboard.js'],
+  plugins: [
+    '~/plugins/mapCss.js',
+    '~/plugins/copyToClipboard.js',
+    '~/plugins/kebabcase.js',
+  ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
   components: true,
