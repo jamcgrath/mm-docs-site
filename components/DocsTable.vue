@@ -5,7 +5,6 @@
 				<tr>
 					<th>Class</th>
 					<th>Props</th>
-					<!-- <th>Value</th> -->
 				</tr>
 			</thead>
 			<tbody>
