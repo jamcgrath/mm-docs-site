@@ -20,13 +20,15 @@
 							a-items-center
 							bg-transparent
 							ws-nowrap
+							relative
+							capitalize
 						"
 						@click="$copyToClipboard(className)"
 					>
 						<span class="pointer-events-none" :class="className">{{
 							className.split('_')[0]
 						}}</span>
-						<span class="copy-msg block m-0">copied</span>
+						<span class="copy-msg block m-0 absolute b-0 l-0">copied</span>
 					</button>
 				</div>
 			</div>

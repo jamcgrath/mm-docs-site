@@ -1,13 +1,15 @@
 <template>
-	<div class="default-wrap grid">
-		<docs-header class="default-header"></docs-header>
-		<docs-sidebar class="default-sidebar"></docs-sidebar>
+	<div class="default-wrap grid pt-11">
+		<docs-header class="default-header fixed t-0 w-100"></docs-header>
+		<docs-sidebar
+			class="default-sidebar overflow-y-auto hide-scroll fixed"
+		></docs-sidebar>
 		<main>
 			<Nuxt />
 		</main>
 		<docs-off-canvas-sidebar class="default-offcanvas">
 		</docs-off-canvas-sidebar>
-		<docs-footer class="default-footer"></docs-footer>
+		<docs-footer class="default-footer z-10 fixed b-0 w-100"></docs-footer>
 	</div>
 </template>
 <script>
@@ -15,6 +17,8 @@
 	import DocsOffCanvasSidebar from '~/components/DocsOffCanvasSidebar.vue'
 	import DocsHeader from '~/components/DocsHeader.vue'
 	import DocsFooter from '~/components/DocsFooter.vue'
+	import '../node_modules/vue-code-highlight/themes/window.css'
+
 	export default {
 		components: {
 			DocsSidebar,
@@ -27,7 +31,7 @@
 <style>
 	.default-wrap {
 		display: grid;
-		grid-template-columns: auto 1fr;
+		grid-template-columns: 200px 1fr;
 		grid-template-rows: auto 1fr auto;
 		grid-template-areas:
 			'header header'
@@ -41,6 +45,7 @@
 	}
 	.default-sidebar {
 		grid-area: sidebar;
+		height: calc(100% - 80px);
 	}
 	.default-footer {
 		grid-area: footer;
@@ -48,6 +53,11 @@
 	main,
 	.default-offcanvas {
 		grid-area: content;
+		border-right: 1px solid var(--gray-5);
+	}
+	main {
+		border-left: 1px solid var(--gray-5);
+		height: 100vh;
 	}
 	.default-offcanvas {
 		justify-self: end;
@@ -71,5 +81,9 @@
 	}
 	.copied > .copy-msg {
 		display: inline-block;
+	}
+
+	a {
+		color: var(--pressed);
 	}
 </style>

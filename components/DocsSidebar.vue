@@ -1,15 +1,24 @@
 <template>
-	<aside class="main-sidebar p-4 _min-w overflow-y-auto hide-scroll">
+	<aside class="main-sidebar p-4">
 		<nav role="navigation">
 			<ul class="list-reset">
 				<li>
 					<nuxt-link to="/colors">Colors</nuxt-link>
 				</li>
-				<li>
+				<li class="mt-3">
 					<nuxt-link to="/typography">Typography</nuxt-link>
 				</li>
-				<li v-for="(item, index) in filesNamesArray" :key="index">
-					<nuxt-link :to="`/${item}`">{{ item }}</nuxt-link>
+				<li class="mt-6">
+					<span class="copy_semibold">Utility Classes</span>
+					<ul class="list-reset">
+						<li
+							v-for="(item, index) in filesNamesArray"
+							:key="index"
+							class="mt-3 pl-2"
+						>
+							<nuxt-link :to="`/${item}`">{{ item }}</nuxt-link>
+						</li>
+					</ul>
 				</li>
 			</ul>
 		</nav>
@@ -46,10 +55,3 @@
 		},
 	}
 </script>
-
-<style>
-	.main-sidebar {
-		--min-width: 180px;
-		border-right: 1px solid var(--gray-5);
-	}
-</style>

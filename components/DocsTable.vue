@@ -1,9 +1,9 @@
 <template>
 	<div class="docs-table">
-		<table>
+		<table class="table-auto border-collapse">
 			<thead>
-				<tr>
-					<th>Class</th>
+				<tr class="text-left">
+					<th class="px-4 py-2">Class</th>
 					<th>Props</th>
 				</tr>
 			</thead>
@@ -68,7 +68,12 @@
 	.docs-table {
 		font-family: monospace;
 	}
-	.docs-table td {
-		min-width: 300px;
+	.docs-table table {
+	}
+	/* .docs-table td {
+													min-width: 300px;
+												} */
+	.docs-table tr {
+		border-bottom: 1px solid var(--bc-primary);
 	}
 </style>
