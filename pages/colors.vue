@@ -27,7 +27,7 @@
 					:data-item="colorVars[color]"
 				>
 					<span class="pointer-events-none">{{ colorVars[color] }}</span>
-					<span class="copy-msg">copied</span>
+					<span class="copy-msg ml-2">copied</span>
 				</button>
 				<ul class="p-3 m-0" @click="$copyToClipboard($event)">
 					<li>
@@ -43,7 +43,7 @@
 							:data-item="color"
 						>
 							{{ color }}
-							<span class="copy-msg">copied</span>
+							<span class="copy-msg ml-2">copied</span>
 						</button>
 					</li>
 					<li
@@ -152,15 +152,6 @@
 	}
 	.color-value:focus {
 		outline-offset: -5px;
-	}
-	.copy-msg {
-		display: none;
-		font-size: 0.8em;
-		font-family: monospace;
-		text-decoration-line: underline;
-		text-underline-offset: 4px;
-		text-transform: capitalize;
-		margin-left: 10px;
 	}
 	.copied > .copy-msg {
 		display: inline-block;

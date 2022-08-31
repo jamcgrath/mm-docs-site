@@ -1,13 +1,15 @@
-exports.code = `<div class="container">
-  <div class="row">
-    <div class="col-md-6">
-      <div class="card">
-        <div class="card-body">
-          <h5 class="card-title">Card title</h5>
-          <p class="card-text">Some quick example text to build on the card title and make up the bulk of the card's content.</p>
-          <a href="#" class="btn btn-primary">Go somewhere</a>
-        </div>
-      </div>
-    </div>
-  </div>
-</div>`
+module.exports = {
+  code: `
+  .align-content {
+    align-content: center;
+    justify-content: center;
+    flex: 1 1 auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-items: center;
+    align-self: center;
+    justify-self: center;
+  }`,
+  language: 'css',
+}

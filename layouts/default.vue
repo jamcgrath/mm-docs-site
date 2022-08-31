@@ -1,14 +1,14 @@
 <template>
 	<div class="default-wrap grid pt-11">
-		<docs-header class="default-header fixed t-0 w-100"></docs-header>
+		<docs-header class="default-header fixed t-0 w-100 z-10"></docs-header>
 		<docs-sidebar
 			class="default-sidebar overflow-y-auto hide-scroll fixed"
 		></docs-sidebar>
 		<main>
 			<Nuxt />
 		</main>
-		<docs-off-canvas-sidebar class="default-offcanvas">
-		</docs-off-canvas-sidebar>
+		<!-- <docs-off-canvas-sidebar class="default-offcanvas">
+		</docs-off-canvas-sidebar> -->
 		<docs-footer class="default-footer z-10 fixed b-0 w-100"></docs-footer>
 	</div>
 </template>
@@ -53,10 +53,11 @@
 	.default-offcanvas {
 		grid-area: content;
 		border-right: 1px solid var(--gray-5);
+		padding-bottom: ;
 	}
 	main {
 		border-left: 1px solid var(--gray-5);
-		height: 100vh;
+		padding-bottom: 40px;
 	}
 	.default-offcanvas {
 		justify-self: end;
@@ -71,12 +72,14 @@
 
 	.copy-msg {
 		display: none;
-		font-size: 0.8em;
-		font-family: monospace;
+		font-size: var(--caption);
+		font-family: 'IBM Plex Mono', monospace;
+		font-weight: normal;
+		font-style: normal;
 		text-decoration-line: underline;
 		text-underline-offset: 4px;
-		text-transform: capitalize;
-		margin-left: 10px;
+		text-transform: lowercase;
+		letter-spacing: normal;
 	}
 	.copied > .copy-msg {
 		display: inline-block;

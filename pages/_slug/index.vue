@@ -6,9 +6,9 @@
 		<div class="markdown">
 			<div v-html="markdown"></div>
 		</div>
-		<div v-if="code" class="code overflow-auto">
+		<div v-if="codeExample" class="code overflow-auto">
 			<pre>
-        <code v-highlight="code" class="html"></code>
+        <code v-highlight="codeExample.code" :class="`language-${codeExample.language}`"></code>
       </pre>
 			<button @click="$copyToClipboard(code)">copy</button>
 		</div>
@@ -30,8 +30,8 @@
 				console.log(codeFile)
 			} finally {
 				const markdown = markdownFile ? markdownFile.default : null
-				const code = codeFile ? codeFile.code : null
-				return { slug, markdown, code }
+				const codeExample = codeFile ? codeFile : null
+				return { slug, markdown, codeExample }
 			}
 		},
 		components: {
