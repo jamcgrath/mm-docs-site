@@ -17,7 +17,6 @@
 	import DocsOffCanvasSidebar from '~/components/DocsOffCanvasSidebar.vue'
 	import DocsHeader from '~/components/DocsHeader.vue'
 	import DocsFooter from '~/components/DocsFooter.vue'
-	import '../node_modules/vue-code-highlight/themes/window.css'
 
 	export default {
 		components: {
