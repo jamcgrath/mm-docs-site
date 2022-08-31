@@ -1,4 +1,5 @@
 export default ({ app }, inject) => {
+  //trim white space and determine if end of string has a comma and remove it
   const trimClass = (s) => {
     const sTrimed = s.trim()
     const end =
