@@ -6,33 +6,32 @@
 		<div class="markdown">
 			<div v-html="markdown"></div>
 		</div>
-		<div class="code">
-			<vue-code-highlight>
-				<pre class="language-html">
-				{{ markdown }}
-			</pre
-				>
-			</vue-code-highlight>
+		<div v-if="code" class="code overflow-auto">
+			<pre>
+        <code v-highlight="code" class="html"></code>
+      </pre>
+			<button @click="$copyToClipboard(code)">copy</button>
 		</div>
 	</div>
 </template>
 
 <script>
 	import DocsTable from '~/components/DocsTable.vue'
-	import { component as VueCodeHighlight } from 'vue-code-highlight'
 
 	export default {
-		components: {
-			VueCodeHighlight,
-		},
+		components: {},
 		async asyncData({ params }) {
 			const slug = params.slug
 			let markdownFile
+			let codeFile
 			try {
 				markdownFile = await require(`~/markdown/${slug}.md`)
+				codeFile = await require(`~/code-examples/${slug}.js`)
+				console.log(codeFile)
 			} finally {
 				const markdown = markdownFile ? markdownFile.default : null
-				return { slug, markdown }
+				const code = codeFile ? codeFile.code : null
+				return { slug, markdown, code }
 			}
 		},
 		components: {
@@ -44,7 +43,7 @@
 <style>
 	.page-grid {
 		display: grid;
-		/* grid-template-columns: repeat(auto-fit, minmax(50%, 1fr)); */
+		grid-template-columns: auto 1fr;
 		grid-template-areas: 'table docs';
 		gap: 2%;
 	}
@@ -58,121 +57,8 @@
 	.code {
 		align-self: end;
 	}
-
-	code[class*='language-'],
-	pre[class*='language-'] {
-		color: #f8f8f2;
-		background: none;
-		text-shadow: 0 1px rgba(0, 0, 0, 0.3);
-		font-family: Consolas, Monaco, 'Andale Mono', 'Ubuntu Mono', monospace;
-		text-align: left;
-		white-space: pre;
-		word-spacing: normal;
-		word-break: normal;
-		word-wrap: normal;
-		line-height: 1.5;
-
-		-moz-tab-size: 4;
-		-o-tab-size: 4;
-		tab-size: 4;
-
-		-webkit-hyphens: none;
-		-moz-hyphens: none;
-		-ms-hyphens: none;
-		hyphens: none;
-	}
-
-	/* Code blocks */
-	pre[class*='language-'] {
-		padding: 1em;
-		margin: 0.5em 0;
-		overflow: auto;
-		border-radius: 0.3em;
-	}
-
-	:not(pre) > code[class*='language-'],
-	pre[class*='language-'] {
-		background: #272822;
-	}
-
-	/* Inline code */
-	:not(pre) > code[class*='language-'] {
-		padding: 0.1em;
-		border-radius: 0.3em;
-		white-space: normal;
-	}
-
-	.token.comment,
-	.token.prolog,
-	.token.doctype,
-	.token.cdata {
-		color: slategray;
-	}
-
-	.token.punctuation {
-		color: #f8f8f2;
-	}
-
-	.namespace {
-		opacity: 0.7;
-	}
-
-	.token.property,
-	.token.tag,
-	.token.constant,
-	.token.symbol,
-	.token.deleted {
-		color: #f92672;
-	}
-
-	.token.boolean,
-	.token.number {
-		color: #ae81ff;
-	}
-
-	.token.selector,
-	.token.attr-name,
-	.token.string,
-	.token.char,
-	.token.builtin,
-	.token.inserted {
-		color: #a6e22e;
-	}
-
-	.token.operator,
-	.token.entity,
-	.token.url,
-	.language-css .token.string,
-	.style .token.string,
-	.token.variable {
-		color: #f8f8f2;
-	}
-
-	.token.atrule,
-	.token.attr-value,
-	.token.function,
-	.token.class-name {
-		color: #e6db74;
-	}
-
-	.token.keyword {
-		color: #66d9ef;
-	}
-
-	.token.regex,
-	.token.important {
-		color: #fd971f;
-	}
-
-	.token.important,
-	.token.bold {
-		font-weight: bold;
-	}
-	.token.italic {
-		font-style: italic;
-	}
-
-	.token.entity {
-		cursor: help;
+	.code code {
+		padding: 2em;
+		border-radius: 12px;
 	}
 </style>
