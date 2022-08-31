@@ -17,11 +17,11 @@ export default ({ app }, inject) => {
           return
         }
         const name = selector.split('_')[0]
-        let updatedRules
         if (cssMap.has(name)) {
-          updatedRules = cssMap.get(name)
+          cssMap.set(selector, { ...cssMap.get(name), ...rules })
+        } else {
+          cssMap.set(selector, rules)
         }
-        cssMap.set(selector, { ...rules, ...updatedRules })
       })
     }
     return cssMap
