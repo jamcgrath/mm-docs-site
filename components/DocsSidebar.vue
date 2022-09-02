@@ -8,6 +8,9 @@
 				<li class="mt-3">
 					<nuxt-link to="/typography">Typography</nuxt-link>
 				</li>
+				<li class="mt-3">
+					<nuxt-link to="/badges">Badges</nuxt-link>
+				</li>
 				<li class="mt-6">
 					<span class="copy_semibold">Utility Classes</span>
 					<ul class="list-reset">
@@ -31,7 +34,7 @@
 	export default {
 		data() {
 			return {
-				excludeList: ['typography', 'colors', 'media-queries'],
+				excludeList: ['typography', 'colors', 'media-queries', 'badges'],
 			}
 		},
 		computed: {
