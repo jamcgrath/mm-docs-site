@@ -58,6 +58,8 @@
 		},
 		methods: {
 			checkValue(value) {
+				// if there are vendor prefixes the rule is an array then
+				// get the last value of the array which is un-prefixed
 				return Array.isArray(value) ? value[value.length - 1] : value
 			},
 		},
@@ -68,11 +70,7 @@
 	.docs-table {
 		font-family: monospace;
 	}
-	.docs-table table {
-	}
-	/* .docs-table td {
-													min-width: 300px;
-												} */
+
 	.docs-table tr {
 		border-bottom: 1px solid var(--bc-primary);
 	}

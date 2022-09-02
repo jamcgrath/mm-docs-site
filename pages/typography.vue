@@ -107,7 +107,6 @@
 				}
 			},
 			getFontFamily(className) {
-				console.log(className)
 				if (className.split('_')[1] === 'display') {
 					return 'Poppins'
 				}
@@ -124,7 +123,7 @@
 
 <style scoped>
 	.page-content_typography {
-		grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+		grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
 	}
 	.grid-col-title {
 		border-bottom: 3px solid var(--bw-primary);
