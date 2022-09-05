@@ -6,8 +6,7 @@ module.exports = [
 `,
     language: 'html',
   },
-{code:`
-<span class="badge-med gray-7 bg-gray-3">
+{code:`<span class="badge-med gray-7 bg-gray-3">
   <icon>🍪</icon>Badge<icon>👍</icon>
 </span>
 `,
