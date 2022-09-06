@@ -1,26 +1,28 @@
 <template>
-	<div class="c-mm-tabs p-20">
-		<div class="tabs-nav" v-show="tabs.length">
-			<div role="tablist" class="tabs-list flex" ref="tablist">
-				<button
-					v-for="(tab, index) in tabs"
-					:key="index"
-					:id="`tab-${tab.id}`"
-					class="tabs-list-button label gray-7 cursor-pointer"
-					type="button"
-					role="tab"
-					:aria-selected="selectedTab === tab.id || 'false'"
-					:aria-controls="tab.id"
-					:tabindex="selectedTab === tab.id ? 0 : -1"
-					ref="tabButton"
-					@keydown="focusNext(tab.id, index, $event)"
-					@click="showTabPanel(tab.id)"
-				>
-					{{ tab['tab-name'] }}
-				</button>
-			</div>
-			<slot></slot>
+	<div class="c-mm-tabs" v-show="tabs.length">
+		<div
+			role="tablist"
+			class="tabs-list flex overflow-x-auto hide-scroll"
+			ref="tablist"
+		>
+			<button
+				v-for="(tab, index) in tabs"
+				:key="index"
+				:id="`tab-${tab.id}`"
+				class="tabs-list-button label gray-7 cursor-pointer"
+				type="button"
+				role="tab"
+				:aria-selected="selectedTab === tab.id || 'false'"
+				:aria-controls="tab.id"
+				:tabindex="selectedTab === tab.id ? 0 : -1"
+				ref="tabButton"
+				@keydown="focusNext(tab.id, index, $event)"
+				@click="showTabPanel(tab.id)"
+			>
+				{{ tab['tab-name'] }}
+			</button>
 		</div>
+		<slot></slot>
 	</div>
 </template>
 
@@ -53,7 +55,6 @@
 				// keycodes: 9=tab|35=end|36=home|37=left|39=right|40=down
 				const { keyCode } = e
 				if (this.keyCodes.includes(keyCode)) {
-					// console.log(this.$refs.tablist)
 					const tabButtons = this.$refs.tabButton
 					const first = tabButtons[0]
 					const last = tabButtons[tabButtons.length - 1]
@@ -99,6 +100,9 @@
 </script>
 
 <style scoped>
+	.tab-list {
+		scroll-snap-type: x mandatory;
+	}
 	.tabs-list-button {
 		--_border-color: var(--tab-border-color, var(--gray-4));
 		--_color: var(--tab-color, var(--gray-7));
@@ -111,6 +115,7 @@
 		min-width: 86px;
 		text-transform: capitalize;
 		outline-offset: -6px;
+		scroll-snap-align: start;
 	}
 	.tabs-list-button[aria-selected='true'] {
 		--tab-border-color: var(--bw-secondary);
