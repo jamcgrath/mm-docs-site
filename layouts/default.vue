@@ -1,5 +1,5 @@
 <template>
-	<div class="default-wrap grid pt-11">
+	<div class="default-wrap pt-11">
 		<docs-header class="default-header fixed t-0 w-100 z-10"></docs-header>
 		<docs-sidebar
 			class="default-sidebar overflow-y-auto hide-scroll fixed"
