@@ -66,8 +66,8 @@
 </template>
 
 <script>
-	import MmTabs from '~/components/mm-components/MmTabs.vue'
-	import MmTabPanel from '~/components/mm-components/MmTabPanel.vue'
+	import MmTabs from '~/components/mm-components/tab-panel/MmTabs.vue'
+	import MmTabPanel from '~/components/mm-components/tab-panel/MmTabPanel.vue'
 
 	export default {
 		components: {
