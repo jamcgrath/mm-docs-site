@@ -3,36 +3,51 @@
 		<div class="table">
 			<docs-table :filename="slug" class="w-100"></docs-table>
 		</div>
-		<div class="markdown">
+		<!-- <div class="markdown">
 			<div v-html="markdown"></div>
-		</div>
-		<div v-if="codeExample" class="visual-preview grid grid-fluid">
-			<div
-				v-for="(example, index) in codeExample"
-				:key="`vp-${index}`"
-				@click="$copyToClipboard(example.code)"
-				class="code-visual"
-				v-html="example.code"
-			></div>
-		</div>
-		<div v-if="codeExample" class="code-preview overflow-auto relative">
-			<pre
-				class="m-0"
-				v-for="(example, index) in codeExample"
-				:key="index"
-				@click="$copyToClipboard(example.code)"
-			>
-					<code v-highlight="example.code" :class="`language-${example.language}`"></code>
-				</pre>
+		</div> -->
+		<div v-if="codeExample" class="examples">
+			<mm-tabs>
+				<mm-tab-panel id="visualPreview" tab-name="Component" selected="true">
+					<div class="visual-preview grid grid-fluid">
+						<div
+							v-for="(example, index) in codeExample"
+							:key="`vp-${index}`"
+							@click="$copyToClipboard(example.code)"
+							class="code-visual"
+							v-html="example.code"
+						></div>
+					</div>
+				</mm-tab-panel>
+				<mm-tab-panel id="codePreview" tab-name="Code">
+					<div class="code-preview overflow-auto relative">
+						<pre
+							class="m-0"
+							v-for="(example, index) in codeExample"
+							:key="index"
+							@click="$copyToClipboard(example.code)"
+						>
+								<code v-highlight="example.code" :class="`language-${example.language}`"></code>
+							</pre>
+					</div>
+				</mm-tab-panel>
+				<mm-tab-panel id="markdown" tab-name="Documentation">
+					<div class="markdown">
+						<div v-html="markdown"></div>
+					</div>
+				</mm-tab-panel>
+			</mm-tabs>
 		</div>
 	</div>
 </template>
 
 <script>
 	import DocsTable from '~/components/DocsTable.vue'
+	import MmTabs from '~/components/mm-components/tab-panel/MmTabs.vue'
+	import MmTabPanel from '~/components/mm-components/tab-panel/MmTabPanel.vue'
 
 	export default {
-		components: {},
+		components: { DocsTable, MmTabs, MmTabPanel },
 		async asyncData({ params }) {
 			const slug = params.slug
 			let markdownFile
@@ -64,19 +79,15 @@
 		grid-area: table;
 	}
 	.markdown,
-	.visual-preview,
-	.code-preview {
+	.examples {
 		grid-area: docs;
 	}
-	.markdown {
-		align-self: start;
-	}
-	.visual-preview {
-		align-self: center;
-	}
-	.code-preview {
-		align-self: end;
-	}
+	/* .markdown {
+				align-self: start;
+			}
+			.examples {
+				align-self: center;
+			} */
 	.code-preview pre {
 		white-space: pre-line;
 	}

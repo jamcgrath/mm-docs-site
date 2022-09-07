@@ -13,7 +13,7 @@
 	</div>
 </template>
 <script>
-	import DocsSidebar from '~/components/DocsSidebarCss.vue'
+	import DocsSidebar from '~/components/DocsSidebarComponents.vue'
 	import DocsOffCanvasSidebar from '~/components/DocsOffCanvasSidebar.vue'
 	import DocsHeader from '~/components/DocsHeader.vue'
 	import DocsFooter from '~/components/DocsFooter.vue'
