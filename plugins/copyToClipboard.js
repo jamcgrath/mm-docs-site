@@ -2,8 +2,10 @@ export default ({ app }, inject) => {
   const copyToClipboard = async (copyText = '') => {
     const el = event.target
     const text = el.dataset.item || copyText
+    const clipboardText = text[0] === '.' ? text.slice(1) : text
+
     try {
-      await navigator.clipboard.writeText(text)
+      await navigator.clipboard.writeText(clipboardText)
       el.classList.add('copied')
     } catch (err) {
       console.error('Failed to copy text: ', err)

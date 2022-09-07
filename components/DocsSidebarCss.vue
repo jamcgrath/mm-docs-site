@@ -14,6 +14,9 @@
 						<li class="mt-3 pl-2">
 							<nuxt-link to="/badges">Badges</nuxt-link>
 						</li>
+						<li class="mt-3 pl-2">
+							<nuxt-link to="/buttons">Buttons</nuxt-link>
+						</li>
 					</ul>
 				</li>
 				<li class="mt-6">
@@ -39,7 +42,13 @@
 	export default {
 		data() {
 			return {
-				excludeList: ['typography', 'colors', 'media-queries', 'badges'],
+				excludeList: [
+					'typography',
+					'colors',
+					'media-queries',
+					'badges',
+					'buttons',
+				],
 			}
 		},
 		computed: {
