@@ -1,5 +1,5 @@
 <template>
-	<div class="m-20">
+	<div>
 		<mm-tabs>
 			<mm-tab-panel id="tab-panel-1" tab-name="tab-1" selected="true">
 				tab 1 Lorem ipsum dolor sit amet consectetur adipisicing elit. Vel esse

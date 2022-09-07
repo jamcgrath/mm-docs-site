@@ -6,9 +6,14 @@
 		<!-- <div class="markdown">
 			<div v-html="markdown"></div>
 		</div> -->
-		<div v-if="codeExample" class="examples">
+		<div v-if="codeExample || markdown" class="examples">
 			<mm-tabs>
-				<mm-tab-panel id="visualPreview" tab-name="Component" selected="true">
+				<mm-tab-panel
+					v-if="codeExample"
+					id="visualPreview"
+					tab-name="Component"
+					selected="true"
+				>
 					<div class="visual-preview grid grid-fluid">
 						<div
 							v-for="(example, index) in codeExample"
@@ -19,7 +24,7 @@
 						></div>
 					</div>
 				</mm-tab-panel>
-				<mm-tab-panel id="codePreview" tab-name="Code">
+				<mm-tab-panel v-f="codeExample" id="codePreview" tab-name="Code">
 					<div class="code-preview overflow-auto relative">
 						<pre
 							class="m-0"
@@ -31,7 +36,7 @@
 							</pre>
 					</div>
 				</mm-tab-panel>
-				<mm-tab-panel id="markdown" tab-name="Documentation">
+				<mm-tab-panel v-if="markdown" id="markdown" tab-name="Documentation">
 					<div class="markdown">
 						<div v-html="markdown"></div>
 					</div>
@@ -55,7 +60,7 @@
 			try {
 				markdownFile = await require(`~/markdown/${slug}.md`)
 				codeFile = await require(`~/code-examples/${slug}.js`)
-				console.log(codeFile)
+				// console.log(codeFile)
 			} finally {
 				const markdown = markdownFile ? markdownFile.default : null
 				const codeExample = codeFile ? codeFile : null
@@ -83,11 +88,11 @@
 		grid-area: docs;
 	}
 	/* .markdown {
-				align-self: start;
-			}
-			.examples {
-				align-self: center;
-			} */
+							align-self: start;
+						}
+						.examples {
+							align-self: center;
+						} */
 	.code-preview pre {
 		white-space: pre-line;
 	}
