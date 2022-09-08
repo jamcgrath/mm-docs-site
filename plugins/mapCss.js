@@ -4,7 +4,12 @@ export default ({ app }, inject) => {
     const sTrimed = s.trim()
     const end =
       sTrimed[sTrimed.length - 1] === ',' ? sTrimed.length - 1 : s.length
-    return sTrimed.slice(1, end)
+    console.log(sTrimed)
+    if (sTrimed.charAt(0) === '.') {
+      return sTrimed.slice(1, end)
+    } else {
+      return sTrimed.slice(0, end)
+    }
   }
   const mapStyles = (cssJson) => {
     const cssMap = new Map()

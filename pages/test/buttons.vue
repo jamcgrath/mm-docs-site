@@ -80,6 +80,11 @@
 			<button class="btn-med_ghost-disabled">button</button>
 			<button class="btn-lg_ghost-disabled">button</button>
 		</div>
+		<div class="mt-3">
+			<button class="btn-sm_success">button</button>
+			<button class="btn-med_success">button</button>
+			<button class="btn-lg_success">button</button>
+		</div>
 	</div>
 </template>
 
@@ -176,6 +181,53 @@
 		--btn-color: var(--gray-6);
 	}
 
+	.btn-sm-success,
+	.btn-med-success,
+	.btn-lg-success {
+		--btn-color: var(--white);
+		--btn-bg: var(--success);
+	}
+	.btn-sm_outline-success,
+	.btn-med_outline-success,
+	.btn-lg_outline-success {
+		--btn-color: var(--success);
+		--btn-bg: transparent;
+		--btn-border-color: currentcolor;
+		--btn-border-width: 1.5px;
+	}
+	.btn-sm_ghost-success,
+	.btn-med_ghost-success,
+	.btn-lg_ghost-success {
+		--btn-color: var(--success);
+	}
+
+	.btn-sm-error,
+	.btn-med-error,
+	.btn-lg-error {
+		--btn-color: var(--white);
+		--btn-bg: var(--error);
+	}
+	.btn-sm_outline-error,
+	.btn-med_outline-error,
+	.btn-lg_outline-error {
+		--btn-color: var(--error);
+		--btn-bg: transparent;
+		--btn-border-color: currentcolor;
+		--btn-border-width: 1.5px;
+	}
+	.btn-sm_ghost-error,
+	.btn-med_ghost-error,
+	.btn-lg_ghost-error {
+		--btn-color: var(--error);
+	}
+
+	.btn-sm_,
+	.btn-med_,
+	.btn-lg_ {
+		--btn-color: var(--white);
+		--btn-bg: var(--);
+	}
+
 	.btn-sm,
 	.btn-sm_primary,
 	.btn-sm_outline,
@@ -185,7 +237,13 @@
 	.btn-sm_outline-disabled,
 	.btn-sm_outline[disabled],
 	.btn-sm_ghost-disabled,
-	.btn-sm_ghost[disabled] {
+	.btn-sm_ghost[disabled],
+	.btn-sm-success,
+	.btn-sm-error,
+	.btn-sm_outline-success,
+	.btn-sm_outline-error,
+	.btn-sm_ghost-success,
+	.btn-sm_ghost-error {
 		--btn-min-width: 77px;
 		--btn-min-height: 32px;
 		--btn-padding: var(--space-0-5) var(--space-3);
@@ -200,7 +258,13 @@
 	.btn-med_ghost-disabled,
 	.btn-med-ghost[disabled],
 	.btn-med_outline-disabled,
-	.btn-med-outline[disabled] {
+	.btn-med-outline[disabled],
+	.btn-med-success,
+	.btn-med-error,
+	.btn-med_outline-success,
+	.btn-med_outline-error,
+	.btn-med_ghost-success,
+	.btn-med_ghost-error {
 		--btn-min-width: 85px;
 		--btn-min-height: 40px;
 		--btn-padding: var(--space-1-5) var(--space-4);
@@ -215,11 +279,17 @@
 	.btn-lg_outline-disabled,
 	.btn-lg_outline[disabled],
 	.btn-lg_ghost-disabled,
-	.btn-lg_ghost[disabled] {
+	.btn-lg_ghost[disabled],
+	.btn-lg-success,
+	.btn-lg-error.btn-sm_outline-success,
+	.btn-lg_outline-error,
+	.btn-lg_ghost-success,
+	.btn-lg_ghost-error {
 		--btn-min-width: 101px;
 		--btn-min-height: 48px;
 		--btn-padding: var(--space-2-5) var(--space-6);
 	}
+
 	.btn-icon[class*='btn-sm'] {
 		--btn-min-width: 97px;
 	}
