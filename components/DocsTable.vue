@@ -11,13 +11,12 @@
 				<tr
 					v-for="(rules, index) in cssStyles"
 					:key="index"
-					class="v-align-baseline"
+					class="v-align-baseline my-3"
 				>
-					<td>
+					<td class="pb-3">
 						<button
 							class="
 								color-value
-								w-100
 								p-4
 								cursor-pointer
 								flex-1
@@ -32,7 +31,7 @@
 							{{ rules[0] }} <span class="copy-msg">copied</span>
 						</button>
 					</td>
-					<td>
+					<td class="pb-3">
 						<ul class="list-reset">
 							<li
 								v-for="(value, prop, index) in rules[1]"
@@ -58,7 +57,7 @@
 		},
 		methods: {
 			checkValue(value) {
-				// if there are vendor prefixes the rule is an array then
+				// if there are vendor prefixes the rule is an array.
 				// get the last value of the array which is un-prefixed
 				return Array.isArray(value) ? value[value.length - 1] : value
 			},
