@@ -1,93 +1,105 @@
 <template>
 	<div class="page-colors p-4">
-		<div class="page-content grid-fluid gap-5">
-			<div
-				class="color-card flex flex-col"
-				v-for="(color, index) in colorVarNames"
-				:key="index"
-			>
-				<button
-					class="
-						color-value
-						w-100
-						p-4
-						cursor-pointer
-						flex-1
-						border-0
-						text-left
-						flex
-						a-items-center
-					"
-					:class="[
-						getColor(colorVars[color]),
-						getColor(colorVars[color]).length > 23 ? 'ws-nowrap' : '',
-					]"
-					:style="{ background: `var(${color})` }"
-					@click="$copyToClipboard()"
-					:data-item="colorVars[color]"
-				>
-					<span class="pointer-events-none">{{ colorVars[color] }}</span>
-					<span class="copy-msg ml-2">copied</span>
-				</button>
-				<ul class="p-3 m-0" @click="$copyToClipboard($event)">
-					<li>
-						<button
-							class="
-								bg-transparent
-								border-0
-								cursor-pointer
-								flex
-								a-items-center
-								ws-nowrap
-							"
-							:data-item="color"
-						>
-							{{ color }}
-							<span class="copy-msg ml-2">copied</span>
-						</button>
-					</li>
-					<li
-						v-if="!colorVars[color].includes('gradient')"
-						class="mt-1_5 cursor-pointer flex a-items-center ws-nowrap"
+		<mm-tabs>
+			<mm-tab-panel id="colors-panel-1" tab-name="Colors" selected="true">
+				<div class="page-content grid-fluid gap-5">
+					<div
+						class="color-card flex flex-col"
+						v-for="(color, index) in colorVarNames"
+						:key="index"
 					>
 						<button
 							class="
-								bg-transparent
-								border-0
+								color-value
+								w-100
+								p-4
 								cursor-pointer
+								flex-1
+								border-0
+								text-left
 								flex
 								a-items-center
-								ws-nowrap
 							"
-							:data-item="colorNames[index]"
+							:class="[
+								getColor(colorVars[color]),
+								getColor(colorVars[color]).length > 23 ? 'ws-nowrap' : '',
+							]"
+							:style="{ background: `var(${color})` }"
+							@click="$copyToClipboard()"
+							:data-item="colorVars[color]"
 						>
-							{{ colorNames[index] }}
-							<span class="copy-msg">copied</span>
+							<span class="pointer-events-none">{{ colorVars[color] }}</span>
+							<span class="copy-msg ml-2">copied</span>
 						</button>
-					</li>
-					<li class="mt-1_5">
-						<button
-							class="
-								bg-transparent
-								border-0
-								cursor-pointer
-								flex
-								a-items-center
-								ws-nowrap
-							"
-							:data-item="`bg-${colorNames[index]}`"
-						>
-							{{ `bg-${colorNames[index]}` }}
-							<span class="copy-msg">copied</span>
-						</button>
-					</li>
-				</ul>
-			</div>
-		</div>
+						<ul class="p-3 m-0" @click="$copyToClipboard($event)">
+							<li>
+								<button
+									class="
+										bg-transparent
+										border-0
+										cursor-pointer
+										flex
+										a-items-center
+										ws-nowrap
+									"
+									:data-item="color"
+								>
+									{{ color }}
+									<span class="copy-msg ml-2">copied</span>
+								</button>
+							</li>
+							<li
+								v-if="!colorVars[color].includes('gradient')"
+								class="mt-1_5 cursor-pointer flex a-items-center ws-nowrap"
+							>
+								<button
+									class="
+										bg-transparent
+										border-0
+										cursor-pointer
+										flex
+										a-items-center
+										ws-nowrap
+									"
+									:data-item="colorNames[index]"
+								>
+									{{ colorNames[index] }}
+									<span class="copy-msg">copied</span>
+								</button>
+							</li>
+							<li class="mt-1_5">
+								<button
+									class="
+										bg-transparent
+										border-0
+										cursor-pointer
+										flex
+										a-items-center
+										ws-nowrap
+									"
+									:data-item="`bg-${colorNames[index]}`"
+								>
+									{{ `bg-${colorNames[index]}` }}
+									<span class="copy-msg">copied</span>
+								</button>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</mm-tab-panel>
+			<mm-tab-panel id="colors-panel-2" tab-name="Docs">
+				COLOR CSS table here
+			</mm-tab-panel>
+			<mm-tab-panel id="colors-panel-3" tab-name="CSS">
+				COLOR CSS table here
+			</mm-tab-panel>
+		</mm-tabs>
 	</div>
 </template>
 
 <script>
+	import MmTabs from '~/components/mm-components/tab-panel/MmTabs.vue'
+	import MmTabPanel from '~/components/mm-components/tab-panel/MmTabPanel.vue'
 	import colorsProps from '~/mm-css/dist/json/colors-props.json'
 	import colorsAlerts from '~/mm-css/dist/json/colors-alerts.json'
 	import colorsAlertsBg from '~/mm-css/dist/json/colors-alerts-bg.json'
@@ -100,7 +112,12 @@
 	import colorGrayBg from '~/mm-css/dist/json/colors-gray-bg.json'
 	import colorNeutralBg from '~/mm-css/dist/json/colors-neutral-bg.json'
 	import colorStateBg from '~/mm-css/dist/json/colors-state-bg.json'
+
 	export default {
+		components: {
+			MmTabs,
+			MmTabPanel,
+		},
 		computed: {
 			colorVarNames() {
 				return Object.keys(colorsProps[':root'])
