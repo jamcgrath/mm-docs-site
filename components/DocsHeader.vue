@@ -2,7 +2,7 @@
 	<header
 		class="
 			mmd-header
-			bg-bw-primary
+			bw-primary-bg
 			white
 			px-4
 			py-1_5
