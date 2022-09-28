@@ -77,9 +77,9 @@
 										a-items-center
 										ws-nowrap
 									"
-									:data-item="`bg-${colorNames[index]}`"
+									:data-item="`${colorNames[index]}-bg`"
 								>
-									{{ `bg-${colorNames[index]}` }}
+									{{ `${colorNames[index]}-bg` }}
 									<span class="copy-msg">copied</span>
 								</button>
 							</li>
@@ -104,14 +104,7 @@
 	import colorsAlerts from '~/mm-css/dist/json/colors-alerts.json'
 	import colorsAlertsBg from '~/mm-css/dist/json/colors-alerts-bg.json'
 	import colorsGray from '~/mm-css/dist/json/colors-gray.json'
-	import colorsNeutral from '~/mm-css/dist/json/colors-neutral.json'
-	import colorsState from '~/mm-css/dist/json/colors-state.json'
-	import colorGradients from '~/mm-css/dist/json/colors-gradients.json'
-	import colorBrand from '~/mm-css/dist/json/colors-brand.json'
-	import colorBrandBg from '~/mm-css/dist/json/colors-brand-bg.json'
 	import colorGrayBg from '~/mm-css/dist/json/colors-gray-bg.json'
-	import colorNeutralBg from '~/mm-css/dist/json/colors-neutral-bg.json'
-	import colorStateBg from '~/mm-css/dist/json/colors-state-bg.json'
 
 	export default {
 		components: {
@@ -134,14 +127,8 @@
 					colorsAlerts,
 					colorsAlertsBg,
 					colorsGray,
-					colorsNeutral,
-					colorsState,
 					colorGradients,
-					colorBrand,
-					colorBrandBg,
 					colorGrayBg,
-					colorNeutralBg,
-					colorStateBg,
 				}
 			},
 		},
