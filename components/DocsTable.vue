@@ -71,6 +71,6 @@
 	}
 
 	.docs-table tr {
-		border-bottom: 1px solid var(-grape-dark);
+		border-bottom: 1px solid var(--aqua-light);
 	}
 </style>
