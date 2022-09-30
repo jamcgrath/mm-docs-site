@@ -57,6 +57,7 @@
 		methods: {
 			clearSearch() {
 				this.$refs.searchInput.value = ''
+				this.$emit('searchCleared')
 			},
 			focusInput() {
 				console.log(this.$refs.cSearchInput)
