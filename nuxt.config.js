@@ -22,6 +22,7 @@ export default {
     '~/plugins/mapCss.js',
     '~/plugins/copyToClipboard.js',
     '~/plugins/kebabcase.js',
+    '~/plugins/getMarkdown.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components

@@ -3,10 +3,15 @@
 		<nav role="navigation">
 			<ul class="list-reset">
 				<li>
-					<nuxt-link to="/colors">Colors</nuxt-link>
+					<nuxt-link to="/colors" class="copy_semibold">Colors</nuxt-link>
 				</li>
 				<li class="mt-3">
-					<nuxt-link to="/typography">Typography</nuxt-link>
+					<nuxt-link to="/typography" class="copy_semibold"
+						>Typography</nuxt-link
+					>
+				</li>
+				<li class="mt-3">
+					<nuxt-link to="/icons" class="copy_semibold">Icons</nuxt-link>
 				</li>
 				<li class="mt-6">
 					<span class="copy_semibold">UI</span>

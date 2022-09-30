@@ -53,19 +53,8 @@
 
 	export default {
 		components: { DocsTable, MmTabs, MmTabPanel },
-		async asyncData({ params }) {
-			const slug = params.slug
-			let markdownFile
-			let codeFile
-			try {
-				markdownFile = await require(`~/markdown/${slug}.md`)
-				codeFile = await require(`~/code-examples/${slug}.js`)
-				// console.log(codeFile)
-			} finally {
-				const markdown = markdownFile ? markdownFile.default : null
-				const codeExample = codeFile ? codeFile : null
-				return { slug, markdown, codeExample }
-			}
+		async asyncData({ $getMarkdown, params }) {
+			return $getMarkdown(params.slug)
 		},
 		components: {
 			DocsTable,
@@ -87,12 +76,7 @@
 	.examples {
 		grid-area: docs;
 	}
-	/* .markdown {
-							align-self: start;
-						}
-						.examples {
-							align-self: center;
-						} */
+
 	.code-preview pre {
 		white-space: pre-line;
 	}
