@@ -31,7 +31,7 @@
 		data() {
 			return {
 				searchText: '',
-				icons: this.iconNames,
+				icons: null,
 			}
 		},
 		computed: {
