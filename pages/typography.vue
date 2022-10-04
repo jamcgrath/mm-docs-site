@@ -22,11 +22,10 @@
 							capitalize
 							px-0
 						"
-						:class="className"
 						:ref="className"
 						@click="$copyToClipboard(className)"
 					>
-						<span class="pointer-events-none">{{
+						<span class="pointer-events-none" :class="className">{{
 							className.split('_')[0]
 						}}</span>
 						<span class="copy-msg block m-0 absolute t-0 r-0 mr-2">copied</span>
