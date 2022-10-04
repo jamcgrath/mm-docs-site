@@ -39,8 +39,6 @@
 			this.tabs = this.$children.map((child) => {
 				if (child.$attrs.selected) {
 					this.selectedTab = child.$attrs.id
-				} else {
-					child.$el.classList.add('hidden')
 				}
 				return child.$attrs
 			})
@@ -118,7 +116,7 @@
 		scroll-snap-align: start;
 	}
 	.tabs-list-button[aria-selected='true'] {
-		--tab-border-color: var(--bw-secondary);
+		--tab-border-color: var(--grape-dark);
 		--tab-color: var(--gray-9);
 	}
 </style>
