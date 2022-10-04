@@ -24,7 +24,7 @@
 						></div>
 					</div>
 				</mm-tab-panel>
-				<mm-tab-panel v-f="codeExample" id="codePreview" tab-name="Code">
+				<mm-tab-panel v-if="codeExample" id="codePreview" tab-name="Code">
 					<div class="code-preview overflow-auto relative">
 						<pre
 							class="m-0"
