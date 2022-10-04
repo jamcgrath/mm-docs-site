@@ -23,6 +23,7 @@ export default {
     '~/plugins/copyToClipboard.js',
     '~/plugins/kebabcase.js',
     '~/plugins/getMarkdown.js',
+    '~/plugins/getCode.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
