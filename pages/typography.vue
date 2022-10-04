@@ -75,10 +75,16 @@
 			typographyClasses() {
 				const classNameObj = {}
 				this.cssStyles.forEach((value, key) => {
+					//skip :before and :after
+					if (key.includes(':')) {
+						return
+					}
+
 					const textType = key.split('_')[1] || 'reg'
 					if (!classNameObj[textType]) {
 						classNameObj[textType] = []
 					}
+
 					classNameObj[textType].push(key)
 				})
 				return classNameObj
