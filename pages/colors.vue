@@ -1,7 +1,7 @@
 <template>
 	<div class="page-colors p-4">
 		<mm-tabs>
-			<mm-tab-panel id="colors-panel-1" tab-name="Colors" :selected="true">
+			<mm-tab-panel id="colors-panel-1" tab-name="Colors" selected="true">
 				<mm-input-search
 					class="mb-4"
 					v-model="searchText"
