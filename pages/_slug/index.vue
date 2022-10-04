@@ -45,8 +45,15 @@
 
 	export default {
 		components: { DocsTable, MmTabs, MmTabPanel, DocsCode },
-		async asyncData({ $getMarkdown, params }) {
-			return $getMarkdown(params.slug)
+		async asyncData({ $getMarkdown, $getCode, params }) {
+			const { slug } = params
+			const markdown = await $getMarkdown(slug)
+			const codeExample = await $getCode(slug)
+			return {
+				slug,
+				markdown,
+				codeExample,
+			}
 		},
 		components: {
 			DocsTable,
