@@ -25,16 +25,7 @@
 					</div>
 				</mm-tab-panel>
 				<mm-tab-panel v-if="codeExample" id="codePreview" tab-name="Code">
-					<div class="code-preview overflow-auto relative">
-						<pre
-							class="m-0"
-							v-for="(example, index) in codeExample"
-							:key="index"
-							@click="$copyToClipboard(example.code)"
-						>
-								<code v-highlight="example.code" :class="`language-${example.language}`"></code>
-							</pre>
-					</div>
+					<docs-code :codeExample="codeExample"></docs-code>
 				</mm-tab-panel>
 				<mm-tab-panel v-if="markdown" id="markdown" tab-name="Documentation">
 					<div class="markdown">
@@ -50,9 +41,10 @@
 	import DocsTable from '~/components/DocsTable.vue'
 	import MmTabs from '~/components/mm-components/tab-panel/MmTabs.vue'
 	import MmTabPanel from '~/components/mm-components/tab-panel/MmTabPanel.vue'
+	import DocsCode from '~/components/DocsCode.vue'
 
 	export default {
-		components: { DocsTable, MmTabs, MmTabPanel },
+		components: { DocsTable, MmTabs, MmTabPanel, DocsCode },
 		async asyncData({ $getMarkdown, params }) {
 			return $getMarkdown(params.slug)
 		},
