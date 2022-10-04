@@ -1,11 +1,16 @@
 <template>
 	<div class="page-colors p-4">
 		<mm-tabs>
-			<mm-tab-panel id="colors-panel-1" tab-name="Colors" selected="true">
+			<mm-tab-panel id="colors-panel-1" tab-name="Colors" :selected="true">
+				<mm-input-search
+					class="mb-4"
+					v-model="searchText"
+					@searchCleared="restoreColors"
+				></mm-input-search>
 				<div class="page-content grid-fluid gap-5">
 					<div
 						class="color-card flex flex-col"
-						v-for="(color, index) in colorVarNames"
+						v-for="(color, index) in colors"
 						:key="index"
 					>
 						<button
@@ -87,7 +92,7 @@
 					</div>
 				</div>
 			</mm-tab-panel>
-			<mm-tab-panel id="colors-panel-2" tab-name="Docs">
+			<mm-tab-panel id="colors-panel-2" tab-name="Docs3">
 				COLOR CSS table here
 			</mm-tab-panel>
 			<mm-tab-panel id="colors-panel-3" tab-name="CSS">
@@ -106,10 +111,19 @@
 	import colorsGray from '~/mm-css/dist/json/colors-gray.json'
 	import colorGrayBg from '~/mm-css/dist/json/colors-gray-bg.json'
 
+	import MmInputSearch from '~/components/mm-components/MmInputSearch.vue'
+
 	export default {
 		components: {
 			MmTabs,
 			MmTabPanel,
+			MmInputSearch,
+		},
+		data() {
+			return {
+				searchText: '',
+				colors: null,
+			}
 		},
 		computed: {
 			colorVarNames() {
@@ -127,16 +141,29 @@
 					colorsAlerts,
 					colorsAlertsBg,
 					colorsGray,
-					colorGradients,
 					colorGrayBg,
 				}
 			},
 		},
+		watch: {
+			searchText(newValue, oldValue) {
+				this.colors = this.colorVarNames.filter((color) =>
+					color.includes(newValue) ? `--${color}` : ''
+				)
+			},
+		},
 		methods: {
+			restoreColors() {
+				this.colors = this.colorVarNames
+			},
+
 			getColor(color) {
 				const l = parseInt(color.split(',')[2])
 				return l <= 50 ? 'white' : 'black'
 			},
+		},
+		mounted() {
+			this.colors = this.colorVarNames
 		},
 	}
 </script>
