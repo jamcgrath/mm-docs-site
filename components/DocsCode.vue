@@ -6,18 +6,13 @@
 			:key="index"
 			@click="$copyToClipboard(example.code)"
 		>
-						<code v-highlight="example.code" :class="`language-${example.language}`"></code>
-					</pre>
+			<code v-highlight="example.code" :class="`language-${example.language}`"></code>
+		</pre>
 	</div>
 </template>
 
 <script>
 	export default {
-		props: {
-			codeExample: Object,
-		},
+		props: ['codeExample'],
 	}
 </script>
-
-<style>
-</style>

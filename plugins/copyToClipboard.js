@@ -1,7 +1,7 @@
 export default ({ app }, inject) => {
   const copyToClipboard = async (copyText = '') => {
     const el = event.target
-    const text = el.dataset.item || copyText
+    const text = el.dataset.copy || copyText
     const clipboardText = text[0] === '.' ? text.slice(1) : text
 
     try {

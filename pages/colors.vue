@@ -47,7 +47,7 @@
 										a-items-center
 										ws-nowrap
 									"
-									:data-item="color"
+									:data-copy="color"
 								>
 									{{ color }}
 									<span class="copy-msg ml-2">copied</span>
@@ -66,7 +66,7 @@
 										a-items-center
 										ws-nowrap
 									"
-									:data-item="colorNames[index]"
+									:data-copy="colorNames[index]"
 								>
 									{{ colorNames[index] }}
 									<span class="copy-msg">copied</span>
@@ -82,7 +82,7 @@
 										a-items-center
 										ws-nowrap
 									"
-									:data-item="`${colorNames[index]}-bg`"
+									:data-copy="`${colorNames[index]}-bg`"
 								>
 									{{ `${colorNames[index]}-bg` }}
 									<span class="copy-msg">copied</span>
