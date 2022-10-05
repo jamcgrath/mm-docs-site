@@ -15,20 +15,37 @@
 					>
 						<i :class="`mmi mmi-${icon}`" aria-hidden="true"></i>
 						<button
-							class="body navy-20-bg p-2 w-100 text-center"
+							class="btn-sm navy-20-bg p-2 w-100 text-center"
 							@click="copyIconClass(icon)"
 						>
 							mmi-{{ icon }}
+							<span class="copy-msg">copied</span>
 						</button>
-						<button><span class="copy-msg">copied</span></button>
-						<button
-							class="body navy-20-bg p-2 w-100 text-center mt-3"
-							@click="copyIconCode(icon)"
-						>
-							<i class="mmi mmi-codemarkup title-5" aria-hidden="true"></i>
-							<span class="visually-hidden">Copy code</span>
-						</button>
-						<a href="../mm-icons/dist/icons/codemarkup.svg" download>test</a>
+						<div class="flex j-content-start mt-3 w-100">
+							<button
+								class="body p-2 text-center btn-sm"
+								@click="copyIconCode(icon)"
+							>
+								<i
+									class="
+										mmi mmi-codemarkup
+										title-7-display
+										mt-1
+										pointer-events-none
+									"
+									aria-hidden="true"
+								></i>
+								<span class="visually-hidden">Copy code</span>
+								<span class="copy-msg">copied</span>
+							</button>
+							<a href="/icons/codemarkup.svg" download class="btn btn-sm">
+								<i
+									class="mmi mmi-download title-7-display mt-1"
+									aria-hidden="true"
+								></i>
+								<span class="visually-hidden">download svg</span>
+							</a>
+						</div>
 					</li>
 				</ul>
 			</mm-tab-panel>
@@ -63,6 +80,7 @@
 			return {
 				searchText: '',
 				icons: null,
+				showCode: false,
 			}
 		},
 		computed: {
