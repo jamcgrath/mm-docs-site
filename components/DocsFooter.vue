@@ -4,7 +4,6 @@
 		<div class="copyright">
 			<p>
 				<span>&copy; {{ new Date().getFullYear() }}</span>
-				<span>All rights reserved.</span>
 			</p>
 		</div>
 	</footer>
