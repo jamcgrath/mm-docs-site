@@ -6,15 +6,15 @@
 				Btn
 				<i>🍪</i>
 			</button>
-			<a class="btn btn-sm btn-round bg-bw-secondary black btn-outline"
+			<a class="btn-custombtn-sm btn-round bg-bw-secondary black btn-outline"
 				>Link button</a
 			>
 			<button class="btn-med btn-round bg-bw-primary black btn-ghost">
 				Btn
 			</button>
-			<a class="btn btn-med btn-round bg-bw-primary white">Link button</a>
+			<a class="btn-custombtn-med btn-round bg-bw-primary white">Link button</a>
 			<button class="btn-lg btn-round bg-bw-primary white">Btn</button>
-			<a class="btn btn-lg btn-round bg-bw-primary white">Link button</a>
+			<a class="btn-custombtn-lg btn-round bg-bw-primary white">Link button</a>
 		</div>
 	</div>
 </template>
