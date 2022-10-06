@@ -1,20 +1,20 @@
 <template>
-  <div>
+  <div class=" w-100">
     <button type="button"
       :aria-expanded="isOpen"
-      class="accordion-trigger grape-bg"
+      class="accordion-trigger w-100"
       :aria-controls="panelId"
       :id="buttonId"
       @click="toggle"
     >
-      <div class="accordion-title title-6_semibold flex j-content-between">
-        <div class="flex-1">
+      <div class="accordion-title title-6_semibold flex w-100 navy">
+        <div class="flex-1" style="text-align: left;">
           <slot name="title">
             {{ title }}
           </slot>
         </div>
         
-        <div class="flex-1">
+        <div class="pl-6">
           <i aria-hidden="true" :class="`mmi mmi-${ isOpen ? 'minus' : 'plus' }-incircle`"></i>
         </div>
       </div>
@@ -22,13 +22,16 @@
     <div :id="panelId"
       role="region"
       :aria-labelledby="buttonId"
-      class="body"
+      class="body pt-4 gray-7"
       :class="{
         hidden: !isOpen
       }"
     >
-      <slot></slot>
+      <slot>
+        Pulvinar consequat eget bibendum morbi hac sit est, elit. Quis nisi tellus vestibulum tempus.
+      </slot>
     </div>
+    <div class="divider mt-6"></div>
   </div>
 </template>
 
@@ -36,7 +39,7 @@
 export default {
   props: {
     title: {
-      default: 'Title'
+      default: 'Phasellus commodo adipiscing tellus felis, mattis purus scelerisque aliquet.'
     },
     initialOpen: {
       default: false
@@ -60,5 +63,26 @@ export default {
 <style scoped>
 .hidden {
   display: none;
+}
+
+.min-300 {
+  width: 100%;
+  min-width: 300px;
+}
+
+.divider {
+  /* Divider */
+
+  /* Auto layout */
+  height: 1px;
+
+  /* width: auto; */
+
+  /* Grey/Grey 3
+
+  Disabled
+  */
+  background: #EBEBEB;
+
 }
 </style>
