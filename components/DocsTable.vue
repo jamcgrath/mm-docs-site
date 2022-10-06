@@ -16,7 +16,7 @@
 					<td class="pb-3">
 						<button
 							class="
-								color-value
+								btn-custom
 								p-4
 								cursor-pointer
 								flex-1
