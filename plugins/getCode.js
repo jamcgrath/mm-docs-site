@@ -3,7 +3,6 @@ export default ({ app }, inject) => {
     let codeFile
     try {
       codeFile = await require(`~/code-examples/${slug}.js`)
-      console.log('codeFile', codeFile)
     } finally {
       return codeFile ? codeFile : null
     }

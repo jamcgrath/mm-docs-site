@@ -15,7 +15,7 @@
 					>
 						<i :class="`mmi mmi-${icon}`" aria-hidden="true"></i>
 						<button
-							class="btn-sm navy-20-bg p-2 w-100 text-center"
+							class="btn-custom btn-sm navy-20-bg p-2 w-100 text-center"
 							@click="copyIconClass(icon)"
 						>
 							mmi-{{ icon }}
@@ -23,7 +23,7 @@
 						</button>
 						<div class="flex j-content-start mt-3 w-100">
 							<button
-								class="body p-2 text-center btn-sm"
+								class="btn-custom body p-2 text-center btn-sm"
 								@click="copyIconCode(icon)"
 							>
 								<i
@@ -38,7 +38,11 @@
 								<span class="visually-hidden">Copy code</span>
 								<span class="copy-msg">copied</span>
 							</button>
-							<a href="/icons/codemarkup.svg" download class="btn btn-sm">
+							<a
+								href="/icons/codemarkup.svg"
+								download
+								class="btn-custom btn-sm"
+							>
 								<i
 									class="mmi mmi-download title-7-display mt-1"
 									aria-hidden="true"
@@ -65,9 +69,7 @@
 
 	export default {
 		async asyncData({ $getCode, route }) {
-			console.log('route', route)
 			const codeExample = await $getCode('icons')
-			console.log('cc', codeExample)
 			return { codeExample }
 		},
 		components: {
@@ -93,7 +95,9 @@
 		},
 		watch: {
 			searchText(newValue, oldValue) {
-				this.icons = this.iconNames.filter((icon) => icon.includes(newValue))
+				this.icons = this.iconNames.filter((icon) =>
+					icon.toLowerCase().includes(newValue.toLowerCase())
+				)
 			},
 		},
 		methods: {
