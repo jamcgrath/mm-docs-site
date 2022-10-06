@@ -27,7 +27,12 @@
 								@click="copyIconCode(icon)"
 							>
 								<i
-									class="mmi mmi-codemarkup body mt-1 pointer-events-none"
+									class="
+										mmi mmi-codemarkup
+										title-7-display
+										mt-1
+										pointer-events-none
+									"
 									aria-hidden="true"
 								></i>
 								<span class="visually-hidden">Copy code</span>
@@ -38,10 +43,7 @@
 								download
 								class="btn-custom btn-sm"
 							>
-								<i
-									class="mmi mmi-download title-7-display mt-1"
-									aria-hidden="true"
-								></i>
+								<i class="mmi mmi-download body mt-1" aria-hidden="true"></i>
 								<span class="visually-hidden">download svg</span>
 							</a>
 						</div>
