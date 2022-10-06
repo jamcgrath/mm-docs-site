@@ -39,7 +39,7 @@
 								<span class="copy-msg">copied</span>
 							</button>
 							<a
-								href="/icons/codemarkup.svg"
+								:href="`/mmicons/${icon}.svg`"
 								download
 								class="btn-custom btn-sm"
 							>
