@@ -1,26 +1,28 @@
 <template>
   <div>
-    <h3>
-      <button type="button"
-        :aria-expanded="isOpen"
-        class="accordion-trigger"
-        :aria-controls="panelId"
-        :id="buttonId"
-        @click="toggle"
-      >
-        <span class="accordion-title">
+    <button type="button"
+      :aria-expanded="isOpen"
+      class="accordion-trigger grape-bg"
+      :aria-controls="panelId"
+      :id="buttonId"
+      @click="toggle"
+    >
+      <div class="accordion-title title-6_semibold flex j-content-between">
+        <div class="flex-1">
           <slot name="title">
             {{ title }}
           </slot>
-          <slot name="right">
-            <i aria-hidden="true" :class="`mmi mmi-${ isOpen ? 'minus' : 'plus' }-incircle`"></i>
-          </slot>
-        </span>
-      </button>
-    </h3>
+        </div>
+        
+        <div class="flex-1">
+          <i aria-hidden="true" :class="`mmi mmi-${ isOpen ? 'minus' : 'plus' }-incircle`"></i>
+        </div>
+      </div>
+    </button>
     <div :id="panelId"
       role="region"
       :aria-labelledby="buttonId"
+      class="body"
       :class="{
         hidden: !isOpen
       }"
