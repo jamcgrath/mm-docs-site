@@ -135,15 +135,6 @@
 			colorVars() {
 				return colorsProps[':root']
 			},
-			allColors() {
-				return {
-					colorsProps,
-					colorsAlerts,
-					colorsAlertsBg,
-					colorsGray,
-					colorGrayBg,
-				}
-			},
 		},
 		watch: {
 			searchText(newValue, oldValue) {
