@@ -1,12 +1,11 @@
 <template>
-  <div class="grape-bg size-64 circle" v-bind="$attrs" v-on="$listeners">
-    <slot>
-      <!-- <i v-show="!imageLoaded" aria-hidden="true" class="mmi mm-anonymous"></i> -->
-      <!-- <span> -->
-      <i v-show="!imageLoaded" aria-hidden="true" class="icon mmi mmi-anonymous"></i>
-      <!-- </span> -->
-    </slot>
-    <img v-bind="$attrs" v-on="$listeners" class="size-64 circle" v-show="imageLoaded" src="https://i.pravatar.cc/300" @load="imageLoaded = true" />
+  <div class="circle avatar" :style="style" v-bind="$attrs" v-on="$listeners">
+    <span v-show="!imageLoaded" :style="{ fontSize: fontSize }">
+      <slot>
+          <i aria-hidden="true" class="mmi mmi-anonymous"></i>
+      </slot>
+    </span>
+    <img v-bind="$attrs" v-on="$listeners" :style="style" class="circle" v-show="imageLoaded && src" :src="src" @load="imageLoaded = true" />
   </div>
 </template>
 
@@ -15,30 +14,36 @@ export default {
   props: {
     src: {
       type: String
+    },
+    size: {
+      default: '64px'
+    },
+    fontSize: {
+      // default: '32px'
     }
   },
   data () {
     return {
       imageLoaded: false
     }
+  },
+  computed: {
+    style () {
+      return {
+        width: this.size,
+        height: this.size,
+        'line-height': this.size
+      }
+    }
   }
 }
 </script>
 
 <style scoped>
-.size-64 {
-  width: 64px;
-  height: 64px;
-  font-size: 36px;
+.avatar {
   text-align: center;
-  line-height: 64px;
   vertical-align: middle;
-}
-.icon {
-  position:relative;
-  top: 10%;
-  /* top:50%;
-  left:50%; */
-  /* transform:translate(-50%,-50%) */
+  align-items: center;
+  display: inline-block;
 }
 </style>
