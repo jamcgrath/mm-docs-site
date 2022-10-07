@@ -38,11 +38,7 @@
 								<span class="visually-hidden">Copy code</span>
 								<span class="copy-msg">copied</span>
 							</button>
-							<a
-								:href="`/mmicons/${icon}.svg`"
-								download
-								class="btn-custom btn-sm"
-							>
+							<a :href="`/mmicons/${icon}.svg`" download class="btn btn-sm">
 								<i class="mmi mmi-download body mt-1" aria-hidden="true"></i>
 								<span class="visually-hidden">download svg</span>
 							</a>

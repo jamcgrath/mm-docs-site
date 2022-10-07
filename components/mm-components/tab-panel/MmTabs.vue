@@ -9,7 +9,7 @@
 				v-for="(tab, index) in tabs"
 				:key="index"
 				:id="`tab-${tab.id}`"
-				class="tabs-list-button label gray-7 cursor-pointer"
+				class="tabs-list-button label gray-7 cursor-pointer br-0"
 				type="button"
 				role="tab"
 				:aria-selected="selectedTab === tab.id || 'false'"
