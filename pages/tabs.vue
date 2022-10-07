@@ -70,6 +70,7 @@
 	import MmTabPanel from '~/components/mm-components/tab-panel/MmTabPanel.vue'
 
 	export default {
+		layout: 'layout-components',
 		components: {
 			MmTabs,
 			MmTabPanel,

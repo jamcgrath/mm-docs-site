@@ -24,6 +24,7 @@ export default {
     '~/plugins/kebabcase.js',
     '~/plugins/getMarkdown.js',
     '~/plugins/getCode.js',
+    '~/plugins/nanoid.js',
   ],
 
   // Auto import components: https://go.nuxtjs.dev/config-components
@@ -61,6 +62,9 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     postcss: null,
+    transpile: [
+      'nanoid',
+    ],
   },
 
   markdownit: {

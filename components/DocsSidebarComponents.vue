@@ -16,6 +16,10 @@
 			return {
 				componentList: [
 					{
+						name: 'Accordion',
+						url: 'accordion',
+					},
+					{
 						name: 'Tabs',
 						url: 'tabs',
 					},
