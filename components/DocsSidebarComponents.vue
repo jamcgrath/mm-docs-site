@@ -31,6 +31,10 @@
 						name: 'Tabs',
 						url: 'tabs',
 					},
+					{
+						name: 'Breadcrumbs',
+						url: 'breadcrumbs',
+					},
 				],
 			}
 		},
