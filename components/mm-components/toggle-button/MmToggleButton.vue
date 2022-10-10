@@ -1,5 +1,10 @@
 <template>
-	<button type="button" :aria-pressed="`${ariaPressed}`" class="br-96">
+	<button
+		type="button"
+		:aria-pressed="`${ariaPressed}`"
+		class="br-96"
+		@click="toggleState"
+	>
 		toggle Button
 	</button>
 </template>
