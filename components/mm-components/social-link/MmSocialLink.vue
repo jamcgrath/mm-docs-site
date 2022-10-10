@@ -3,6 +3,7 @@
     :href="url"
     class="mm-social-link label btn btn-outline br-8"
     target="_blank"
+    rel="noopener"
   >
     <svg
       v-if="'facebook' === social"
