@@ -20,6 +20,14 @@
 						url: 'accordion',
 					},
 					{
+						name: 'Avatar',
+						url: 'avatar',
+					},
+					{
+						name: 'Switch',
+						url: 'switch',
+					},
+					{
 						name: 'Tabs',
 						url: 'tabs',
 					},
