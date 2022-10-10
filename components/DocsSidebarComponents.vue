@@ -32,9 +32,13 @@
 						url: 'tabs',
 					},
 					{
-						name: 'Breadcrumbs',
-						url: 'breadcrumbs',
+						name: 'Social Media Links',
+						url: 'socialLink',
 					},
+          {
+            name: 'Breadcrumbs',
+						url: 'breadcrumbs',
+          },
 				],
 			}
 		},
