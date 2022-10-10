@@ -24,6 +24,14 @@
 						url: 'avatar',
 					},
 					{
+						name: 'Stepper',
+						url: 'stepper',
+					},
+					{
+						name: 'Switch',
+						url: 'switch',
+					},
+					{
 						name: 'Tabs',
 						url: 'tabs',
 					},
