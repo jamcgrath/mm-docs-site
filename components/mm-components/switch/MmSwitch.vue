@@ -1,84 +1,73 @@
 <template>
-	<label class="switch">
-    <input
-    :id="id"
-    type="checkbox"
-    role="checkbox"
-    :aria-checked="value"
-    :checked="value"
-    tabindex="0"
-    :value="value" :disabled="disabled" @change="(val) => $emit('input', !value)" >
-    <span class="slider round br-100"></span>
-  </label>
+	<label class="mm-switch flex a-items-center">
+		<slot></slot>
+		<input
+			class="mm-switch-input"
+			:id="$nanoid()"
+			type="checkbox"
+			role="checkbox"
+			:aria-checked="`${value}`"
+			:checked="value"
+			tabindex="0"
+			:value="value"
+			:disabled="disabled"
+			@change="(val) => $emit('input', !value)"
+		/>
+		<span class="mm-switch-slider round br-100"></span>
+	</label>
 </template>
 
 <script>
 	export default {
-    props: ['value', 'disabled', 'id'],
+		props: ['value', 'disabled', 'id'],
 	}
 </script>
 
 <style scoped>
-.switch {
-  position: relative;
-  display: inline-block;
-  width: 42px;
-  height: 24px;
-}
-.switch input { 
-  opacity: 0;
-  width: 0;
-  height: 0;
-}
+	.mm-switch {
+		position: relative;
+	}
 
-.slider {
-  position: absolute;
-  cursor: pointer;
-  top: 0;
-  left: 0;
-  right: 0;
-  bottom: 0;
-  background-color: var(--gray-4);
-  -webkit-transition: .4s;
-  transition: .4s;
-}
+	.mm-switch-input {
+		opacity: 0;
+	}
 
-.slider:before {
-  position: absolute;
-  content: "";
-  height: 20px;
-  width: 20px;
-  left: 2px;
-  bottom: 2px;
-  background-color: var(--white);
-  -webkit-transition: .4s;
-  transition: .4s;
-}
+	.mm-switch-slider {
+		position: relative;
+		cursor: pointer;
+		width: 42px;
+		height: 24px;
+		background-color: var(--gray-4);
+		transition: 0.4s;
+		display: inline-block;
+	}
 
-input:checked + .slider {
-  background-color: var(--grape);
-}
+	.mm-switch-slider:before {
+		position: absolute;
+		content: '';
+		height: 20px;
+		width: 20px;
+		left: 2px;
+		bottom: 2px;
+		background-color: var(--white);
+		transition: 0.4s;
+	}
 
-input:disabled + .slider {
-  background-color: var(--gray-6);
-}
+	.mm-switch-input:checked + .mm-switch-slider {
+		background-color: var(--grape);
+	}
 
-input:focus + .slider {
-  /* box-shadow: 0 0 1px #2196F3; */
-}
+	.mm-switch-input:disabled + .mm-switch-slider {
+		background-color: var(--gray-6);
+	}
 
-input:checked + .slider:before {
-  -webkit-transform: translateX(18px);
-  -ms-transform: translateX(18px);
-  transform: translateX(18px);
-}
+	.mm-switch-input:checked + .mm-switch-slider:before {
+		-webkit-transform: translateX(18px);
+		-ms-transform: translateX(18px);
+		transform: translateX(18px);
+	}
 
-/* Rounded sliders */
-.slider.round {
-  /* border-radius: 34px; */
-}
-
-.slider.round:before {
-  border-radius: 50%;
-}
+	.mm-switch-slider.round:before {
+		border-radius: 50%;
+	}
 </style>
