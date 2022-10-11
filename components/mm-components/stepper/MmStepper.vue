@@ -1,6 +1,9 @@
 <template>
 	<div>
-    <button class="size-32 circle btn-outline" @click="model--" :disabled="disabled">
+    <button class="btn size-32 circle btn-outline" @click="select(), model-=stepCount" :disabled="disabled"
+      :aria-label="`${stepCount} step${ stepCount > 1 ? 's' : '' } down`"
+      tabindex="-1"
+    >
       <i aria-hidden="true" class="mmi mmi-minus" style="position: relative; top: 2px;" ></i>
     </button>
 
@@ -8,16 +11,26 @@
 
     {{ touched }} -->
 
-    <input ref="input" :disabled="disabled" type="number" :value="model"
+    <input ref="input" :disabled="disabled" type="number"
+      :value="model"
+      :aria-valuenow="model"
+      tabindex="0"
+      :aria-valuemin="this.min"
+      :aria-valuemax="this.max"
+      :aria-label="ariaLabel"
       @keyup.esc="$event.target.value = model = value, $event.target.blur()"
       @keyup.enter="$emit('input', $event.target.value), $event.target.blur()"
       :class="{
         success: touched && (greaterThanMin && lessThanMax),
         error: error
       }"
-    class="text-center border border-solid m-1 br-12 ">
+    class="text-center border border-solid m-1 br-12 input">
 
-    <button class="size-32 circle btn-outline" @click="select(), model++" :disabled="disabled">
+    <button class="btn size-32 circle btn-outline" @click="select(), model+=stepCount" :disabled="disabled"
+      :aria-label="`${stepCount} step${ stepCount > 1 ? 's' : '' } up`"
+      tabindex="-1"
+    >
+      <!-- {{ `${stepCount} step${ stepCount > 1 ? 's' : '' } up` }} -->
       <i aria-hidden="true" class="mmi mmi-plus" style="position: relative; top: 2px;"></i>
     </button>
   </div>
@@ -25,7 +38,27 @@
 
 <script>
 	export default {
-    props: ['value', 'disabled', 'min', 'max'],
+    props: {
+      value: {
+        type: String,
+      },
+      disabled: {
+        type: Boolean,
+      },
+      min: {
+        type: Number,
+      },
+      max: {
+        type: Number,
+      },
+      stepCount: {
+        type: Number,
+        default: 1,
+      },
+      ariaLabel: {
+        type: String
+      }
+    },
     watch: {
       value (newVal) {
         this.model = newVal
@@ -37,7 +70,7 @@
     },
     data () {
       return {
-        model: 0,
+        model: this.min || 0,
         touched: false
       }
     },
@@ -63,7 +96,7 @@
         this.$refs.input.select()
         setTimeout(() => {
           this.$refs.input.select()
-        }, 200)
+        }, 100)
       }
     }
 	}
@@ -71,19 +104,17 @@
 
 <style scoped>
 
-button:disabled {
-  color: var(--gray-6)
-}
+
 
 /* Chrome, Safari, Edge, Opera */
-input::-webkit-outer-spin-button,
-input::-webkit-inner-spin-button {
+.input::-webkit-outer-spin-button,
+.input::-webkit-inner-spin-button {
   -webkit-appearance: none;
   margin: 0;
 }
 
 /* Firefox */
-input[type=number] {
+.input[type=number] {
   width: 86px;
   height: 46px;
   -moz-appearance: textfield;
@@ -100,24 +131,36 @@ input[type=number] {
   border: 1px solid var(--error) !important;
 }
 
-input[type=number]:hover {
+.input[type=number]:hover {
   border-color: var(--navy) !important;
 }
 
-input[type=number]:focus {
+.input[type=number]:focus {
   color: var(--navy);
   border: 1px solid var(--navy-dark);
   outline-width: 0;
 }
 
-input[type=number]:disabled {
+.input[type=number]:disabled {
   border-color: var(--gray-6) !important;
 }
 
-button {
+.btn:active {
+  background-color: var(--navy-light) !important;
+}
+
+.btn:disabled {
+  color: var(--gray-6) !important;
+  background-color: var(--gray-3) !important;
+}
+
+.btn {
+  border-width: 1px;
   border-color: var(--gray-4);
   /* border: 1px solid #D7D7D7; */
 }
+
+
 .size-32 {
   width: 32px;
   height: 32px;
