@@ -1,26 +1,24 @@
 <template>
-  <div class="circle avatar" :style="style" v-bind="$attrs" v-on="$listeners">
-    <span v-show="!imageLoaded" :style="{ fontSize: fontSize }">
-      <slot>
-          <i aria-hidden="true" class="mmi mmi-anonymous"></i>
-      </slot>
+  <div class="circle avatar" :style="{ ...style, fontSize }" v-bind="$attrs" v-on="$listeners">
+    <span v-if="!imageLoaded && initials">
+        {{ initials.slice(0, 2) }}
     </span>
-    <img v-bind="$attrs" v-on="$listeners" :style="style" class="circle" v-show="imageLoaded && src" :src="src" @load="imageLoaded = true" />
+    <i v-else-if="anonymous && !src" aria-hidden="true" class="mmi mmi-anonymous"></i>
+    <img v-bind="$attrs" v-on="$listeners" :style="style" class="circle" v-show="imageLoaded && src" :src="src" @error="imageLoaded = false" @load="imageLoaded = true" />
   </div>
 </template>
 
 <script>
 export default {
   props: {
-    src: {
-      type: String
-    },
+    initials: String,
+    anonymous: String,
+    src: String,
     size: {
+      type: String, 
       default: '64px'
     },
-    fontSize: {
-      // default: '32px'
-    }
+    fontSize: String
   },
   data () {
     return {

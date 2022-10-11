@@ -24,6 +24,11 @@
 						url: 'avatar',
 					},
 					{
+						name: 'Stepper',
+						url: 'stepper',
+					},
+					{
+
 						name: 'Switch',
 						url: 'switch',
 					},
