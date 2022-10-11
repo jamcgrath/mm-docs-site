@@ -28,12 +28,17 @@
 						url: 'stepper',
 					},
 					{
+
 						name: 'Switch',
 						url: 'switch',
 					},
 					{
 						name: 'Tabs',
 						url: 'tabs',
+					},
+					{
+						name: 'Social Media Links',
+						url: 'socialLink',
 					},
 				],
 			}
