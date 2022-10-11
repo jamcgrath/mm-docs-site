@@ -28,7 +28,6 @@
 						url: 'stepper',
 					},
 					{
-
 						name: 'Switch',
 						url: 'switch',
 					},
@@ -37,6 +36,12 @@
 						url: 'tabs',
 					},
 					{
+						name: 'Buttons',
+						url: 'buttons',
+					},
+					{
+						name: 'Search',
+						url: 'search',
 						name: 'Social Media Links',
 						url: 'socialLink',
 					},
