@@ -11,17 +11,14 @@
 <script>
 export default {
   props: {
-    initials: {},
-    anonymous: {},
-    src: {
-      type: String
-    },
+    initials: String,
+    anonymous: String,
+    src: String,
     size: {
+      type: String, 
       default: '64px'
     },
-    fontSize: {
-      // default: '32px'
-    }
+    fontSize: String
   },
   data () {
     return {
