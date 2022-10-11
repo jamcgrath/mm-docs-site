@@ -1,9 +1,9 @@
 <template>
-    <nav aria-label="Breadcrumbs" class="breadcrumbs-container">
+    <nav aria-label="breadcrumbs" class="breadcrumbs-container">
         <ul class="breadcrumbs-items">
             <li class="breadcrumbs-item" v-for="(item, index) in items" :key="index">
-                <nuxt-link class="body breadcrumbs-item-link" :class="linkClass(item.disabled, index)" :to="item.to"
-                    :aria-current="isActive(index) && 'page'">
+                <nuxt-link class="body breadcrumbs-item-link" :class="item.disabled && 'breadcrumbs-item-disabled'"
+                    :to="item.to">
                     {{ item.text }}
                 </nuxt-link>
                 <div class="px-1_5 breadcrumbs-item-divider" v-if="index < items.length - 1">
@@ -68,16 +68,7 @@ export default {
             type: String,
             default: 'mmi-slash'
         },
-    },
-    methods: {
-        isActive(index) {
-            return index === this.items.length - 1
-        },
-        linkClass(disabled, index) {
-            if (disabled) return 'breadcrumbs-item-disabled'
-            if (this.isActive(index)) return 'breadcrumbs-item-activated'
-        },
-    },
+    }
 }
 </script>
 
@@ -106,8 +97,14 @@ export default {
     height: 28px;
 }
 
-.breadcrumbs-item-link:not(.breadcrumbs-item-disabled, .breadcrumbs-item-activated):hover {
+.breadcrumbs-item-link:hover {
     color: var(--navy);
+}
+
+.breadcrumbs-item-link:focus,
+.breadcrumbs-item-link:active {
+    color: var(--white);
+    background-color: var(--grape);
 }
 
 .breadcrumbs-item-disabled {
@@ -115,13 +112,7 @@ export default {
     color: var(--gray-6);
 }
 
-.breadcrumbs-item-activated {
-    color: var(--white);
-    background-color: var(--grape);
-}
-
-.breadcrumbs-item-disabled,
-.breadcrumbs-item-activated {
+.breadcrumbs-item-disabled {
     pointer-events: none;
 }
 
