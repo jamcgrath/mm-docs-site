@@ -20,6 +20,18 @@
 						url: 'accordion',
 					},
 					{
+						name: 'Avatar',
+						url: 'avatar',
+					},
+					{
+						name: 'Stepper',
+						url: 'stepper',
+					},
+					{
+						name: 'Switch',
+						url: 'switch',
+					},
+					{
 						name: 'Tabs',
 						url: 'tabs',
 					},
@@ -30,6 +42,8 @@
 					{
 						name: 'Search',
 						url: 'search',
+						name: 'Social Media Links',
+						url: 'socialLink',
 					},
 				],
 			}
