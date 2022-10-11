@@ -40,6 +40,10 @@
 						name: 'Social Media Links',
 						url: 'socialLink',
 					},
+					{
+						name: 'Checkbox',
+						url: 'checkbox',
+					},
 				],
 			}
 		},
