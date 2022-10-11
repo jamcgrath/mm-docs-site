@@ -23,6 +23,14 @@
 						name: 'Tabs',
 						url: 'tabs',
 					},
+					{
+						name: 'Buttons',
+						url: 'buttons',
+					},
+					{
+						name: 'Search',
+						url: 'search',
+					},
 				],
 			}
 		},

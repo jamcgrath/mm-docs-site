@@ -7,6 +7,7 @@
 <script>
 	import MmInputSearch from '~/components/mm-components/MmInputSearch.vue'
 	export default {
+		layout: 'layout-components',
 		components: { MmInputSearch },
 		data() {
 			return {
