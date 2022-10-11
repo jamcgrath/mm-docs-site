@@ -45,6 +45,10 @@
 						name: 'Social Media Links',
 						url: 'socialLink',
 					},
+          {
+            name: 'Breadcrumbs',
+						url: 'breadcrumbs',
+          },
 				],
 			}
 		},
