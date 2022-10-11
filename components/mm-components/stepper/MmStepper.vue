@@ -1,7 +1,7 @@
 <template>
 	<div>
     <button class="btn size-32 circle btn-outline" @click="select(), model-=stepCount" :disabled="disabled"
-      :aria-label="`${stepCount} step${ stepCount > 1 ? 's' : '' } down`"
+      :aria-label="`${stepCount} step${ stepCountPlural } down`"
       tabindex="-1"
     >
       <i aria-hidden="true" class="mmi mmi-minus" style="position: relative; top: 2px;" ></i>
@@ -27,7 +27,7 @@
     class="text-center border border-solid m-1 br-12 input">
 
     <button class="btn size-32 circle btn-outline" @click="select(), model+=stepCount" :disabled="disabled"
-      :aria-label="`${stepCount} step${ stepCount > 1 ? 's' : '' } up`"
+      :aria-label="`${stepCount} step${ stepCountPlural } up`"
       tabindex="-1"
     >
       <!-- {{ `${stepCount} step${ stepCount > 1 ? 's' : '' } up` }} -->
@@ -85,6 +85,9 @@
       }
     },
     computed: {
+      stepCountPlural () {
+        return this.stepCount > 1 ? 's' : ''
+      },
       greaterThanMin () {
         if (this.min === undefined) return true
         return this.model >= this.min
