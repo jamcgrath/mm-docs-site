@@ -1,7 +1,7 @@
 <template>
   <div class="gutter">
     <mmStepper v-model="model" :min="3"/>
-    <mmStepper v-model="model" :min="1" :max="5"/>
+    <mmStepper v-model="model" :step-count="2" :min="1" :max="5"/>
     <mmStepper v-model="model" disabled />
   </div>
 </template>
