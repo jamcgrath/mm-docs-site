@@ -1,12 +1,19 @@
 <template>
 	<div>
-    <button type="button" class="btn btn-white btn-med box-shadow-med arrow">
+    <button v-show="pages > 5 && model > 3" type="button" class="btn btn-white btn-med box-shadow-med arrow">
       <i aria-hidden="true" class="mmi mmi-chevron-left icon"></i>
+    </button>
+    <button
+      v-show="pages > 5 && model > 5"
+      type="button" class="btn btn-med box-shadow-med fw-500 gray-7 ml-1 btn-white"
+      @click="model -= 5"
+    >
+      ...
     </button>
     <button
       v-for="(i) in paginator"
       :key="'btn' + i"
-      type="button" class="btn btn-med box-shadow-med fw-500 m-1"
+      type="button" class="btn btn-med box-shadow-med fw-500 m-1 width-40 btn-white"
       :class="{
         'btn-secondary': i + 1 === model,
         'gray-7': i + 1 !== model
@@ -15,7 +22,14 @@
     >
 			{{ i + 1 }}
 		</button>
-    <button type="button" class="btn btn-white btn-med box-shadow-med arrow">
+    <button
+      v-show="pages > 5 && model < pages - 5"
+      type="button" class="btn btn-med box-shadow-med fw-500 gray-7 mr-1 btn-white"
+      @click="model += 5"
+    >
+      ...
+    </button>
+    <button v-show="pages > 5 && model < pages - 3" type="button" class="btn btn-white btn-med box-shadow-med arrow btn-white">
       <i aria-hidden="true" class="mmi mmi-chevron-right icon"></i>
     </button>
   </div>
@@ -63,6 +77,10 @@
 
 .fw-500 {
   font-weight: 500;
+}
+
+.width-40  {
+  width: 40px !important; 
 }
 
 .btn-white:hover {
