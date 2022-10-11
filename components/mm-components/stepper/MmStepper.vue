@@ -58,10 +58,20 @@
       ariaLabel: {
         type: String
       }
+      ,
+      strict: {
+        type: Boolean
+      }
     },
     watch: {
-      value (newVal) {
+      async value (newVal) {
         this.model = newVal
+        await this.$nextTick()
+        console.log('this.strict', this.strict)
+        if (this.strict) {
+          if (!this.greaterThanMin) return this.model = this.min
+          if (!this.lessThanMax) this.model = this.max
+        }
       },
       model (newVal) {
         this.touched = true
