@@ -42,6 +42,8 @@
 					{
 						name: 'Search',
 						url: 'search',
+					},
+					{
 						name: 'Social Media Links',
 						url: 'socialLink',
 					},
@@ -52,6 +54,10 @@
 					{
 						name: 'Breadcrumbs',
 						url: 'breadcrumbs',
+					},
+					{
+						name: 'Logo',
+						url: 'logo',
 					},
 				],
 			}
