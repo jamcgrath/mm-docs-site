@@ -1,128 +1,238 @@
 <template>
 	<div class="container">
-		<div class="badge-sm bg-bw-primary bw-secondary">small</div>
-		<div class="badge-med bg-bw-primary bw-secondary">medium</div>
-		<div class="badge-sm bg-bw-primary bw-secondary">
-			<i>
-				<svg
-					width="10"
-					height="10"
-					viewBox="0 0 10 10"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path
-						d="M9.1384 1.80467C9.39875 1.54432 9.39875 1.12221 9.1384 0.861858C8.87805 0.601508 8.45594 0.601508 8.19559 0.861858L5.00029 4.05715L1.80506 0.86192C1.54471 0.60157 1.1226 0.60157 0.862254 0.86192C0.601905 1.12227 0.601905 1.54438 0.862254 1.80473L4.05749 4.99996L0.862254 8.19519C0.601904 8.45554 0.601905 8.87765 0.862254 9.138C1.1226 9.39835 1.54471 9.39835 1.80506 9.138L5.0003 5.94277L8.19559 9.13806C8.45594 9.39841 8.87805 9.39841 9.1384 9.13806C9.39875 8.87771 9.39875 8.4556 9.1384 8.19525L5.9431 4.99996L9.1384 1.80467Z"
-						fill="#5487F5"
-					/></svg
-			></i>
-
-			small
+		<div class="mm-badge">Badge</div>
+		<div class="mm-badge mm-badge-sm">Badge sm</div>
+		<div class="mm-badge mm-badge-med">Badge med</div>
+		<div class="mm-badge">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>
 		</div>
-		<div class="badge-med bg-bw-primary bw-secondary">
-			<i>
-				<svg
-					width="10"
-					height="10"
-					viewBox="0 0 10 10"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path
-						d="M9.1384 1.80467C9.39875 1.54432 9.39875 1.12221 9.1384 0.861858C8.87805 0.601508 8.45594 0.601508 8.19559 0.861858L5.00029 4.05715L1.80506 0.86192C1.54471 0.60157 1.1226 0.60157 0.862254 0.86192C0.601905 1.12227 0.601905 1.54438 0.862254 1.80473L4.05749 4.99996L0.862254 8.19519C0.601904 8.45554 0.601905 8.87765 0.862254 9.138C1.1226 9.39835 1.54471 9.39835 1.80506 9.138L5.0003 5.94277L8.19559 9.13806C8.45594 9.39841 8.87805 9.39841 9.1384 9.13806C9.39875 8.87771 9.39875 8.4556 9.1384 8.19525L5.9431 4.99996L9.1384 1.80467Z"
-						fill="#5487F5"
-					/></svg></i
-			>medium
+		<div class="mm-badge mm-badge-sm">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>
 		</div>
-		<div class="badge-sm bg-bw-primary bw-secondary">
-			small
-			<i>
-				<svg
-					width="10"
-					height="10"
-					viewBox="0 0 10 10"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path
-						d="M9.1384 1.80467C9.39875 1.54432 9.39875 1.12221 9.1384 0.861858C8.87805 0.601508 8.45594 0.601508 8.19559 0.861858L5.00029 4.05715L1.80506 0.86192C1.54471 0.60157 1.1226 0.60157 0.862254 0.86192C0.601905 1.12227 0.601905 1.54438 0.862254 1.80473L4.05749 4.99996L0.862254 8.19519C0.601904 8.45554 0.601905 8.87765 0.862254 9.138C1.1226 9.39835 1.54471 9.39835 1.80506 9.138L5.0003 5.94277L8.19559 9.13806C8.45594 9.39841 8.87805 9.39841 9.1384 9.13806C9.39875 8.87771 9.39875 8.4556 9.1384 8.19525L5.9431 4.99996L9.1384 1.80467Z"
-						fill="#5487F5"
-					/></svg
+		<div class="mm-badge mm-badge-med">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>
+		</div>
+		<hr />
+		<div class="mm-badge mm-badge-success">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge
+		</div>
+		<div class="mm-badge mm-badge-sm mm-badge-success">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge sm
+		</div>
+		<div class="mm-badge mm-badge-med mm-badge-success">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge med
+		</div>
+		<div class="mm-badge mm-badge-success">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge<i
+				class="mmi mmi-multiply"
+				aria-hidden="true"
 			></i>
 		</div>
-		<div class="badge-med bg-bw-primary bw-secondary">
-			medium
-			<i>
-				<svg
-					width="10"
-					height="10"
-					viewBox="0 0 10 10"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path
-						d="M9.1384 1.80467C9.39875 1.54432 9.39875 1.12221 9.1384 0.861858C8.87805 0.601508 8.45594 0.601508 8.19559 0.861858L5.00029 4.05715L1.80506 0.86192C1.54471 0.60157 1.1226 0.60157 0.862254 0.86192C0.601905 1.12227 0.601905 1.54438 0.862254 1.80473L4.05749 4.99996L0.862254 8.19519C0.601904 8.45554 0.601905 8.87765 0.862254 9.138C1.1226 9.39835 1.54471 9.39835 1.80506 9.138L5.0003 5.94277L8.19559 9.13806C8.45594 9.39841 8.87805 9.39841 9.1384 9.13806C9.39875 8.87771 9.39875 8.4556 9.1384 8.19525L5.9431 4.99996L9.1384 1.80467Z"
-						fill="#5487F5"
-					/></svg
+		<div class="mm-badge mm-badge-sm mm-badge-success">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge sm<i
+				class="mmi mmi-multiply"
+				aria-hidden="true"
 			></i>
 		</div>
-		<div class="badge-sm bg-bw-primary bw-secondary">
-			<i>
-				<svg
-					width="10"
-					height="10"
-					viewBox="0 0 10 10"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path
-						d="M9.1384 1.80467C9.39875 1.54432 9.39875 1.12221 9.1384 0.861858C8.87805 0.601508 8.45594 0.601508 8.19559 0.861858L5.00029 4.05715L1.80506 0.86192C1.54471 0.60157 1.1226 0.60157 0.862254 0.86192C0.601905 1.12227 0.601905 1.54438 0.862254 1.80473L4.05749 4.99996L0.862254 8.19519C0.601904 8.45554 0.601905 8.87765 0.862254 9.138C1.1226 9.39835 1.54471 9.39835 1.80506 9.138L5.0003 5.94277L8.19559 9.13806C8.45594 9.39841 8.87805 9.39841 9.1384 9.13806C9.39875 8.87771 9.39875 8.4556 9.1384 8.19525L5.9431 4.99996L9.1384 1.80467Z"
-						fill="#5487F5"
-					/></svg
-			></i>
-			small
-			<i>
-				<svg
-					width="10"
-					height="10"
-					viewBox="0 0 10 10"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path
-						d="M9.1384 1.80467C9.39875 1.54432 9.39875 1.12221 9.1384 0.861858C8.87805 0.601508 8.45594 0.601508 8.19559 0.861858L5.00029 4.05715L1.80506 0.86192C1.54471 0.60157 1.1226 0.60157 0.862254 0.86192C0.601905 1.12227 0.601905 1.54438 0.862254 1.80473L4.05749 4.99996L0.862254 8.19519C0.601904 8.45554 0.601905 8.87765 0.862254 9.138C1.1226 9.39835 1.54471 9.39835 1.80506 9.138L5.0003 5.94277L8.19559 9.13806C8.45594 9.39841 8.87805 9.39841 9.1384 9.13806C9.39875 8.87771 9.39875 8.4556 9.1384 8.19525L5.9431 4.99996L9.1384 1.80467Z"
-						fill="#5487F5"
-					/></svg
+		<div class="mm-badge mm-badge-med mm-badge-success">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge med<i
+				class="mmi mmi-multiply"
+				aria-hidden="true"
 			></i>
 		</div>
-		<div class="badge-med bg-bw-primary bw-secondary">
-			<i>
-				<svg
-					width="10"
-					height="10"
-					viewBox="0 0 10 10"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path
-						d="M9.1384 1.80467C9.39875 1.54432 9.39875 1.12221 9.1384 0.861858C8.87805 0.601508 8.45594 0.601508 8.19559 0.861858L5.00029 4.05715L1.80506 0.86192C1.54471 0.60157 1.1226 0.60157 0.862254 0.86192C0.601905 1.12227 0.601905 1.54438 0.862254 1.80473L4.05749 4.99996L0.862254 8.19519C0.601904 8.45554 0.601905 8.87765 0.862254 9.138C1.1226 9.39835 1.54471 9.39835 1.80506 9.138L5.0003 5.94277L8.19559 9.13806C8.45594 9.39841 8.87805 9.39841 9.1384 9.13806C9.39875 8.87771 9.39875 8.4556 9.1384 8.19525L5.9431 4.99996L9.1384 1.80467Z"
-						fill="#5487F5"
-					/></svg
+		<div class="mm-badge mm-badge-success">
+			Badge<i class="mmi mmi-multiply" aria-hidden="true"></i>
+		</div>
+		<div class="mm-badge mm-badge-sm mm-badge-success">
+			Badge sm<i class="mmi mmi-multiply" aria-hidden="true"></i>
+		</div>
+		<div class="mm-badge mm-badge-med mm-badge-success">
+			Badge med<i class="mmi mmi-multiply" aria-hidden="true"></i>
+		</div>
+		<hr />
+		<div class="mm-badge mm-badge-error">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge
+		</div>
+		<div class="mm-badge mm-badge-sm mm-badge-error">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge sm
+		</div>
+		<div class="mm-badge mm-badge-med mm-badge-error">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge med
+		</div>
+		<div class="mm-badge mm-badge-error">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge<i
+				class="mmi mmi-multiply"
+				aria-hidden="true"
 			></i>
-			medium
-			<i>
-				<svg
-					width="10"
-					height="10"
-					viewBox="0 0 10 10"
-					fill="none"
-					xmlns="http://www.w3.org/2000/svg"
-				>
-					<path
-						d="M9.1384 1.80467C9.39875 1.54432 9.39875 1.12221 9.1384 0.861858C8.87805 0.601508 8.45594 0.601508 8.19559 0.861858L5.00029 4.05715L1.80506 0.86192C1.54471 0.60157 1.1226 0.60157 0.862254 0.86192C0.601905 1.12227 0.601905 1.54438 0.862254 1.80473L4.05749 4.99996L0.862254 8.19519C0.601904 8.45554 0.601905 8.87765 0.862254 9.138C1.1226 9.39835 1.54471 9.39835 1.80506 9.138L5.0003 5.94277L8.19559 9.13806C8.45594 9.39841 8.87805 9.39841 9.1384 9.13806C9.39875 8.87771 9.39875 8.4556 9.1384 8.19525L5.9431 4.99996L9.1384 1.80467Z"
-						fill="#5487F5"
-					/></svg
+		</div>
+		<div class="mm-badge mm-badge-sm mm-badge-error">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge sm<i
+				class="mmi mmi-multiply"
+				aria-hidden="true"
 			></i>
+		</div>
+		<div class="mm-badge mm-badge-med mm-badge-error">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge med<i
+				class="mmi mmi-multiply"
+				aria-hidden="true"
+			></i>
+		</div>
+		<div class="mm-badge mm-badge-error">
+			Badge<i class="mmi mmi-multiply" aria-hidden="true"></i>
+		</div>
+		<div class="mm-badge mm-badge-sm mm-badge-error">
+			Badge sm<i class="mmi mmi-multiply" aria-hidden="true"></i>
+		</div>
+		<div class="mm-badge mm-badge-med mm-badge-error">
+			Badge med<i class="mmi mmi-multiply" aria-hidden="true"></i>
+		</div>
+		<hr />
+		<div class="mm-badge mm-badge-alert">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge
+		</div>
+		<div class="mm-badge mm-badge-sm mm-badge-alert">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge sm
+		</div>
+		<div class="mm-badge mm-badge-med mm-badge-alert">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge med
+		</div>
+		<div class="mm-badge mm-badge-alert">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge<i
+				class="mmi mmi-multiply"
+				aria-hidden="true"
+			></i>
+		</div>
+		<div class="mm-badge mm-badge-sm mm-badge-alert">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge sm<i
+				class="mmi mmi-multiply"
+				aria-hidden="true"
+			></i>
+		</div>
+		<div class="mm-badge mm-badge-med mm-badge-alert">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge med<i
+				class="mmi mmi-multiply"
+				aria-hidden="true"
+			></i>
+		</div>
+		<div class="mm-badge mm-badge-alert">
+			Badge<i class="mmi mmi-multiply" aria-hidden="true"></i>
+		</div>
+		<div class="mm-badge mm-badge-sm mm-badge-alert">
+			Badge sm<i class="mmi mmi-multiply" aria-hidden="true"></i>
+		</div>
+		<div class="mm-badge mm-badge-med mm-badge-alert">
+			Badge med<i class="mmi mmi-multiply" aria-hidden="true"></i>
+		</div>
+		<hr />
+		<div class="mm-badge mm-badge-info">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge
+		</div>
+		<div class="mm-badge mm-badge-sm mm-badge-info">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge sm
+		</div>
+		<div class="mm-badge mm-badge-med mm-badge-info">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge med
+		</div>
+		<div class="mm-badge mm-badge-info">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge<i
+				class="mmi mmi-multiply"
+				aria-hidden="true"
+			></i>
+		</div>
+		<div class="mm-badge mm-badge-sm mm-badge-info">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge sm<i
+				class="mmi mmi-multiply"
+				aria-hidden="true"
+			></i>
+		</div>
+		<div class="mm-badge mm-badge-med mm-badge-info">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge med<i
+				class="mmi mmi-multiply"
+				aria-hidden="true"
+			></i>
+		</div>
+		<div class="mm-badge mm-badge-info">
+			Badge<i class="mmi mmi-multiply" aria-hidden="true"></i>
+		</div>
+		<div class="mm-badge mm-badge-sm mm-badge-info">
+			Badge sm<i class="mmi mmi-multiply" aria-hidden="true"></i>
+		</div>
+		<div class="mm-badge mm-badge-med mm-badge-info">
+			Badge med<i class="mmi mmi-multiply" aria-hidden="true"></i>
+		</div>
+		<hr />
+		<div class="mm-badge mm-badge-warning">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge
+		</div>
+		<div class="mm-badge mm-badge-sm mm-badge-warning">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge sm
+		</div>
+		<div class="mm-badge mm-badge-med mm-badge-warning">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge med
+		</div>
+		<div class="mm-badge mm-badge-warning">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge<i
+				class="mmi mmi-multiply"
+				aria-hidden="true"
+			></i>
+		</div>
+		<div class="mm-badge mm-badge-sm mm-badge-warning">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge sm<i
+				class="mmi mmi-multiply"
+				aria-hidden="true"
+			></i>
+		</div>
+		<div class="mm-badge mm-badge-med mm-badge-warning">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge med<i
+				class="mmi mmi-multiply"
+				aria-hidden="true"
+			></i>
+		</div>
+		<div class="mm-badge mm-badge-warning">
+			Badge<i class="mmi mmi-multiply" aria-hidden="true"></i>
+		</div>
+		<div class="mm-badge mm-badge-sm mm-badge-warning">
+			Badge sm<i class="mmi mmi-multiply" aria-hidden="true"></i>
+		</div>
+		<div class="mm-badge mm-badge-med mm-badge-warning">
+			Badge med<i class="mmi mmi-multiply" aria-hidden="true"></i>
+		</div>
+		<hr />
+		<div class="mm-badge mm-badge-navy-dark">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge
+		</div>
+		<div class="mm-badge mm-badge-sm mm-badge-navy-dark">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge sm
+		</div>
+		<div class="mm-badge mm-badge-med mm-badge-navy-dark">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge med
+		</div>
+		<div class="mm-badge mm-badge-navy-dark">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge<i
+				class="mmi mmi-multiply"
+				aria-hidden="true"
+			></i>
+		</div>
+		<div class="mm-badge mm-badge-sm mm-badge-navy-dark">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge sm<i
+				class="mmi mmi-multiply"
+				aria-hidden="true"
+			></i>
+		</div>
+		<div class="mm-badge mm-badge-med mm-badge-navy-dark">
+			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge med<i
+				class="mmi mmi-multiply"
+				aria-hidden="true"
+			></i>
+		</div>
+		<div class="mm-badge mm-badge-navy-dark">
+			Badge<i class="mmi mmi-multiply" aria-hidden="true"></i>
+		</div>
+		<div class="mm-badge mm-badge-sm mm-badge-navy-dark">
+			Badge sm<i class="mmi mmi-multiply" aria-hidden="true"></i>
+		</div>
+		<div class="mm-badge mm-badge-med mm-badge-navy-dark">
+			Badge med<i class="mmi mmi-multiply" aria-hidden="true"></i>
 		</div>
 	</div>
 </template>
@@ -132,31 +242,62 @@
 </script>
 
 <style>
-	.badge-sm,
-	.badge-med {
-		--badge-padding: 2px 4px;
-		--badge-fs: 1em;
-		--badge-lh: 1.333;
-		--badge-fw: var(--fw-7);
-		--badge-ls: 1px;
-		--badge-gap: 4px;
-		padding: var(--badge-padding);
-		font-size: var(--badge-fs);
-		line-height: var(--badge-lh);
-		font-weight: var(--badge-fw);
-		gap: var(--badge-gap);
-		border-radius: 4px;
-		display: inline-flex;
-		align-items: center;
-		text-transform: uppercase;
-	}
+	/* .mm-badge {
+			--badge-padding: var(--space-1) var(--space-2);
+			--badge-fs: var(--overline-small);
+			--badge-lh: 1;
+			--badge-fw: var(--fw-7);
+			--badge-ls: var(--ls-1);
+			--badge-gap: var(--space-1);
+			--badge-border-radius: var(--space-1);
+			--badge-bg: var(--gray-3);
+			--bagdge-color: var(--gray-7);
 
-	.badge-sm {
-		--badge-fs: var(--overline-small);
-	}
-
-	.badge-med {
-		--badge-padding: 4px 8px;
-		--badge-fs: var(--overline-big);
-	}
+			background: var(--badge-bg);
+			color: var(--badge-color);
+			padding: var(--badge-padding);
+			font-size: var(--badge-fs);
+			line-height: var(--badge-lh);
+			font-weight: var(--badge-fw);
+			gap: var(--badge-gap);
+			border-radius: var(--badge-border-radius);
+			display: inline-flex;
+			align-items: center;
+			justify-content: center;
+			text-transform: uppercase;
+		}
+		.mm-badge i {
+			position: relative;
+			top: 1px;
+		}
+		.mm-badge-sm {
+			--badge-fs: var(--overline-small);
+		}
+		.mm-badge-med {
+			--badge-fs: var(--overline-big);
+		}
+		.mm-badge-success {
+			--badge-color: var(--success);
+			--badge-bg: var(--success-light);
+		}
+		.mm-badge-error {
+			--badge-color: var(--error);
+			--badge-bg: var(--error-light);
+		}
+		.mm-badge-alert {
+			--badge-color: var(--alert);
+			--badge-bg: var(--alert-light);
+		}
+		.mm-badge-info {
+			--badge-color: var(--info);
+			--badge-bg: var(--info-light);
+		}
+		.mm-badge-warning {
+			--badge-color: var(--warning);
+			--badge-bg: var(--warning-light);
+		}
+		.mm-badge-navy-dark {
+			--badge-color: var(--white);
+			--badge-bg: var(--navy-dark);
+		} */
 </style>
