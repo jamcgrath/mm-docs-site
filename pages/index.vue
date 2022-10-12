@@ -34,17 +34,6 @@
 					</li>
 				</ul>
 			</mm-tab-panel>
-			<mm-tab-panel id="home-panel-3" tab-name="Components">
-				<iframe
-					class="airtable-embed"
-					src="https://airtable.com/embed/shrBjjpIOAZDHO1s4?backgroundColor=teal&viewControls=on"
-					frameborder="0"
-					onmousewheel=""
-					width="100%"
-					height="533"
-					style="background: transparent; border: 1px solid #ccc"
-				></iframe>
-			</mm-tab-panel>
 		</mm-tabs>
 	</div>
 </template>
