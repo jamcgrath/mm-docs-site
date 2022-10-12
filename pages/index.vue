@@ -34,18 +34,16 @@
 					</li>
 				</ul>
 			</mm-tab-panel>
-			<mm-tab-panel id="home-panel-3" tab-name="DS">
-				<ul class="list-reset grid grid-fluid">
-					<li
-						v-for="(item, index) in filesNamesArray"
-						:key="index"
-						class="mt-3 pl-2"
-					>
-						<nuxt-link :to="`/${item}`" class="td-underline_hover">{{
-							item
-						}}</nuxt-link>
-					</li>
-				</ul>
+			<mm-tab-panel id="home-panel-3" tab-name="Components">
+				<iframe
+					class="airtable-embed"
+					src="https://airtable.com/embed/shrBjjpIOAZDHO1s4?backgroundColor=teal&viewControls=on"
+					frameborder="0"
+					onmousewheel=""
+					width="100%"
+					height="533"
+					style="background: transparent; border: 1px solid #ccc"
+				></iframe>
 			</mm-tab-panel>
 		</mm-tabs>
 	</div>

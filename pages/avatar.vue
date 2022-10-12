@@ -1,13 +1,9 @@
 <template>
   <div class="gutter">
-    <mmAccordion class="grape-bg title-6 pt-0 white" size="32px">
-      TB
-    </mmAccordion>
-    <mmAccordion size="100px" font-size="72px" class="white grape-bg pt-2"></mmAccordion>
-    <mmAccordion class="citrus-dark-bg" src="https://i.pravatar.cc/300"></mmAccordion>
-    <mmAccordion class="citrus-dark-bg title-6" src="https://i.pravatar.cc/300">
-      TB
-    </mmAccordion>
+    <mmAccordion size="32px" initials="TB" class="grape-bg title-6 pt-0 white" />
+    <mmAccordion size="100px" font-size="72px" anonymous="true" class="white citrus-dark-bg pt-2" />
+    <mmAccordion src="https://i.pravatar.cccccc/300" initials="TB" class="citrus-dark-bg" with-img-error /> 
+    <mmAccordion src="https://i.pravatar.cc/300" initials="TB" class="citrus-dark-bg title-6" />
   </div>
 </template>
 <script>
