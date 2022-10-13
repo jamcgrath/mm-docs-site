@@ -32,6 +32,10 @@
 						url: 'newsletter',
 					},
 					{
+						name: 'Notification',
+						url: 'notification',
+					},
+					{
 						name: 'Pagination',
 						url: 'pagination',
 					},
