@@ -3,7 +3,7 @@
 		<nav role="navigation">
 			<ul class="list-reset">
 				<li v-for="(item, index) in componentList" :key="index" class="mt-3">
-					<nuxt-link :to="`/${item.url}`">{{ item.name }}</nuxt-link>
+					<nuxt-link :to="`/components/${item.url}`">{{ item.name }}</nuxt-link>
 				</li>
 			</ul>
 		</nav>
@@ -56,8 +56,12 @@
 						url: 'breadcrumbs',
 					},
 					{
+						name: 'Logo',
+						url: 'logo',
+					},
+					{
 						name: 'Spinner',
-						url: 'spinner'
+						url: 'spinner',
 					},
 				],
 			}
