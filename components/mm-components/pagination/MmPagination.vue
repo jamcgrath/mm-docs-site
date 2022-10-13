@@ -14,7 +14,7 @@
 			<li v-show="pages > 5 && model > 5">
 				<button
 					type="button"
-					class="btn btn-med box-shadow-med fw-500 gray-7 ml-1 btn-pagination"
+					class="btn btn-med box-shadow-med fw-500 ml-1 btn-pagination"
 					@click="model -= 5"
 				>
 					...<span class="visually-hidden">Previous 5 pages</span>
@@ -38,7 +38,7 @@
 			<li v-show="pages > 5 && model < pages - 5">
 				<button
 					type="button"
-					class="btn btn-med box-shadow-med fw-500 gray-7 mr-1 btn-pagination"
+					class="btn btn-med box-shadow-med fw-500 mr-1 btn-pagination"
 					@click="model += 5"
 				>
 					...<span class="visually-hidden">Next 5 pages</span>
@@ -97,31 +97,31 @@
 </script>
 
 <style>
-	.gray-7 {
-		color: var(--gray-7);
-	}
-
 	.fw-500 {
 		font-weight: 500;
 	}
 	.btn-pagination {
 		--btn-bg: var(--white);
+		--btn-color: var(--gray-7);
 		min-height: 34px;
 		width: 40px;
 	}
 
 	.btn-pagination[aria-current] {
 		--btn-bg: var(--grape);
+		--btn-color: var(--white);
 	}
 	.btn-pagination:hover {
-		--btn-bg: var(--grape-10);
+		/* --btn-bg: var(--grape-10); */
+		/* --btn-color: var(--gray-7); */
 	}
 
 	.btn-pagination:active {
 		--btn-bg: var(--grape-light);
 	}
-	.btn-pagination:focus {
-		--btn-focus-color: currentcolor;
+	.btn-pagination:focus,
+	.btn-pagination[aria-current]:focus {
+		--btn-focus-color: var(--grape-40);
 	}
 
 	.icon {
