@@ -1,9 +1,9 @@
 <template>
 	<div class="gutter">
-		<!-- <mmStepper v-model="test" :min="3" />
+		<mmStepper v-model="test" :min="3" />
 		<mmStepper v-model="model" :step-count="2" :min="1" :max="5" />
 		<mmStepper v-model="model" disabled />
-		<mmStepper v-model="modelStrict" :min="1" :max="5" strict /> -->
+		<mmStepper v-model="modelStrict" :min="1" :max="5" strict />
 	</div>
 </template>
 <script>
