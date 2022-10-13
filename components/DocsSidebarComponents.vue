@@ -42,6 +42,8 @@
 					{
 						name: 'Search',
 						url: 'search',
+					},
+					{
 						name: 'Social Media Links',
 						url: 'socialLink',
 					},
@@ -49,10 +51,14 @@
 						name: 'Checkbox',
 						url: 'checkbox',
 					},
-          {
-            name: 'Breadcrumbs',
+					{
+						name: 'Breadcrumbs',
 						url: 'breadcrumbs',
-          },
+					},
+					{
+						name: 'Spinner',
+						url: 'spinner'
+					},
 				],
 			}
 		},
