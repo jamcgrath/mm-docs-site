@@ -24,6 +24,10 @@
 						url: 'avatar',
 					},
 					{
+						name: 'Pagination',
+						url: 'pagination',
+					},
+					{
 						name: 'Stepper',
 						url: 'stepper',
 					},
