@@ -24,6 +24,10 @@
 						url: 'avatar',
 					},
 					{
+						name: 'Newsletter',
+						url: 'newsletter',
+					},
+					{
 						name: 'Pagination',
 						url: 'pagination',
 					},
