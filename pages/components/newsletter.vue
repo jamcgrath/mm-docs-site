@@ -1,6 +1,7 @@
 <template>
   <div class="gutter">
-    <MmNewsletter v-model="model" :pages="100" />
+    <MmNewsletter />
+    <MmNewsletter :value="model" @select="log" />
   </div>
 </template>
 <script>
@@ -12,6 +13,19 @@
     },
     data () {
       return {
+        // $log: console.log,
+        model: {
+          id: this.$nanoid(),
+          title: 'Trinmar Pogi',
+          frequency: 'Daily',
+          description: 'Get across the stories women are talking about today.',
+        }
+      }
+    },
+    methods: {
+      log (val) {
+        console.log('selected: asdasdas ' + val)
+        // console.log(...attrs)
       }
     }
 	}
