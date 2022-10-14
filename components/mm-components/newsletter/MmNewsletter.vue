@@ -1,5 +1,5 @@
 <template>
-	<div
+	<div 
 		class="newsletter flex flex-col br-12"
 		:class="{
 			'grape-light-bg newsletter-selected': selected,
@@ -17,7 +17,9 @@
 					:class="{
 						'btn-selected': selected,
 					}"
-					@click="select()"
+          :aria-label="`${selected ? 'deselect' : 'select'} ${value.title}. frequency is ${value.frequency}. ${value.description}`"
+          tabindex="0"
+					@click="select"
 				>
 					<i
 						aria-hidden="true"
@@ -57,7 +59,7 @@
 		},
 		computed: {},
 		methods: {
-			select() {
+			select () {
 				this.selected = !this.selected
 				this.$emit('select', this.selected)
 			},
@@ -72,6 +74,11 @@
 	.btn-selected {
 		background: var(--grape);
 		color: var(--white);
+	}
+
+  .btn:focus {
+		/* background: var(--grape-10); */
+    border: 2px solid var(--grape);
 	}
 
 	.newsletter {

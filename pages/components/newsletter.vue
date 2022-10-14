@@ -1,7 +1,7 @@
 <template>
   <div class="gutter">
-    <MmNewsletter />
     <MmNewsletter :value="model" @select="log" />
+    <MmNewsletter />
   </div>
 </template>
 <script>
@@ -24,7 +24,7 @@
     },
     methods: {
       log (val) {
-        console.log('selected: asdasdas ' + val)
+        console.log('selected: ' + val)
         // console.log(...attrs)
       }
     }
