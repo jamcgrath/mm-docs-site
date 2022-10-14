@@ -59,6 +59,10 @@
 						name: 'Logo',
 						url: 'logo',
 					},
+					{
+						name: 'Divider',
+						url: 'divider',
+					},
 				],
 			}
 		},
