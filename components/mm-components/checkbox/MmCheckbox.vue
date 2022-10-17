@@ -73,8 +73,8 @@
 		border-radius: var(--space-1);
 	}
 	.mm-checkbox-input[type='checkbox']:focus-visible {
-		outline: max(2px, 0.15em) solid currentColor;
-		outline-offset: max(2px, 0.15em);
+		outline: 2px solid var(--grape-hover);
+		outline-offset: 2px;
 	}
 	.mm-checkbox-input[type='checkbox']:disabled,
 	.mm-checkbox-input[type='checkbox']:disabled ~ .mm-checkbox-icon {
