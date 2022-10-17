@@ -24,10 +24,6 @@
 						url: 'avatar',
 					},
 					{
-						name: 'Flag',
-						url: 'flag',
-					},
-					{
 						name: 'Pagination',
 						url: 'pagination',
 					},
