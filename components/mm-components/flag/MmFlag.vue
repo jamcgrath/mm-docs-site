@@ -13,6 +13,9 @@
 			>
 				{{ button }}
 			</button>
+			<!-- <button type="button" class="btn btn-flat-secondary btn-sm btn-circle">
+				<i aria-hidden="true" class="mmi mmi-close"></i>
+			</button> -->
 			<button v-if="hasClose || false" type="button" class="btn btn-flat-primary btn-sm btn-circle ml-2"
 				@click="$emit('closeClick')"
 			>
@@ -41,4 +44,7 @@
 </script>
 
 <style scoped>
+.close {
+
+}
 </style>
