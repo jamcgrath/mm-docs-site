@@ -2,12 +2,19 @@
 	<label class="flex mm-checkbox">
 		<input
 			type="checkbox"
-			class="mm-checkbox-input"
+			class="
+				mm-checkbox-input
+				br-4
+				relative
+				border border-solid border-gray-6
+				m-0
+				white-bg
+			"
 			:disabled="disabled || false"
 			:checked="checked || false"
 			ref="mmCheckboxInput"
 		/>
-		<div class="mm-checkbox-icon">
+		<div class="mm-checkbox-icon flex j-content-center a-items-center absolute">
 			<i
 				class="mmi"
 				:class="indeterminate ? ' mmi-minus' : 'mmi-check'"
@@ -43,31 +50,16 @@
 		gap: 8px;
 	}
 	.mm-checkbox-input[type='checkbox'] {
-		/* Add if not using autoprefixer */
 		-webkit-appearance: none;
 		appearance: none;
-		/* For iOS < 15 to remove gradient background */
-		background-color: #fff;
-		/* Not removed via appearance */
-		margin: 0;
-		font: inherit;
-		color: currentColor;
 		width: 1.25em;
 		height: 1.25em;
-		border-radius: var(--space-1);
-		/* transform: translateY(-0.075em); */
-		position: relative;
-		border: 1px solid var(--gray-6);
 	}
 	.mm-checkbox-icon {
-		display: flex;
 		height: 1.25em;
 		width: 1.25em;
-		justify-content: center;
-		align-items: center;
 		transform: scale(0);
 		transition: 120ms transform ease-in-out;
-		position: absolute;
 	}
 	.mm-checkbox-icon .mmi-check,
 	.mm-checkbox-icon .mmi-minus {
