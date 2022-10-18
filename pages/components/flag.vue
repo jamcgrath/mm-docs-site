@@ -1,9 +1,12 @@
 <template>
 	<div class="gutter">
-    <mmFlag class="mb-2" title="Trinmar Pogi" />
-    <mmFlag class="mb-2" icon="mmi mmi-multiply-incircle-filled error" title="Error" body="error hahaaha" />
-		<mmFlag class="mb-2" icon="mmi mmi-check-circle-filled success" title="Success" body="Success huhuhu"
-      button="click me" @buttonClick="log('ahhh!')" has-close @closeClick="log('oh oh!')" />
+		<mmFlag class="mb-2" title="Trinmar Pogi" no-close />
+		<mmFlag class="mb-2" title="Trinmar Pogi" body="Success huhuhu" type="success" button="No Event" />
+		<mmFlag class="mb-2" type="error" title="Error" body="error hahaaha" button="click me"
+			@buttonClick="log('Error!')" @closeClick="log('oh oh!')" />
+		<mmFlag class="mb-2" type="info" title="Information" body="info :(" button="click me"
+			@buttonClick="log('Info!')" @closeClick="log('oh oh!')" />
+		<mmFlag class="mb-2" title="Trinmar Pogi" body="pogi ko talga" type="warning" no-close />
 	</div>
 </template>
 <script>
