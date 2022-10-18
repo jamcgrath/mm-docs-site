@@ -1,9 +1,9 @@
 <template>
 	<div class="gutter">
-		<MmNotification label="Trinmar Pogi" sub-label="ang pogi"/>
-		<MmNotification read />
-		<MmNotification v-model="model" disabled />
-		<MmNotification label="Trinmar Pogi" sub-label="ang pogi"/>
+		<MmNotification label="Trinmar Pogi" sub-label="ang pogi" @click="log('clicked notif')" @menuClick="log('menu')"/>
+		<MmNotification read @click="log('clicked notif')" @menuClick="log('menu')" />
+		<MmNotification v-model="model" disabled @click="log('clicked notif')" @menuClick="log('menu')" />
+		<MmNotification label="Trinmar Pogi" sub-label="ang pogi" image="https://picsum.photos/200/300" @click="log('clicked notif')" @menuClick="log('menu')"/>
 	</div>
 </template>
 <script>
@@ -15,6 +15,7 @@
 		},
 		data() {
 			return {
+				log: console.log,
 				test: 0,
 				model: 0,
 				modelStrict: 1,
