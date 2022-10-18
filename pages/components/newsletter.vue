@@ -19,6 +19,7 @@
           title: 'Trinmar Pogi',
           frequency: 'Daily',
           description: 'Get across the stories women are talking about today.',
+          image: 'https://picsum.photos/351/150'
         }
       }
     },
