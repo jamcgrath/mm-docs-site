@@ -1,39 +1,40 @@
 <template>
-  <div class="gutter">
-    <MmNewsletter />
-    <MmNewsletter :value="model" @select="log" />
-  </div>
+	<div class="gutter">
+		<MmNewsletter :value="model" @select="log" />
+		<MmNewsletter />
+	</div>
 </template>
 <script>
-  import MmNewsletter from '~/components/mm-components/newsletter/MmNewsletter.vue'
+	import MmNewsletter from '~/components/mm-components/newsletter/MmNewsletter.vue'
 	export default {
 		layout: 'layout-components',
-    components: {
-      MmNewsletter
-    },
-    data () {
-      return {
-        // $log: console.log,
-        model: {
-          id: this.$nanoid(),
-          title: 'Trinmar Pogi',
-          frequency: 'Daily',
-          description: 'Get across the stories women are talking about today.',
-        }
-      }
-    },
-    methods: {
-      log (val) {
-        console.log('selected: asdasdas ' + val)
-        // console.log(...attrs)
-      }
-    }
+		components: {
+			MmNewsletter,
+		},
+		data() {
+			return {
+				// $log: console.log,
+				model: {
+					id: this.$nanoid(),
+					title: 'Trinmar Pogi',
+					frequency: 'Daily',
+					description: 'Get across the stories women are talking about today.',
+					image: 'https://picsum.photos/351/150',
+				},
+			}
+		},
+		methods: {
+			log(val) {
+				console.log('selected: ' + val)
+				// console.log(...attrs)
+			},
+		},
 	}
 </script>
 
 <style scoped>
-.gutter {
-  column-gap: 20px;
-  row-gap: 20px;
-}
+	.gutter {
+		column-gap: 20px;
+		row-gap: 20px;
+	}
 </style>

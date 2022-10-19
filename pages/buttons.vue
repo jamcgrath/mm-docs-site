@@ -30,7 +30,7 @@
 				><i aria-hidden="true" class="mmi mmi-close"></i
 				><span class="visually-hidden">close</span></mm-toggle-button
 			>
-			<mm-toggle-button theme="secondary" size="lg" :toggle="true" round="true"
+			<mm-toggle-button theme="secondary" size="lg" :toggle="true" :round="true"
 				><i aria-hidden="true" class="mmi mmi-close"></i
 				><span class="visually-hidden">close</span>
 			</mm-toggle-button>

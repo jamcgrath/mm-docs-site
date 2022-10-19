@@ -1,29 +1,33 @@
 <template>
 	<div
+		tabindex="0"
+		role="button"
 		class="newsletter flex flex-col br-12"
 		:class="{
 			'grape-light-bg newsletter-selected': selected,
 		}"
+		@click="select"
+		@keyup.enter="select"
+		@keyup.space="select"
+		:aria-pressed="`${selected}`"
 	>
-		<img src="https://picsum.photos/350/150" class="img" alt="" />
+		<img :src="value.image" class="img" alt="" />
 		<div class="mm-body m-4 navy-dark">
 			<div class="flex title-bar">
 				<div class="flex-1 title-5_semibold m-0 p-0">
 					{{ value.title }}
 				</div>
-				<button
-					type="button"
+				<span
 					class="btn btn-sm btn-circle"
 					:class="{
 						'btn-selected': selected,
 					}"
-					@click="select()"
 				>
 					<i
 						aria-hidden="true"
 						:class="`mmi mmi-${selected ? 'check' : 'plus'}`"
 					></i>
-				</button>
+				</span>
 			</div>
 			<div class="caption" :class="{ 'gray-5': !selected }">
 				{{ value.frequency }}
@@ -46,6 +50,7 @@
 						title: 'Mamamia Daily',
 						frequency: 'Daily',
 						description: 'Get across the stories women are talking about today.',
+						image: 'https://picsum.photos/350/150',
 					}
 				},
 			},
@@ -69,6 +74,7 @@
 	.btn {
 		background: rgba(0, 0, 0, 0.1);
 	}
+
 	.btn-selected {
 		background: var(--grape);
 		color: var(--white);
@@ -78,6 +84,7 @@
 		width: 327px;
 		max-height: 183.7px;
 		border: 1px solid var(--gray-4);
+		cursor: pointer;
 	}
 
 	.newsletter-selected {
