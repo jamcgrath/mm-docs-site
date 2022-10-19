@@ -4,6 +4,7 @@
 		}"
 		@click="select"
 		@keyup.enter="select"
+    @keyup.space="select"
 		:aria-pressed="`${selected}`"
 	>
 		<img :src="value.image" class="img" alt="" />
