@@ -1,23 +1,24 @@
 <template>
-	<div class="newsletter flex flex-col br-12" :class="{
+	<div tabindex="0" role="button" class="newsletter flex flex-col br-12" :class="{
 		'grape-light-bg newsletter-selected': selected,
-	}">
+		}"
+		@click="select"
+		@keyup.enter="select"
+		:aria-pressed="`${selected}`"
+	>
 		<img :src="value.image" class="img" alt="" />
 		<div class="mm-body m-4 navy-dark">
 			<div class="flex title-bar">
 				<div class="flex-1 title-5_semibold m-0 p-0">
 					{{ value.title }}
 				</div>
-				<button type="button" class="btn btn-sm btn-circle"
+				<span class="btn btn-sm btn-circle"
 					:class="{
 						'btn-selected': selected,
 					}"
-					:aria-label="`${selected ? 'deselect' : 'select'} ${value.title}. frequency is ${value.frequency}. ${value.description}`"
-					:aria-pressed="`${selected}`"
-					@click="select"
 				>
 					<i aria-hidden="true" :class="`mmi mmi-${selected ? 'check' : 'plus'}`"></i>
-				</button>
+				</span>
 			</div>
 			<div class="caption" :class="{ 'gray-5': !selected }">
 				{{ value.frequency }}
@@ -70,15 +71,11 @@ export default {
 	color: var(--white);
 }
 
-.btn:focus {
-	/* background: var(--grape-10); */
-	border: 2px solid var(--grape);
-}
-
 .newsletter {
 	width: 327px;
 	max-height: 183.7px;
 	border: 1px solid var(--gray-4);
+	cursor: pointer;
 }
 
 .newsletter-selected {
