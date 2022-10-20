@@ -2,11 +2,11 @@
 	<div role="link" tabindex="0" class="notification flex p-4 cursor-pointer" :class="{ 'grape-10-bg': !value.read, 'gray-1-bg': value.read }" @click="$emit('click')">
 		<div class="logo br-12 flex mr-4" :class="{ 'br-100': isTypeAuthor }">
       
-      <i v-if="isMediaTypeIcon" v-show="!imageError" aria-hidden="true" :class="`mmi ${value.media.data} m-auto`"></i>
+      <i v-if="isMediaTypeIcon" aria-hidden="true" :class="`mmi ${value.media.data} m-auto`"></i>
       <img v-else-if="isMediaTypeImage" alt="" v-show="!imageError" class="logo br-12" :class="{ 'br-100': isTypeAuthor }"
-        :src="value.media.data" @load="imageError = false" @error="imageError = true"
-      />
-      <i v-show="imageError" aria-hidden="true" class="mmi mmi-podcast m-auto"></i>
+          :src="value.media.data" @load="imageError = false" @error="imageError = true"
+        />
+      <i v-if="!isMediaTypeIcon" v-show="imageError" aria-hidden="true" class="mmi mmi-podcast m-auto"></i>
     </div>
     <div class="flex-1 flex-col flex">
       <div class="title-message label gray-6 regular">
