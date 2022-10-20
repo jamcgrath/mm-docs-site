@@ -1,18 +1,22 @@
 <template>
-	<div role="link" tabindex="0" class="notification flex p-4 cursor-pointer" :class="{ 'grape-10-bg': !read, 'gray-1-bg': read }" @click="$emit('click')">
-		<div class="logo br-12 flex mr-4" :class="{ 'br-100': circle }">
-      <img v-if="image" class="logo br-12" :class="{ 'br-100': circle }" :src="image">
-      <i v-else aria-hidden="true" :class="icon"></i>
+	<div role="link" tabindex="0" class="notification flex p-4 cursor-pointer" :class="{ 'grape-10-bg': !value.read, 'gray-1-bg': value.read }" @click="$emit('click')">
+		<div class="logo br-12 flex mr-4" :class="{ 'br-100': isTypeAuthor }">
+      
+      <i v-if="isMediaTypeIcon" v-show="!imageError" aria-hidden="true" :class="`mmi ${value.media.data} m-auto`"></i>
+      <img v-else-if="isMediaTypeImage" alt="" v-show="!imageError" class="logo br-12" :class="{ 'br-100': isTypeAuthor }"
+        :src="value.media.data" @load="imageError = false" @error="imageError = true"
+      />
+      <i v-show="imageError" aria-hidden="true" class="mmi mmi-podcast m-auto"></i>
     </div>
     <div class="flex-1 flex-col flex">
       <div class="title-message label gray-6 regular">
-        {{ preLabel }}
-        <span class="label_med navy-dark medium title-message">{{ label }}</span>{{ removeSpaceColon }}{{ subLabel }}
+        {{ value.preLabel }}
+        <span class="label_med navy-dark medium title-message">{{ value.highlight }}</span>{{ removeSpaceColon }}{{ value.subLabel }}
       </div>
       <div class="flex gray-5 mr-1 a-items-center overline-small time">
-        <div class="flex-1">{{ time }}</div>
+        <div class="flex-1">{{ value.time }}</div>
         <button class="btn btn-sm btn-circle a-self-end menu"
-          :style="{ 'background-color': read ? 'var(--gray-1)' : 'var(--grape-0)' }"
+          :style="{ 'background-color': value.read ? 'var(--gray-1)' : 'var(--grape-0)' }"
           aria-label="menu" @click.stop="$emit('menuClick')"
         >
           <i aria-hidden="true" class="mmi mmi-menu-horizontal-lite gray-5"></i>
@@ -27,47 +31,73 @@
 <script>
 	export default {
 		props: {
-      circle: Boolean,
-			icon: {
-        type: String,
-        default: 'mmi mmi-podcast m-auto'
+      value: {
+        type: Object,
+        required: true,
+        default () {
+          return {
+						media: {
+							type: 'image',
+							data: 'mmi mmi-video'
+						},
+						preLabel: 'New subscriber exclusive episode of',
+						highlight: 'Mamamia Out Loud',
+						subLabel: 'new episode: The episode title goes here',
+						read: true
+					}
+        }
       },
-      image: {
-        type: String,
-      },
-      preLabel: {
-        type: String,
-      },
-      label: {
-        type: String,
-        default: 'Mamamia Out Loud'
-      },
-      subLabel: {
-        type: String,
-        default: 'new episode: Episode Title'
-      },
-      subLabel2: {
-        type: String,
-        default: 'new episode: Episode Title'
-      },
-      time: {
-        type: String,
-        default: '2 hours ago'
-      },
-      read: {
-        type: Boolean
-      }
+      // circle: Boolean,
+			// icon: {
+      //   type: String,
+      //   default: 'mmi mmi-podcast m-auto'
+      // },
+      // image: {
+      //   type: String,
+      // },
+      // preLabel: {
+      //   type: String,
+      // },
+      // label: {
+      //   type: String,
+      //   default: 'Mamamia Out Loud'
+      // },
+      // subLabel: {
+      //   type: String,
+      //   default: 'new episode: Episode Title'
+      // },
+      // subLabel2: {
+      //   type: String,
+      //   default: 'new episode: Episode Title'
+      // },
+      // time: {
+      //   type: String,
+      //   default: '2 hours ago'
+      // },
+      // read: {
+      //   type: Boolean
+      // }
 
 		},
     data () {
       return {
+        imageError: true,
       }
     },
 		mounted() {
 		},
 		computed: {
+      isMediaTypeImage () {
+        return this.value.media && this.value.media.type === 'image'
+      },
+      isMediaTypeIcon () {
+        return this.value.media && this.value.media.type === 'icon'
+      },
+      isTypeAuthor () {
+        return this.value.type === 'author'
+      },
       removeSpaceColon () {
-        return this.subLabel.charAt(0) === ':' ? '' : ' '
+        return this.value.subLabel.charAt(0) === ':' ? '' : ' '
       }
 		},
 		methods: {
@@ -87,13 +117,13 @@
 
 .notification {
   width: 375px;
-  height: 85px;
+  min-height: 85px;
 }
 
 .logo {
   position: relative;
-  min-width: 52px;
-  min-height: 52px;
+  width: 52px;
+  height: 52px;
   background-color: var(--white);
   object-fit: cover;
 }

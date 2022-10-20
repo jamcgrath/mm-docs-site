@@ -1,22 +1,6 @@
 <template>
 	<div class="gutter">
-		<MmNotification
-			label="Mamamia Out Loud"
-			sub-label="new episode: The episode title goes here"
-			@click="log('clicked notif')" @menuClick="log('menu')"/>
-		<MmNotification read @click="log('clicked notif')" @menuClick="log('menu')" />
-		<MmNotification v-model="model" disabled @click="log('clicked notif')" @menuClick="log('menu')" />
-		<MmNotification
-			preLabel="New subscriber exclusive episode of"
-			label="Mamamia Out Loud"
-			sub-label=": The episode title goes here"
-			image="https://picsum.photos/200/300"
-			@click="log('clicked notif')" @menuClick="log('menu')"/>
-		<MmNotification
-			image="https://picsum.photos/201/300"
-			preLabel="New video featuring" label="Author Name" subLabel=": Video title"
-			circle
-		/>
+		<MmNotification v-for="notif in notifications" :key="$nanoid()" :value="notif" ></MmNotification>
 	</div>
 </template>
 <script>
@@ -29,9 +13,44 @@
 		data() {
 			return {
 				log: console.log,
-				test: 0,
-				model: 0,
-				modelStrict: 1,
+				notifications: [
+					{
+						media: {
+							type: 'icon',
+							data: 'mmi mmi-video'
+						},
+						highlight: 'Mamamia Out Loud',
+						subLabel: 'new episode: The episode title goes here',
+						time: '2 hours ago'
+					},
+					{
+						highlight: 'Mamamia Out Loud',
+						subLabel: 'new episode: The episode title goes here',
+						time: '2 hours ago'
+					},
+					{
+						media: {
+							type: 'image',
+							data: 'https://picsum.photos/201/300'
+						},
+						preLabel: 'New subscriber exclusive episode of',
+						highlight: 'Mamamia Out Loud',
+						subLabel: ': The episode title goes here',
+						read: true,
+						time: '2 hours ago'
+					},
+					{
+						type: 'author',
+						media: {
+							type: 'image',
+							data: 'https://picsum.photos/200/300'
+						},
+						preLabel: 'New video featuring',
+						highlight: 'Author Name',
+						subLabel: 'Video title',
+						time: '2 hours ago'
+					}
+				]
 			}
 		},
 	}
