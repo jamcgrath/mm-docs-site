@@ -30,8 +30,8 @@
 								getColor(colorVars[color]).length > 23 ? 'ws-nowrap' : '',
 							]"
 							:style="{ background: `var(${color})` }"
-							@click="$copyToClipboard()"
-							:data-item="colorVars[color]"
+							@click="$copyToClipboard($event)"
+							:data-copy="colorVars[color]"
 						>
 							<span class="pointer-events-none">{{ colorVars[color] }}</span>
 							<span class="copy-msg ml-2">copied</span>
