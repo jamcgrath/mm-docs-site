@@ -101,14 +101,18 @@
 				}
 				let fontSize
 				if (displayFonts[className]) {
-					fontSize = props[`--${displayFonts[className]}`]
+					fontSize = props[`--${displayFonts[className]}`].replace(
+						/[^\d\.]*/g,
+						''
+					)
 				} else {
-					fontSize = props[`--${className}`]
+					fontSize = props[`--${className}`].replace(/[^\d\.]*/g, '')
 				}
 
+				console.log(fontSize)
 				return {
 					px: `${parseFloat(fontSize) * 16}px`,
-					rem: fontSize,
+					rem: `${fontSize}rem`,
 				}
 			},
 			getFontFamily(className) {
