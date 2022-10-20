@@ -9,9 +9,9 @@
       <i v-if="!isMediaTypeIcon" v-show="imageError" aria-hidden="true" class="mmi mmi-podcast m-auto"></i>
     </div>
     <div class="flex-1 flex-col flex">
-      <div class="title-message label gray-6 regular">
+      <div class="message label gray-6 regular">
         {{ value.preLabel }}
-        <span class="label_med navy-dark medium title-message">{{ value.highlight }}</span>{{ removeSpaceColon }}{{ value.subLabel }}
+        <span class="label_med navy-dark medium message">{{ value.highlight }}</span>{{ removeSpaceColon }}{{ value.subLabel }}
       </div>
       <div class="flex gray-5 mr-1 a-items-center overline-small time">
         <div class="flex-1">{{ value.time }}</div>
@@ -128,9 +128,16 @@
   object-fit: cover;
 }
 
-.title-message {
+.message {
   line-height: 17.5px !important;
   font-size: 14px !important;
+  /* overflow: hidden !important; */
+  /* text-overflow: ellipsis !important; */
+  max-height: 3.8em;
+
+  /* white-space: nowrap; */
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 .time {

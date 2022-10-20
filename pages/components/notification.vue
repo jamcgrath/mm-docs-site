@@ -35,7 +35,7 @@
 						},
 						preLabel: 'New subscriber exclusive episode of',
 						highlight: 'Mamamia Out Loud',
-						subLabel: ': The episode title goes here',
+						subLabel: ': The episode title goes here adad asda sdas das dada sdasda sdasd asd ',
 						read: true,
 						time: '2 hours ago'
 					},
