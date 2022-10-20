@@ -12,11 +12,7 @@
 					<h2 v-if="index" :key="`cgt-${index}`" class="mb-2">
 						{{ `${index.toUpperCase()}` }}
 					</h2>
-					<div
-						class="page-content gap-5 mb-5"
-						:key="`cg-${index}`"
-						:class="{ gafc: colors[index].length > 6 }"
-					>
+					<div class="page-content gap-5 mb-5" :key="`cg-${index}`">
 						<div
 							class="color-card flex flex-col"
 							v-for="(color, index) in colorGroup"
@@ -199,9 +195,7 @@
 		grid-template-columns: repeat(auto-fill, 200px);
 		grid-template-rows: repeat(3, auto);
 	}
-	.gafc {
-		grid-auto-flow: column;
-	}
+
 	.color-card {
 		border: 1px solid var(--gray-4);
 		border-radius: 15px;

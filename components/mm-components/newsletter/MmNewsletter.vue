@@ -18,7 +18,7 @@
 					{{ value.title }}
 				</div>
 				<span
-					class="btn btn-sm btn-circle"
+					class="select-btn btn btn-sm btn-circle"
 					:class="{
 						'btn-selected': selected,
 					}"
@@ -71,7 +71,7 @@
 </script>
 
 <style>
-	.btn {
+	.select-btn {
 		background: rgba(0, 0, 0, 0.1);
 	}
 
