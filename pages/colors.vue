@@ -12,7 +12,11 @@
 					<h2 v-if="index" :key="`cgt-${index}`" class="mb-2">
 						{{ `${index.toUpperCase()}` }}
 					</h2>
-					<div class="page-content gap-5 mb-5" :key="`cg-${index}`">
+					<div
+						class="page-content gap-5 mb-5"
+						:key="`cg-${index}`"
+						:class="{ gafc: colors[index].length > 6 }"
+					>
 						<div
 							class="color-card flex flex-col"
 							v-for="(color, index) in colorGroup"
@@ -101,10 +105,9 @@
 				</template>
 			</mm-tab-panel>
 			<mm-tab-panel id="colors-panel-2" tab-name="Docs">
-				<p>
-					The color name should correspond to the color name in the right
-					sidepanel in figma
-				</p>
+				<div class="markdown">
+					<div v-html="markdown"></div>
+				</div>
 			</mm-tab-panel>
 		</mm-tabs>
 	</div>
@@ -121,6 +124,14 @@
 			MmTabs,
 			MmTabPanel,
 			MmInputSearch,
+		},
+		async asyncData({ $getMarkdown, params }) {
+			const slug = 'colors'
+			const markdown = await $getMarkdown(slug)
+			return {
+				slug,
+				markdown,
+			}
 		},
 		data() {
 			return {
@@ -187,6 +198,8 @@
 		display: grid;
 		grid-template-columns: repeat(auto-fill, 200px);
 		grid-template-rows: repeat(3, auto);
+	}
+	.gafc {
 		grid-auto-flow: column;
 	}
 	.color-card {
