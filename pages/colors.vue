@@ -66,9 +66,9 @@
 										a-items-center
 										ws-nowrap
 									"
-									:data-copy="colorNames[index]"
+									:data-copy="`${color.slice(2)}`"
 								>
-									{{ colorNames[index] }}
+									{{ `${color.slice(2)}` }}
 									<span class="copy-msg">copied</span>
 								</button>
 							</li>
@@ -82,9 +82,9 @@
 										a-items-center
 										ws-nowrap
 									"
-									:data-copy="`${colorNames[index]}-bg`"
+									:data-copy="`${color.slice(2)}-bg`"
 								>
-									{{ `${colorNames[index]}-bg` }}
+									{{ `${color.slice(2)}-bg` }}
 									<span class="copy-msg">copied</span>
 								</button>
 							</li>
@@ -128,9 +128,6 @@
 		computed: {
 			colorVarNames() {
 				return Object.keys(colorsProps[':root'])
-			},
-			colorNames() {
-				return this.colorVarNames.map((color) => color.slice(2))
 			},
 			colorVars() {
 				return colorsProps[':root']
