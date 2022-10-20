@@ -88,4 +88,9 @@
 	a {
 		color: var(--pressed);
 	}
+	.markdown code {
+		background: var(--gray-3);
+		padding: 0 var(--space-0-5);
+		color: var(--error);
+	}
 </style>
