@@ -3,9 +3,6 @@
 		<div class="table">
 			<docs-table :filename="slug" class="w-100"></docs-table>
 		</div>
-		<!-- <div class="markdown">
-			<div v-html="markdown"></div>
-		</div> -->
 		<div v-if="codeExample || markdown" class="examples">
 			<mm-tabs>
 				<mm-tab-panel
