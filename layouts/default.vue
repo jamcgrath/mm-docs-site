@@ -7,11 +7,10 @@
 		<main class="p-3">
 			<Nuxt />
 		</main>
-		<!-- <docs-off-canvas-sidebar class="default-offcanvas">
-		</docs-off-canvas-sidebar> -->
 		<docs-footer class="default-footer z-10 fixed b-0 w-100"></docs-footer>
 	</div>
 </template>
+
 <script>
 	import DocsSidebar from '~/components/DocsSidebarCss.vue'
 	import DocsOffCanvasSidebar from '~/components/DocsOffCanvasSidebar.vue'
@@ -27,6 +26,7 @@
 		},
 	}
 </script>
+
 <style>
 	.default-wrap {
 		display: grid;
@@ -88,9 +88,19 @@
 	a {
 		color: var(--pressed);
 	}
+	.markdown {
+		padding: var(--space-4);
+	}
 	.markdown code {
 		background: var(--gray-3);
 		padding: 0 var(--space-0-5);
 		color: var(--error);
+	}
+	.markdown table {
+		border-collapse: collapse;
+	}
+	.markdown td {
+		padding: var(--space-1) var(--space-2);
+		border: 1px solid var(--aqua-light);
 	}
 </style>
