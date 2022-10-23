@@ -228,11 +228,12 @@ export default {
 
 <style>
 .mm-social-link {
-  --btn-padding: var(--spacing-3) var(--spacing-6);
+  --btn-padding: var(--space-3) var(--space-6);
   --btn-border-color: var(--gray-4);
   --btn-bg: var(--white);
   --btn-border-width: 1px;
   --btn-color: var(--navy-dark);
+  --btn-gap: var(--space-2);
   min-width: 150px;
   min-height: 44px;
 }
