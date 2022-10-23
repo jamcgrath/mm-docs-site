@@ -1,10 +1,6 @@
 <template>
     <div class="flex">
-        <mm-spinner  />
-        <mm-spinner value="25" />
-        <mm-spinner value="50" />
-        <mm-spinner value="75" />
-        <mm-spinner value="100" />
+        <mm-spinner></mm-spinner>
     </div>
 </template>
 
