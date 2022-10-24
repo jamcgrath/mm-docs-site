@@ -67,6 +67,10 @@
 						name: 'Logo',
 						url: 'logo',
 					},
+					{
+						name: 'Progress Indicator',
+						url: 'progressIndicator',
+					},
 				],
 			}
 		},
