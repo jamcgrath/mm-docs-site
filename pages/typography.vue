@@ -121,24 +121,7 @@
 		methods: {
 			getFontSize(className) {
 				const props = typographyProps[':root']
-				// const displayFonts = {
-				// 	'title-7': 'copy',
-				// 	'title-8': 'body',
-				// 	'title-9': 'label',
-				// 	'title-10': 'caption',
-				// }
-				let fontSize
-				// if (displayFonts[className]) {
-				// 	fontSize = props[`--${displayFonts[className]}`].replace(
-				// 		/[^\d\.]*/g,
-				// 		''
-				// 	)
-				// } else {
-				// 	fontSize = props[`--${className}`].replace(/[^\d\.]*/g, '')
-				// }
-				fontSize = props[`--${className}`].replace(/[^\d\.]*/g, '')
-
-				console.log(fontSize)
+				let fontSize = props[`--${className}`].replace(/[^\d\.]*/g, '')
 				return {
 					px: `${parseFloat(fontSize) * 16}px`,
 					rem: `${fontSize}rem`,
