@@ -99,7 +99,7 @@
 	.search-input[disabled] {
 		cursor: not-allowed;
 	}
-	.mmi {
+	.search-icon .mmi {
 		position: relative;
 		top: 2px;
 	}

@@ -101,9 +101,7 @@
 				</template>
 			</mm-tab-panel>
 			<mm-tab-panel id="colors-panel-2" tab-name="Docs">
-				<div class="markdown">
-					<div v-html="markdown"></div>
-				</div>
+				<div v-html="markdown"></div>
 			</mm-tab-panel>
 		</mm-tabs>
 	</div>

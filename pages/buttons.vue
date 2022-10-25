@@ -1,9 +1,20 @@
 <template>
 	<div class="button-test">
-		<div class="mt-3">
-			<h2>Button</h2>
-			<button type="button">Button</button>
-		</div>
+		<mm-tabs>
+			<mm-tab-panel id="btn-docs-1" tab-name="Buttons" selected="true">
+				<p>
+					Default button with no <code>.btn</code> class has minimal styling
+				</p>
+				<div class="mt-5">
+					<button type="button">Default Button</button>
+					<div class="btn">Default .btn</div>
+				</div>
+
+				<docs-code :codeExample="codeExample"></docs-code>
+				<!-- <docs-code :codeExample="defaultButtonCode"></docs-code> -->
+			</mm-tab-panel>
+		</mm-tabs>
+		<div class="mt-3"></div>
 		<div class="mt-3">
 			<h2>Toggle Button</h2>
 			<mm-toggle-button theme="primary" :toggle="false"
@@ -282,10 +293,28 @@
 
 <script>
 	import MmToggleButton from '~/components/mm-components/toggle-button/MmToggleButton.vue'
+	import MmTabs from '~/components/mm-components/tab-panel/MmTabs.vue'
+	import MmTabPanel from '~/components/mm-components/tab-panel/MmTabPanel.vue'
+	import DocsCode from '~/components/DocsCode.vue'
+
+	//prettier ignore
 	export default {
 		layout: 'layout-components',
 		components: {
 			MmToggleButton,
+			MmTabs,
+			MmTabPanel,
+			DocsCode,
+		},
+		data() {
+			return {
+				defaultButtonCode: [
+					{
+						code: `<button type="button">Default Button</button>\n<div role="button"\n class="btn"\n @click="clickHandler"\n @keyup.enter="clickHandler"\n @keyup.space="clickHandler" >Default .btn</div>`,
+						language: 'HTML',
+					},
+				],
+			}
 		},
 	}
 </script>

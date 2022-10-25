@@ -13,3 +13,9 @@ The color name should correspond to the color name in the right sidepanel in fig
 | color       | .grape-dark    |
 | background  | .grape-dark-bg |
 | css var     | --grape-dark   |
+
+```css
+.grape-dark {
+  color: #3c2e5a;
+}
+```
