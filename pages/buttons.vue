@@ -2,16 +2,7 @@
 	<div class="button-test">
 		<mm-tabs>
 			<mm-tab-panel id="btn-docs-1" tab-name="Buttons" selected="true">
-				<p>
-					Default button with no <code>.btn</code> class has minimal styling
-				</p>
-				<div class="mt-5">
-					<button type="button">Default Button</button>
-					<div class="btn">Default .btn</div>
-				</div>
-
-				<docs-code :codeExample="codeExample"></docs-code>
-				<!-- <docs-code :codeExample="defaultButtonCode"></docs-code> -->
+				<div class="markdown" v-html="markdown"></div>
 			</mm-tab-panel>
 		</mm-tabs>
 		<div class="mt-3"></div>
@@ -306,14 +297,12 @@
 			MmTabPanel,
 			DocsCode,
 		},
-		data() {
+		async asyncData({ $getMarkdown }) {
+			const slug = 'buttons'
+			const markdown = await $getMarkdown(slug)
 			return {
-				defaultButtonCode: [
-					{
-						code: `<button type="button">Default Button</button>\n<div role="button"\n class="btn"\n @click="clickHandler"\n @keyup.enter="clickHandler"\n @keyup.space="clickHandler" >Default .btn</div>`,
-						language: 'HTML',
-					},
-				],
+				slug,
+				markdown,
 			}
 		},
 	}

@@ -6,7 +6,9 @@
 				mm-checkbox-input
 				br-4
 				relative
-				border border-solid border-gray-6
+				border
+				solid
+				border-gray-6
 				m-0
 				white-bg
 			"

@@ -19,7 +19,8 @@ export default {
   css: [
     '~/mm-css/dist/styles.css',
     '~/mm-icons/dist/mm-icons.css',
-    '~/node_modules/highlight.js/styles/atom-one-dark-reasonable.css',
+    '~/node_modules/highlight.js/styles/a11y-dark.css',
+    '~/assets/css/main.css',
   ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins

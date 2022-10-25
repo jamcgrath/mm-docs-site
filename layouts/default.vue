@@ -91,11 +91,11 @@
 	.markdown {
 		padding: var(--space-4);
 	}
-	.markdown code {
-		background: var(--gray-3);
-		padding: 0 var(--space-0-5);
-		color: var(--error);
-	}
+	/* .markdown code {
+			background: var(--gray-3);
+			padding: 0 var(--space-0-5);
+			color: var(--error);
+		} */
 	.markdown table {
 		border-collapse: collapse;
 	}
