@@ -1,35 +1,7 @@
 <template>
 	<div class="page-grid p-4" :class="`page-${slug}`">
 		<div class="table">
-			<docs-table :filename="slug" class="w-100"></docs-table>
-		</div>
-		<div v-if="codeExample || markdown" class="examples">
-			<mm-tabs>
-				<mm-tab-panel
-					v-if="codeExample"
-					id="visualPreview"
-					tab-name="Component"
-					selected="true"
-				>
-					<div class="visual-preview grid grid-fluid">
-						<div
-							v-for="(example, index) in codeExample"
-							:key="`vp-${index}`"
-							@click="$copyToClipboard(example.code)"
-							class="code-visual"
-							v-html="example.code"
-						></div>
-					</div>
-				</mm-tab-panel>
-				<mm-tab-panel v-if="codeExample" id="codePreview" tab-name="Code">
-					<docs-code :codeExample="codeExample"></docs-code>
-				</mm-tab-panel>
-				<mm-tab-panel v-if="markdown" id="markdown" tab-name="Documentation">
-					<div class="markdown">
-						<div v-html="markdown"></div>
-					</div>
-				</mm-tab-panel>
-			</mm-tabs>
+			<docs-table :cssStyles="cssStyles" class="w-100"></docs-table>
 		</div>
 	</div>
 </template>
@@ -42,15 +14,18 @@
 
 	export default {
 		components: { DocsTable, MmTabs, MmTabPanel, DocsCode },
-		async asyncData({ $getMarkdown, $getCode, params }) {
+		async asyncData({ $getMarkdown, params }) {
 			const { slug } = params
 			const markdown = await $getMarkdown(slug)
-			const codeExample = await $getCode(slug)
 			return {
 				slug,
 				markdown,
-				codeExample,
 			}
+		},
+		computed: {
+			cssStyles() {
+				return this.$mapStyles(require(`~/mm-css/dist/json/${this.slug}`))
+			},
 		},
 		components: {
 			DocsTable,

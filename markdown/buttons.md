@@ -138,3 +138,10 @@ If the button is not decorative, be sure to add a label for screen readers.
   <i aria-hidden="true" class="mmi mmi-close"></i>
 </button>
 ```
+
+---
+
+## Toggle Button
+
+<br>
+See toggle button for more information.
