@@ -1,6 +1,6 @@
 <template>
-    <div role="progress" class="progress-circular" aria-valuemin="0" :aria-valuemax="maxValue"
-        :aria-valuenow="normalizedValue" :style="{ height: `${this.size}px`, width: `${this.size}px`}">
+    <div role="progressbar" class="progress-circular" aria-valuemin="0" :aria-valuemax="maxValue"
+        :aria-valuenow="normalizedValue" :style="{ height: `${this.size}px`, width: `${this.size}px` }">
         <svg class="progress-circular-svg" xmlns="http://www.w3.org/2000/svg" :viewBox="viewBox"
             style="transform: rotate(-90deg);">
             <circle fill="transparent" :cx="2 * viewBoxSize" :cy="2 * viewBoxSize" :r="radius"
@@ -10,7 +10,7 @@
                 :stroke-width="strokeWidth" :stroke-dasharray="strokeDashArray" :stroke-dashoffset="strokeDashOffset"
                 class="progress-circular-overlay"></circle>
         </svg>
-        <div class="progress-circular-info fw-500">{{contentValue}}</div>
+        <div class="progress-circular-info fw-500">{{ contentValue }}</div>
     </div>
 </template>
 

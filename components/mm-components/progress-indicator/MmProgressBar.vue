@@ -1,9 +1,9 @@
 <template>
-    <div role="progress-bar" aria-valuemin="0" :aria-valuemax="maxValue" :aria-valuenow="normalizedValue"
-        class="progress-bar" :style="{height: height + 'px'}">
+    <div role="progressbar" aria-valuemin="0" :aria-valuemax="maxValue" :aria-valuenow="normalizedValue"
+        class="progress-bar" :style="{ height: height + 'px' }">
         <div class="progress-bar-background" :style="backgroundStyle">
         </div>
-        <div class="progress-bar-active" :style="{width: activeValue + '%'}">
+        <div class="progress-bar-active" :style="{ width: activeValue + '%' }">
         </div>
     </div>
 </template>
