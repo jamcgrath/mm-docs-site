@@ -1,7 +1,7 @@
 <template>
-    <div role="status" :aria-label="ariaLabel">
+    <div role="status" :aria-label="ariaLabel" :style="styles">
         <svg class="mm-spinner-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"
-            :style="{ width: width + 'px', height: width + 'px' }">
+            :style="styles">
             <circle fill="transparent" cx="26" cy="26" r="24" stroke-width="3" stroke-dasharray="157"
                 stroke-dashoffset="0" class="mm-spinner-underlay"></circle>
             <circle fill="transparent" cx="26" cy="26" r="24" stroke-width="3" stroke-dasharray="157"
@@ -20,6 +20,11 @@ export default {
         ariaLabel: {
             type: String,
             default: "loading"
+        }
+    },
+    computed: {
+        styles() {
+            return { width: this.width + 'px', height: this.width + 'px' }
         }
     }
 }
