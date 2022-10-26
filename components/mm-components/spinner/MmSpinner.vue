@@ -1,5 +1,5 @@
 <template>
-    <div role="status" aria-label="loading">
+    <div role="status" :aria-label="ariaLabel">
         <svg class="mm-spinner-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"
             :style="{ width: width + 'px', height: width + 'px' }">
             <circle fill="transparent" cx="26" cy="26" r="24" stroke-width="3" stroke-dasharray="157"
@@ -16,6 +16,10 @@ export default {
         width: {
             type: [String, Number],
             default: 52
+        },
+        ariaLabel: {
+            type: String,
+            default: "loading"
         }
     }
 }
