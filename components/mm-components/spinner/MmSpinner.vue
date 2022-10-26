@@ -1,55 +1,50 @@
 <template>
-    <div role="spinner" aria-valuemin="0" aria-valuemax="100">
-        <svg class="spinner-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"
-            style="transform: rotate(-90deg);">
+    <div role="status" aria-label="loading">
+        <svg class="mm-spinner-svg" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 52 52"
+            :style="{ width: width + 'px', height: width + 'px' }">
             <circle fill="transparent" cx="26" cy="26" r="24" stroke-width="3" stroke-dasharray="157"
-                stroke-dashoffset="0" class="spinner-underlay"></circle>
+                stroke-dashoffset="0" class="mm-spinner-underlay"></circle>
             <circle fill="transparent" cx="26" cy="26" r="24" stroke-width="3" stroke-dasharray="157"
-                stroke-dashoffset="157" class="spinner-overlay"></circle>
+                stroke-dashoffset="157" class="mm-spinner-overlay"></circle>
         </svg>
     </div>
 </template>
 
 <script>
-export default {}
+export default {
+    props: {
+        width: {
+            type: [String, Number],
+            default: 52
+        }
+    }
+}
 </script>
 
 <style scoped>
-.spinner-svg {
-    height: 52px;
+.mm-spinner-svg {
     width: 52px;
-    z-index: 0;
+    height: 52px;
+    transform: rotate(-90deg);
 }
 
-.spinner-underlay {
+.mm-spinner-underlay {
     stroke: var(--gray-3);
     z-index: 1;
 }
 
-.spinner-overlay {
+.mm-spinner-overlay {
     stroke-linecap: round;
     stroke: var(--navy);
     z-index: 2;
-    --spin: 2s;
-    -webkit-animation: dash var(--spin) infinite;
-    animation: dash var(--spin) infinite;
+    --spin: 1.4s;
+    -webkit-animation: spinner var(--spin) infinite;
+    animation: spinner var(--spin) infinite;
 }
 
-@keyframes dash {
+@keyframes spinner {
     0% {
         stroke-dashoffset: 157;
-    }
-
-    25% {
-        stroke-dashoffset: 126;
-    }
-
-    50% {
-        stroke-dashoffset: 79;
-    }
-
-    75% {
-        stroke-dashoffset: 47;
     }
 
     100% {

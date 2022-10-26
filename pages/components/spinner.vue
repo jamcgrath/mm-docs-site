@@ -1,6 +1,11 @@
 <template>
-    <div class="flex">
-        <mm-spinner></mm-spinner>
+    <div>
+        <div class="flex mb-4">
+            <mm-spinner></mm-spinner>
+        </div>
+        <div class="flex">
+            <mm-spinner width="100"></mm-spinner>
+        </div>
     </div>
 </template>
 
