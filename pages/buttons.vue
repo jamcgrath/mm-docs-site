@@ -16,10 +16,7 @@
 						/>
 					</div>
 				</div>
-				<div
-					class="button-section mt-3 grid grid-fluid"
-					style="--col-width: 33%"
-				>
+				<div class="button-section mt-3 grid gap-10">
 					<div class="m-5 border-b-2 solid border-navy pb-4">
 						<h3 class="mb-3">Primary</h3>
 						<ul class="docs-button-list list-reset mt-3">
@@ -1780,5 +1777,9 @@
 		display: grid;
 		grid-template-columns: auto auto auto 1fr;
 		gap: var(--space-2);
+	}
+	.button-section {
+		--min: 380px;
+		grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
 	}
 </style>
