@@ -27,9 +27,6 @@
 				return this.$mapStyles(require(`~/mm-css/dist/json/${this.slug}`))
 			},
 		},
-		components: {
-			DocsTable,
-		},
 	}
 </script>
 
