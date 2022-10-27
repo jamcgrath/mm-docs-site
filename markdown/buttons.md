@@ -141,7 +141,53 @@ If the button is not decorative, be sure to add a label for screen readers.
 
 ---
 
-## Toggle Button
+## Link that look like a button
 
 <br>
-See toggle button for more information.
+To make a link look like a button, add the same button classes to an anchor tag.
+
+```html
+<a class="btn btn-primary btn-lg">This is a link</a>
+
+<nuxt-link to="/badges" class="btn btn-primary btn-lg">
+  Nuxt link to badges
+</nuxt-link>
+```
+
+<div class="border solid border-navy p-5 my-5 my-5">
+	<a class="btn btn-primary btn-lg" href="https://mamamia.com.au">This is a link</a>
+	<nuxt-link to="/badges" class="btn btn-primary btn-lg">
+  	Nuxt link to badges
+	</nuxt-link>
+</div>
+
+## Buttons that are not buttons
+
+<br>
+IF for some reason you need to make a button that is not a button, use the `role="button"` attribute, `tabindex="0"` and event handlers for `keydown` and `click`. Also be sure to add any other aria attributes as required.
+
+```html
+<div
+  class="btn btn-primary btn-lg"
+  role="button"
+  @click="clickHandler"
+  @keyup.space="clickHandler"
+  @keyup.enter="clickHandler"
+  tabindex="0"
+>
+  This is not a button
+</div>
+```
+
+<div class="border solid border-navy p-5 my-5 my-5">
+	<div
+	  class="btn btn-primary btn-lg"
+	  role="button"
+	  @click="clickHandler"
+	  @keyup.space="clickHandler"
+	  @keyup.enter="clickHandler"
+		tabindex="0"
+	>
+		This is not a button
+	</div>
+</div>
