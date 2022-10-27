@@ -166,6 +166,11 @@ To make a link look like a button, add the same button classes to an anchor tag.
 <br>
 IF for some reason you need to make a button that is not a button, use the `role="button"` attribute, `tabindex="0"` and event handlers for `keydown` and `click`. Also be sure to add any other aria attributes as required.
 
+<br>
+<br>
+
+**Note:** This is not recommended as it is not accessible unless you add all the accessiblity things a button gives you for free.
+
 ```html
 <div
   class="btn btn-primary btn-lg"
