@@ -1,13 +1,27 @@
 <template>
 	<div class="button-test">
 		<mm-tabs>
-			<mm-tab-panel id="btn-docs-1" tab-name="Usage" selected="true">
+			<mm-tab-panel id="btn-docs-1" tab-name="Usage" :selected="true">
 				<div class="markdown" v-html="markdown"></div>
 			</mm-tab-panel>
 			<mm-tab-panel id="btn-docs-2" tab-name="Buttons">
-				<div class="mt-3">
+				<div class="button-edit">
+					<div>
+						<label for="buttonText">Button Text</label>
+						<input
+							type="text"
+							id="buttonText"
+							name="buttonText"
+							v-model.trim="buttonText"
+						/>
+					</div>
+				</div>
+				<div
+					class="button-section mt-3 grid grid-fluid"
+					style="--col-width: 33%"
+				>
 					<div class="m-5 border-b-2 solid border-navy pb-4">
-						<h3 class="mb-3">default</h3>
+						<h3 class="mb-3">Primary</h3>
 						<ul class="docs-button-list list-reset mt-3">
 							<li>
 								<button
@@ -15,7 +29,7 @@
 									class="btn btn-primary btn-lg"
 									@click="copyButton"
 								>
-									primary large
+									{{ buttonText || 'large' }}
 								</button>
 							</li>
 							<li>
@@ -25,7 +39,7 @@
 									class="btn btn-primary btn-lg"
 								>
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									primary large
+									{{ buttonText || 'large' }}
 								</button>
 							</li>
 							<li>
@@ -34,7 +48,7 @@
 									type="button"
 									class="btn btn-primary btn-lg"
 								>
-									primary large
+									{{ buttonText || 'large' }}
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
 								</button>
 							</li>
@@ -53,7 +67,7 @@
 									type="button"
 									class="btn btn-primary btn-med"
 								>
-									primary medium
+									{{ buttonText || 'medium' }}
 								</button>
 							</li>
 							<li>
@@ -63,7 +77,7 @@
 									class="btn btn-primary btn-med"
 								>
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									primary medium
+									{{ buttonText || 'medium' }}
 								</button>
 							</li>
 							<li>
@@ -72,7 +86,7 @@
 									type="button"
 									class="btn btn-primary btn-med"
 								>
-									primary medium
+									{{ buttonText || 'medium' }}
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
 								</button>
 							</li>
@@ -90,7 +104,7 @@
 									type="button"
 									class="btn btn-primary btn-sm"
 								>
-									primary small
+									{{ buttonText || 'small' }}
 								</button>
 							</li>
 							<li>
@@ -100,7 +114,7 @@
 									class="btn btn-primary btn-sm"
 								>
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									primary small
+									{{ buttonText || 'small' }}
 								</button>
 							</li>
 							<li>
@@ -109,7 +123,7 @@
 									type="button"
 									class="btn btn-primary btn-sm"
 								>
-									primary small
+									{{ buttonText || 'small' }}
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
 								</button>
 							</li>
@@ -133,7 +147,7 @@
 									type="button"
 									class="btn btn-tonal btn-lg"
 								>
-									tonal large
+									{{ buttonText || ' large' }}
 								</button>
 							</li>
 							<li>
@@ -143,7 +157,7 @@
 									class="btn btn-tonal btn-lg"
 								>
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									tonal large
+									{{ buttonText || ' large' }}
 								</button>
 							</li>
 							<li>
@@ -152,7 +166,7 @@
 									type="button"
 									class="btn btn-tonal btn-lg"
 								>
-									tonal large
+									{{ buttonText || ' large' }}
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
 								</button>
 							</li>
@@ -171,7 +185,7 @@
 									type="button"
 									class="btn btn-tonal btn-med"
 								>
-									tonal medium
+									{{ buttonText || ' medium' }}
 								</button>
 							</li>
 							<li>
@@ -181,7 +195,7 @@
 									class="btn btn-tonal btn-med"
 								>
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									tonal medium
+									{{ buttonText || ' medium' }}
 								</button>
 							</li>
 							<li>
@@ -190,7 +204,7 @@
 									type="button"
 									class="btn btn-tonal btn-med"
 								>
-									tonal medium
+									{{ buttonText || ' medium' }}
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
 								</button>
 							</li>
@@ -209,7 +223,7 @@
 									type="button"
 									class="btn btn-tonal btn-sm"
 								>
-									tonal small
+									{{ buttonText || ' small' }}
 								</button>
 							</li>
 							<li>
@@ -219,7 +233,7 @@
 									class="btn btn-tonal btn-sm"
 								>
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									tonal small
+									{{ buttonText || ' small' }}
 								</button>
 							</li>
 							<li>
@@ -228,7 +242,7 @@
 									type="button"
 									class="btn btn-tonal btn-sm"
 								>
-									tonal small
+									{{ buttonText || ' small' }}
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
 								</button>
 							</li>
@@ -252,7 +266,7 @@
 									type="button"
 									class="btn btn-outline btn-lg"
 								>
-									outline large
+									{{ buttonText || 'large' }}
 								</button>
 							</li>
 							<li>
@@ -262,7 +276,7 @@
 									class="btn btn-outline btn-lg"
 								>
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									outline large
+									{{ buttonText || 'large' }}
 								</button>
 							</li>
 							<li>
@@ -271,7 +285,7 @@
 									type="button"
 									class="btn btn-outline btn-lg"
 								>
-									outline large
+									{{ buttonText || 'large' }}
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
 								</button>
 							</li>
@@ -290,7 +304,7 @@
 									type="button"
 									class="btn btn-outline btn-med"
 								>
-									outline medium
+									{{ buttonText || 'medium' }}
 								</button>
 							</li>
 							<li>
@@ -300,7 +314,7 @@
 									class="btn btn-outline btn-med"
 								>
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									outline medium
+									{{ buttonText || 'medium' }}
 								</button>
 							</li>
 							<li>
@@ -309,7 +323,7 @@
 									type="button"
 									class="btn btn-outline btn-med"
 								>
-									outline medium
+									{{ buttonText || 'medium' }}
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
 								</button>
 							</li>
@@ -327,7 +341,7 @@
 									type="button"
 									class="btn btn-outline btn-sm"
 								>
-									outline small
+									{{ buttonText || 'small' }}
 								</button>
 							</li>
 							<li>
@@ -337,7 +351,7 @@
 									class="btn btn-outline btn-sm"
 								>
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									outline small
+									{{ buttonText || 'small' }}
 								</button>
 							</li>
 							<li>
@@ -346,7 +360,7 @@
 									type="button"
 									class="btn btn-outline btn-sm"
 								>
-									outline small
+									{{ buttonText || 'small' }}
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
 								</button>
 							</li>
@@ -370,7 +384,7 @@
 									type="button"
 									class="btn btn-flat btn-lg"
 								>
-									flat large
+									{{ buttonText || 'large' }}
 								</button>
 							</li>
 							<li>
@@ -380,7 +394,7 @@
 									class="btn btn-flat btn-lg"
 								>
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									flat large
+									{{ buttonText || 'large' }}
 								</button>
 							</li>
 							<li>
@@ -389,7 +403,7 @@
 									type="button"
 									class="btn btn-flat btn-lg"
 								>
-									flat large
+									{{ buttonText || 'large' }}
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
 								</button>
 							</li>
@@ -408,7 +422,7 @@
 									type="button"
 									class="btn btn-flat btn-med"
 								>
-									flat medium
+									{{ buttonText || 'medium' }}
 								</button>
 							</li>
 							<li>
@@ -418,7 +432,7 @@
 									class="btn btn-flat btn-med"
 								>
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									flat medium
+									{{ buttonText || 'medium' }}
 								</button>
 							</li>
 							<li>
@@ -427,7 +441,7 @@
 									type="button"
 									class="btn btn-flat btn-med"
 								>
-									flat medium
+									{{ buttonText || 'medium' }}
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
 								</button>
 							</li>
@@ -446,7 +460,7 @@
 									type="button"
 									class="btn btn-flat btn-sm"
 								>
-									flat small
+									{{ buttonText || 'small' }}
 								</button>
 							</li>
 							<li>
@@ -456,7 +470,7 @@
 									class="btn btn-flat btn-sm"
 								>
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									flat small
+									{{ buttonText || 'small' }}
 								</button>
 							</li>
 							<li>
@@ -465,7 +479,7 @@
 									type="button"
 									class="btn btn-flat btn-sm"
 								>
-									flat small
+									{{ buttonText || 'small' }}
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
 								</button>
 							</li>
@@ -489,7 +503,7 @@
 									type="button"
 									class="btn btn-secondary btn-lg"
 								>
-									secondary large
+									{{ buttonText || 'large' }}
 								</button>
 							</li>
 							<li>
@@ -499,7 +513,7 @@
 									class="btn btn-secondary btn-lg"
 								>
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									secondary large
+									{{ buttonText || 'large' }}
 								</button>
 							</li>
 							<li>
@@ -508,7 +522,7 @@
 									type="button"
 									class="btn btn-secondary btn-lg"
 								>
-									secondary large
+									{{ buttonText || 'large' }}
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
 								</button>
 							</li>
@@ -526,7 +540,7 @@
 									type="button"
 									class="btn btn-secondary btn-med"
 								>
-									secondary medium
+									{{ buttonText || 'medium' }}
 								</button>
 							</li>
 							<li>
@@ -536,7 +550,7 @@
 									class="btn btn-secondary btn-med"
 								>
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									secondary medium
+									{{ buttonText || 'medium' }}
 								</button>
 							</li>
 							<li>
@@ -545,7 +559,7 @@
 									type="button"
 									class="btn btn-secondary btn-med"
 								>
-									secondary medium
+									{{ buttonText || 'medium' }}
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
 								</button>
 							</li>
@@ -563,7 +577,7 @@
 									type="button"
 									class="btn btn-secondary btn-sm"
 								>
-									secondary small
+									{{ buttonText || 'small' }}
 								</button>
 							</li>
 							<li>
@@ -573,7 +587,7 @@
 									class="btn btn-secondary btn-sm"
 								>
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									secondary small
+									{{ buttonText || 'small' }}
 								</button>
 							</li>
 							<li>
@@ -582,7 +596,7 @@
 									type="button"
 									class="btn btn-secondary btn-sm"
 								>
-									secondary small
+									{{ buttonText || 'small' }}
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
 								</button>
 							</li>
@@ -605,7 +619,7 @@
 									type="button"
 									class="btn btn-tonal-secondary btn-lg"
 								>
-									tonal secondary large
+									{{ buttonText || 'large' }}
 								</button>
 							</li>
 							<li>
@@ -615,7 +629,7 @@
 									class="btn btn-tonal-secondary btn-lg"
 								>
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									tonal secondary large
+									{{ buttonText || 'large' }}
 								</button>
 							</li>
 							<li>
@@ -624,7 +638,7 @@
 									type="button"
 									class="btn btn-tonal-secondary btn-lg"
 								>
-									tonal secondary large
+									{{ buttonText || 'large' }}
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
 								</button>
 							</li>
@@ -642,7 +656,7 @@
 									type="button"
 									class="btn btn-tonal-secondary btn-med"
 								>
-									tonal secondary medium
+									{{ buttonText || 'medium' }}
 								</button>
 							</li>
 							<li>
@@ -652,7 +666,7 @@
 									class="btn btn-tonal-secondary btn-med"
 								>
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									tonal secondary medium
+									{{ buttonText || 'medium' }}
 								</button>
 							</li>
 							<li>
@@ -661,7 +675,7 @@
 									type="button"
 									class="btn btn-tonal-secondary btn-med"
 								>
-									tonal secondary medium
+									{{ buttonText || 'medium' }}
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
 								</button>
 							</li>
@@ -679,7 +693,7 @@
 									type="button"
 									class="btn btn-tonal-secondary btn-sm"
 								>
-									tonal secondary small
+									{{ buttonText || 'small' }}
 								</button>
 							</li>
 							<li>
@@ -689,7 +703,7 @@
 									class="btn btn-tonal-secondary btn-sm"
 								>
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									tonal secondary small
+									{{ buttonText || 'small' }}
 								</button>
 							</li>
 							<li>
@@ -698,7 +712,7 @@
 									type="button"
 									class="btn btn-tonal-secondary btn-sm"
 								>
-									tonal secondary small
+									{{ buttonText || 'small' }}
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
 								</button>
 							</li>
@@ -721,7 +735,7 @@
 									type="button"
 									class="btn btn-outline-secondary btn-lg"
 								>
-									outline secondary large
+									{{ buttonText || 'large' }}
 								</button>
 							</li>
 							<li>
@@ -731,7 +745,7 @@
 									class="btn btn-outline-secondary btn-lg"
 								>
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									outline secondary large
+									{{ buttonText || 'large' }}
 								</button>
 							</li>
 							<li>
@@ -740,7 +754,7 @@
 									type="button"
 									class="btn btn-outline-secondary btn-lg"
 								>
-									outline secondary large
+									{{ buttonText || 'large' }}
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
 								</button>
 							</li>
@@ -758,7 +772,7 @@
 									type="button"
 									class="btn btn-outline-secondary btn-med"
 								>
-									outline secondary medium
+									{{ buttonText || 'medium' }}
 								</button>
 							</li>
 							<li>
@@ -768,7 +782,7 @@
 									class="btn btn-outline-secondary btn-med"
 								>
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									outline secondary medium
+									{{ buttonText || 'medium' }}
 								</button>
 							</li>
 							<li>
@@ -777,7 +791,7 @@
 									type="button"
 									class="btn btn-outline-secondary btn-med"
 								>
-									outline secondary medium
+									{{ buttonText || 'medium' }}
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
 								</button>
 							</li>
@@ -795,7 +809,7 @@
 									type="button"
 									class="btn btn-outline-secondary btn-sm"
 								>
-									outline secondary small
+									{{ buttonText || 'small' }}
 								</button>
 							</li>
 							<li>
@@ -805,7 +819,7 @@
 									class="btn btn-outline-secondary btn-sm"
 								>
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									outline secondary small
+									{{ buttonText || 'small' }}
 								</button>
 							</li>
 							<li>
@@ -814,7 +828,7 @@
 									type="button"
 									class="btn btn-outline-secondary btn-sm"
 								>
-									outline secondary small
+									{{ buttonText || 'small' }}
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
 								</button>
 							</li>
@@ -837,7 +851,7 @@
 									type="button"
 									class="btn btn-flat-secondary btn-lg"
 								>
-									flat secondary large
+									{{ buttonText || 'large' }}
 								</button>
 							</li>
 							<li>
@@ -847,7 +861,7 @@
 									class="btn btn-flat-secondary btn-lg"
 								>
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									flat secondary large
+									{{ buttonText || 'large' }}
 								</button>
 							</li>
 							<li>
@@ -856,7 +870,7 @@
 									type="button"
 									class="btn btn-flat-secondary btn-lg"
 								>
-									flat secondary large
+									{{ buttonText || 'large' }}
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
 								</button>
 							</li>
@@ -874,7 +888,7 @@
 									type="button"
 									class="btn btn-flat-secondary btn-med"
 								>
-									flat secondary medium
+									{{ buttonText || 'medium' }}
 								</button>
 							</li>
 							<li>
@@ -884,7 +898,7 @@
 									class="btn btn-flat-secondary btn-med"
 								>
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									flat secondary medium
+									{{ buttonText || 'medium' }}
 								</button>
 							</li>
 							<li>
@@ -893,7 +907,7 @@
 									type="button"
 									class="btn btn-flat-secondary btn-med"
 								>
-									flat secondary medium
+									{{ buttonText || 'medium' }}
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
 								</button>
 							</li>
@@ -911,7 +925,7 @@
 									type="button"
 									class="btn btn-flat-secondary btn-sm"
 								>
-									flat secondary small
+									{{ buttonText || 'small' }}
 								</button>
 							</li>
 							<li>
@@ -921,7 +935,7 @@
 									class="btn btn-flat-secondary btn-sm"
 								>
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									flat secondary small
+									{{ buttonText || 'small' }}
 								</button>
 							</li>
 							<li>
@@ -930,7 +944,7 @@
 									type="button"
 									class="btn btn-flat-secondary btn-sm"
 								>
-									flat secondary small
+									{{ buttonText || 'small' }}
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
 								</button>
 							</li>
@@ -953,7 +967,7 @@
 									type="button"
 									class="btn btn-destructive btn-lg"
 								>
-									destructive large
+									{{ buttonText || 'large' }}
 								</button>
 							</li>
 							<li>
@@ -963,7 +977,7 @@
 									class="btn btn-destructive btn-lg"
 								>
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									destructive large
+									{{ buttonText || 'large' }}
 								</button>
 							</li>
 							<li>
@@ -972,7 +986,7 @@
 									type="button"
 									class="btn btn-destructive btn-lg"
 								>
-									destructive large
+									{{ buttonText || 'large' }}
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
 								</button>
 							</li>
@@ -990,7 +1004,7 @@
 									type="button"
 									class="btn btn-destructive btn-med"
 								>
-									destructive medium
+									{{ buttonText || 'medium' }}
 								</button>
 							</li>
 							<li>
@@ -1000,7 +1014,7 @@
 									class="btn btn-destructive btn-med"
 								>
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									destructive medium
+									{{ buttonText || 'medium' }}
 								</button>
 							</li>
 							<li>
@@ -1009,7 +1023,7 @@
 									type="button"
 									class="btn btn-destructive btn-med"
 								>
-									destructive medium
+									{{ buttonText || 'medium' }}
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
 								</button>
 							</li>
@@ -1027,7 +1041,7 @@
 									type="button"
 									class="btn btn-destructive btn-sm"
 								>
-									destructive small
+									{{ buttonText || 'small' }}
 								</button>
 							</li>
 							<li>
@@ -1037,7 +1051,7 @@
 									class="btn btn-destructive btn-sm"
 								>
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									destructive small
+									{{ buttonText || 'small' }}
 								</button>
 							</li>
 							<li>
@@ -1046,7 +1060,7 @@
 									type="button"
 									class="btn btn-destructive btn-sm"
 								>
-									destructive small
+									{{ buttonText || 'small' }}
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
 								</button>
 							</li>
@@ -1068,7 +1082,7 @@
 									type="button"
 									class="btn btn-outline-destructive btn-lg"
 								>
-									destructive outline large
+									{{ buttonText || 'large' }}
 								</button>
 							</li>
 							<li>
@@ -1077,7 +1091,7 @@
 									class="btn btn-outline-destructive btn-lg"
 								>
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									destructive outline large
+									{{ buttonText || 'large' }}
 								</button>
 							</li>
 							<li>
@@ -1085,7 +1099,7 @@
 									type="button"
 									class="btn btn-outline-destructive btn-lg"
 								>
-									destructive outline large
+									{{ buttonText || 'large' }}
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
 								</button>
 							</li>
@@ -1102,7 +1116,7 @@
 									type="button"
 									class="btn btn-outline-destructive btn-med"
 								>
-									destructive outline medium
+									{{ buttonText || 'medium' }}
 								</button>
 							</li>
 							<li>
@@ -1111,7 +1125,7 @@
 									class="btn btn-outline-destructive btn-med"
 								>
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									destructive outline medium
+									{{ buttonText || 'medium' }}
 								</button>
 							</li>
 							<li>
@@ -1119,7 +1133,7 @@
 									type="button"
 									class="btn btn-outline-destructive btn-med"
 								>
-									destructive outline medium
+									{{ buttonText || 'medium' }}
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
 								</button>
 							</li>
@@ -1136,7 +1150,7 @@
 									type="button"
 									class="btn btn-outline-destructive btn-sm"
 								>
-									destructive outline small
+									{{ buttonText || 'small' }}
 								</button>
 							</li>
 							<li>
@@ -1145,7 +1159,7 @@
 									class="btn btn-outline-destructive btn-sm"
 								>
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									destructive outline small
+									{{ buttonText || 'small' }}
 								</button>
 							</li>
 							<li>
@@ -1153,7 +1167,7 @@
 									type="button"
 									class="btn btn-outline-destructive btn-sm"
 								>
-									destructive outline small
+									{{ buttonText || 'small' }}
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
 								</button>
 							</li>
@@ -1168,7 +1182,7 @@
 						</ul>
 					</div>
 					<div class="m-5 border-b-2 solid border-navy pb-4">
-						<h3 class="mb-3">Destructive flate</h3>
+						<h3 class="mb-3">Destructive flat</h3>
 						<ul class="docs-button-list list-reset mt-3">
 							<li>
 								<button
@@ -1176,7 +1190,7 @@
 									type="button"
 									class="btn btn-flat-destructive btn-lg"
 								>
-									destructive flat large
+									{{ buttonText || 'large' }}
 								</button>
 							</li>
 							<li>
@@ -1186,7 +1200,7 @@
 									class="btn btn-flat-destructive btn-lg"
 								>
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									destructive flat large
+									{{ buttonText || 'large' }}
 								</button>
 							</li>
 							<li>
@@ -1195,7 +1209,7 @@
 									type="button"
 									class="btn btn-flat-destructive btn-lg"
 								>
-									destructive flat large
+									{{ buttonText || 'large' }}
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
 								</button>
 							</li>
@@ -1213,7 +1227,7 @@
 									type="button"
 									class="btn btn-flat-destructive btn-med"
 								>
-									destructive flat medium
+									{{ buttonText || 'medium' }}
 								</button>
 							</li>
 							<li>
@@ -1223,7 +1237,7 @@
 									class="btn btn-flat-destructive btn-med"
 								>
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									destructive flat medium
+									{{ buttonText || 'medium' }}
 								</button>
 							</li>
 							<li>
@@ -1232,7 +1246,7 @@
 									type="button"
 									class="btn btn-flat-destructive btn-med"
 								>
-									destructive flat medium
+									{{ buttonText || 'medium' }}
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
 								</button>
 							</li>
@@ -1250,7 +1264,7 @@
 									type="button"
 									class="btn btn-flat-destructive btn-sm"
 								>
-									destructive flat small
+									{{ buttonText || 'small' }}
 								</button>
 							</li>
 							<li>
@@ -1260,7 +1274,7 @@
 									class="btn btn-flat-destructive btn-sm"
 								>
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									destructive flat small
+									{{ buttonText || 'small' }}
 								</button>
 							</li>
 							<li>
@@ -1269,7 +1283,7 @@
 									type="button"
 									class="btn btn-flat-destructive btn-sm"
 								>
-									destructive flat small
+									{{ buttonText || 'small' }}
 									<i class="mmi mmi-multiply" aria-hidden="true"></i>
 								</button>
 							</li>
@@ -1283,396 +1297,382 @@
 							</li>
 						</ul>
 					</div>
-					<div class="mt-3">
-						<div class="m-5 border-b-2 solid border-navy pb-4">
-							<h3 class="mb-3">Disabled</h3>
-							<ul class="docs-button-list list-reset mt-3">
-								<li>
-									<button
-										@click="copyButton"
-										type="button"
-										class="btn btn-lg"
-										disabled
-									>
-										disabled large
-									</button>
-								</li>
-								<li>
-									<button
-										@click="copyButton"
-										type="button"
-										class="btn btn-lg"
-										disabled
-									>
-										<i class="mmi mmi-multiply" aria-hidden="true"></i>
-										disabled large
-									</button>
-								</li>
-								<li>
-									<button
-										@click="copyButton"
-										type="button"
-										class="btn btn-lg"
-										disabled
-									>
-										disabled large
-										<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									</button>
-								</li>
-								<li>
-									<button
-										@click="copyButton"
-										type="button"
-										class="btn btn-lg btn-circle"
-										disabled
-									>
-										<i class="mmi mmi-close" aria-hidden="true"></i>
-									</button>
-								</li>
-								<li>
-									<button
-										@click="copyButton"
-										type="button"
-										class="btn btn-med"
-										disabled
-									>
-										disabled medium
-									</button>
-								</li>
-								<li>
-									<button
-										@click="copyButton"
-										type="button"
-										class="btn btn-med"
-										disabled
-									>
-										<i class="mmi mmi-multiply" aria-hidden="true"></i>
-										disabled medium
-									</button>
-								</li>
-								<li>
-									<button
-										@click="copyButton"
-										type="button"
-										class="btn btn-med"
-										disabled
-									>
-										disabled medium
-										<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									</button>
-								</li>
-								<li>
-									<button
-										@click="copyButton"
-										type="button"
-										class="btn btn-med btn-circle"
-										disabled
-									>
-										<i class="mmi mmi-close" aria-hidden="true"></i>
-									</button>
-								</li>
-								<li>
-									<button
-										@click="copyButton"
-										type="button"
-										class="btn btn-sm"
-										disabled
-									>
-										disabled small
-									</button>
-								</li>
-								<li>
-									<button
-										@click="copyButton"
-										type="button"
-										class="btn btn-sm"
-										disabled
-									>
-										<i class="mmi mmi-multiply" aria-hidden="true"></i>
-										disabled small
-									</button>
-								</li>
-								<li>
-									<button
-										@click="copyButton"
-										type="button"
-										class="btn btn-sm"
-										disabled
-									>
-										disabled small
-										<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									</button>
-								</li>
-								<li>
-									<button
-										@click="copyButton"
-										type="button"
-										class="btn btn-sm btn-circle"
-										disabled
-									>
-										<i class="mmi mmi-close" aria-hidden="true"></i>
-									</button>
-								</li>
-							</ul>
-						</div>
-						<div class="m-5 border-b-2 solid border-navy pb-4">
-							<h3 class="mb-3">Disabled Outline</h3>
-							<ul class="docs-button-list list-reset mt-3">
-								<li>
-									<button
-										@click="copyButton"
-										type="button"
-										class="btn btn-outline btn-lg"
-										disabled
-									>
-										disabled outline large
-									</button>
-								</li>
-								<li>
-									<button
-										@click="copyButton"
-										type="button"
-										class="btn btn-outline btn-lg"
-										disabled
-									>
-										<i class="mmi mmi-multiply" aria-hidden="true"></i>
-										Button disbaled outline large
-									</button>
-								</li>
-								<li>
-									<button
-										@click="copyButton"
-										type="button"
-										class="btn btn-outline btn-lg"
-										disabled
-									>
-										disabled outline large
-										<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									</button>
-								</li>
-								<li>
-									<button
-										type="button"
-										class="btn btn-outline btn-lg btn-circle"
-										disabled
-									>
-										<i class="mmi mmi-close" aria-hidden="true"></i>
-									</button>
-								</li>
-								<li>
-									<button
-										type="button"
-										class="btn btn-outline btn-med"
-										disabled
-									>
-										disabled outline medium
-									</button>
-								</li>
-								<li>
-									<button
-										type="button"
-										class="btn btn-outline btn-med"
-										disabled
-									>
-										<i class="mmi mmi-multiply" aria-hidden="true"></i>
-										disabled outline medium
-									</button>
-								</li>
-								<li>
-									<button
-										type="button"
-										class="btn btn-outline btn-med"
-										disabled
-									>
-										disabled outline medium
-										<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									</button>
-								</li>
-								<li>
-									<button
-										type="button"
-										class="btn btn-outline btn-med btn-circle"
-										disabled
-									>
-										<i class="mmi mmi-close" aria-hidden="true"></i>
-									</button>
-								</li>
-								<li>
-									<button
-										@click="copyButton"
-										type="button"
-										class="btn btn-outline btn-sm"
-										disabled
-									>
-										disabled outline small
-									</button>
-								</li>
-								<li>
-									<button
-										@click="copyButton"
-										type="button"
-										class="btn btn-outline btn-sm"
-										disabled
-									>
-										<i class="mmi mmi-multiply" aria-hidden="true"></i>
-										disabled outline small
-									</button>
-								</li>
-								<li>
-									<button
-										@click="copyButton"
-										type="button"
-										class="btn btn-outline btn-sm"
-										disabled
-									>
-										disabled outline small
-										<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									</button>
-								</li>
-								<li>
-									<button
-										type="button"
-										class="btn btn-outline btn-sm btn-circle"
-										disabled
-									>
-										<i class="mmi mmi-close" aria-hidden="true"></i>
-									</button>
-								</li>
-							</ul>
-						</div>
-						<div class="m-5 border-b-2 solid border-navy pb-4">
-							<h3 class="mb-3">Disabled flat</h3>
-							<ul class="docs-button-list list-reset mt-3">
-								<li>
-									<button
-										@click="copyButton"
-										type="button"
-										class="btn btn-flat btn-lg"
-										disabled
-									>
-										disabled flat large
-									</button>
-								</li>
-								<li>
-									<button
-										@click="copyButton"
-										type="button"
-										class="btn btn-flat btn-lg"
-										disabled
-									>
-										<i class="mmi mmi-multiply" aria-hidden="true"></i>
-										disabled flat large
-									</button>
-								</li>
-								<li>
-									<button
-										@click="copyButton"
-										type="button"
-										class="btn btn-flat btn-lg"
-										disabled
-									>
-										disabled flat large
-										<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									</button>
-								</li>
-								<li>
-									<button
-										type="button"
-										class="btn btn-flat btn-lg btn-circle"
-										disabled
-									>
-										<i class="mmi mmi-close" aria-hidden="true"></i>
-									</button>
-								</li>
-								<li>
-									<button
-										@click="copyButton"
-										type="button"
-										class="btn btn-flat btn-med"
-										disabled
-									>
-										disabled flat medium
-									</button>
-								</li>
-								<li>
-									<button
-										@click="copyButton"
-										type="button"
-										class="btn btn-flat btn-med"
-										disabled
-									>
-										<i class="mmi mmi-multiply" aria-hidden="true"></i>
-										disabled flat medium
-									</button>
-								</li>
-								<li>
-									<button
-										@click="copyButton"
-										type="button"
-										class="btn btn-flat btn-med"
-										disabled
-									>
-										disabled flat medium
-										<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									</button>
-								</li>
-								<li>
-									<button
-										type="button"
-										class="btn btn-flat btn-med btn-circle"
-										disabled
-									>
-										<i class="mmi mmi-close" aria-hidden="true"></i>
-									</button>
-								</li>
-								<li>
-									<button
-										@click="copyButton"
-										type="button"
-										class="btn btn-flat btn-sm"
-										disabled
-									>
-										disabled flat small
-									</button>
-								</li>
-								<li>
-									<button
-										@click="copyButton"
-										type="button"
-										class="btn btn-flat btn-sm"
-										disabled
-									>
-										<i class="mmi mmi-multiply" aria-hidden="true"></i>
-										disabled flat small
-									</button>
-								</li>
-								<li>
-									<button
-										@click="copyButton"
-										type="button"
-										class="btn btn-flat btn-sm"
-										disabled
-									>
-										disabled flat small
-										<i class="mmi mmi-multiply" aria-hidden="true"></i>
-									</button>
-								</li>
-								<li>
-									<button
-										type="button"
-										class="btn btn-flat btn-sm btn-circle"
-										disabled
-									>
-										<i class="mmi mmi-close" aria-hidden="true"></i>
-									</button>
-								</li>
-							</ul>
-						</div>
+					<div class="m-5 border-b-2 solid border-navy pb-4">
+						<h3 class="mb-3">Disabled</h3>
+						<ul class="docs-button-list list-reset mt-3">
+							<li>
+								<button
+									@click="copyButton"
+									type="button"
+									class="btn btn-lg"
+									disabled
+								>
+									{{ buttonText || ' large' }}
+								</button>
+							</li>
+							<li>
+								<button
+									@click="copyButton"
+									type="button"
+									class="btn btn-lg"
+									disabled
+								>
+									<i class="mmi mmi-multiply" aria-hidden="true"></i>
+									{{ buttonText || ' large' }}
+								</button>
+							</li>
+							<li>
+								<button
+									@click="copyButton"
+									type="button"
+									class="btn btn-lg"
+									disabled
+								>
+									{{ buttonText || ' large' }}
+									<i class="mmi mmi-multiply" aria-hidden="true"></i>
+								</button>
+							</li>
+							<li>
+								<button
+									@click="copyButton"
+									type="button"
+									class="btn btn-lg btn-circle"
+									disabled
+								>
+									<i class="mmi mmi-close" aria-hidden="true"></i>
+								</button>
+							</li>
+							<li>
+								<button
+									@click="copyButton"
+									type="button"
+									class="btn btn-med"
+									disabled
+								>
+									{{ buttonText || ' medium' }}
+								</button>
+							</li>
+							<li>
+								<button
+									@click="copyButton"
+									type="button"
+									class="btn btn-med"
+									disabled
+								>
+									<i class="mmi mmi-multiply" aria-hidden="true"></i>
+									{{ buttonText || ' medium' }}
+								</button>
+							</li>
+							<li>
+								<button
+									@click="copyButton"
+									type="button"
+									class="btn btn-med"
+									disabled
+								>
+									{{ buttonText || ' medium' }}
+									<i class="mmi mmi-multiply" aria-hidden="true"></i>
+								</button>
+							</li>
+							<li>
+								<button
+									@click="copyButton"
+									type="button"
+									class="btn btn-med btn-circle"
+									disabled
+								>
+									<i class="mmi mmi-close" aria-hidden="true"></i>
+								</button>
+							</li>
+							<li>
+								<button
+									@click="copyButton"
+									type="button"
+									class="btn btn-sm"
+									disabled
+								>
+									{{ buttonText || ' small' }}
+								</button>
+							</li>
+							<li>
+								<button
+									@click="copyButton"
+									type="button"
+									class="btn btn-sm"
+									disabled
+								>
+									<i class="mmi mmi-multiply" aria-hidden="true"></i>
+									{{ buttonText || ' small' }}
+								</button>
+							</li>
+							<li>
+								<button
+									@click="copyButton"
+									type="button"
+									class="btn btn-sm"
+									disabled
+								>
+									{{ buttonText || ' small' }}
+									<i class="mmi mmi-multiply" aria-hidden="true"></i>
+								</button>
+							</li>
+							<li>
+								<button
+									@click="copyButton"
+									type="button"
+									class="btn btn-sm btn-circle"
+									disabled
+								>
+									<i class="mmi mmi-close" aria-hidden="true"></i>
+								</button>
+							</li>
+						</ul>
+					</div>
+					<div class="m-5 border-b-2 solid border-navy pb-4">
+						<h3 class="mb-3">Disabled Outline</h3>
+						<ul class="docs-button-list list-reset mt-3">
+							<li>
+								<button
+									@click="copyButton"
+									type="button"
+									class="btn btn-outline btn-lg"
+									disabled
+								>
+									{{ buttonText || 'large' }}
+								</button>
+							</li>
+							<li>
+								<button
+									@click="copyButton"
+									type="button"
+									class="btn btn-outline btn-lg"
+									disabled
+								>
+									<i class="mmi mmi-multiply" aria-hidden="true"></i>
+									{{ buttonText || 'large' }}
+								</button>
+							</li>
+							<li>
+								<button
+									@click="copyButton"
+									type="button"
+									class="btn btn-outline btn-lg"
+									disabled
+								>
+									{{ buttonText || 'large' }}
+									<i class="mmi mmi-multiply" aria-hidden="true"></i>
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="btn btn-outline btn-lg btn-circle"
+									disabled
+								>
+									<i class="mmi mmi-close" aria-hidden="true"></i>
+								</button>
+							</li>
+							<li>
+								<button type="button" class="btn btn-outline btn-med" disabled>
+									{{ buttonText || 'medium' }}
+								</button>
+							</li>
+							<li>
+								<button type="button" class="btn btn-outline btn-med" disabled>
+									<i class="mmi mmi-multiply" aria-hidden="true"></i>
+									{{ buttonText || 'medium' }}
+								</button>
+							</li>
+							<li>
+								<button type="button" class="btn btn-outline btn-med" disabled>
+									{{ buttonText || 'medium' }}
+									<i class="mmi mmi-multiply" aria-hidden="true"></i>
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="btn btn-outline btn-med btn-circle"
+									disabled
+								>
+									<i class="mmi mmi-close" aria-hidden="true"></i>
+								</button>
+							</li>
+							<li>
+								<button
+									@click="copyButton"
+									type="button"
+									class="btn btn-outline btn-sm"
+									disabled
+								>
+									{{ buttonText || 'small' }}
+								</button>
+							</li>
+							<li>
+								<button
+									@click="copyButton"
+									type="button"
+									class="btn btn-outline btn-sm"
+									disabled
+								>
+									<i class="mmi mmi-multiply" aria-hidden="true"></i>
+									{{ buttonText || 'small' }}
+								</button>
+							</li>
+							<li>
+								<button
+									@click="copyButton"
+									type="button"
+									class="btn btn-outline btn-sm"
+									disabled
+								>
+									{{ buttonText || 'small' }}
+									<i class="mmi mmi-multiply" aria-hidden="true"></i>
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="btn btn-outline btn-sm btn-circle"
+									disabled
+								>
+									<i class="mmi mmi-close" aria-hidden="true"></i>
+								</button>
+							</li>
+						</ul>
+					</div>
+					<div class="m-5 border-b-2 solid border-navy pb-4">
+						<h3 class="mb-3">Disabled flat</h3>
+						<ul class="docs-button-list list-reset mt-3">
+							<li>
+								<button
+									@click="copyButton"
+									type="button"
+									class="btn btn-flat btn-lg"
+									disabled
+								>
+									{{ buttonText || 'large' }}
+								</button>
+							</li>
+							<li>
+								<button
+									@click="copyButton"
+									type="button"
+									class="btn btn-flat btn-lg"
+									disabled
+								>
+									<i class="mmi mmi-multiply" aria-hidden="true"></i>
+									{{ buttonText || 'large' }}
+								</button>
+							</li>
+							<li>
+								<button
+									@click="copyButton"
+									type="button"
+									class="btn btn-flat btn-lg"
+									disabled
+								>
+									{{ buttonText || 'large' }}
+									<i class="mmi mmi-multiply" aria-hidden="true"></i>
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="btn btn-flat btn-lg btn-circle"
+									disabled
+								>
+									<i class="mmi mmi-close" aria-hidden="true"></i>
+								</button>
+							</li>
+							<li>
+								<button
+									@click="copyButton"
+									type="button"
+									class="btn btn-flat btn-med"
+									disabled
+								>
+									{{ buttonText || 'medium' }}
+								</button>
+							</li>
+							<li>
+								<button
+									@click="copyButton"
+									type="button"
+									class="btn btn-flat btn-med"
+									disabled
+								>
+									<i class="mmi mmi-multiply" aria-hidden="true"></i>
+									{{ buttonText || 'medium' }}
+								</button>
+							</li>
+							<li>
+								<button
+									@click="copyButton"
+									type="button"
+									class="btn btn-flat btn-med"
+									disabled
+								>
+									{{ buttonText || 'medium' }}
+									<i class="mmi mmi-multiply" aria-hidden="true"></i>
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="btn btn-flat btn-med btn-circle"
+									disabled
+								>
+									<i class="mmi mmi-close" aria-hidden="true"></i>
+								</button>
+							</li>
+							<li>
+								<button
+									@click="copyButton"
+									type="button"
+									class="btn btn-flat btn-sm"
+									disabled
+								>
+									{{ buttonText || 'small' }}
+								</button>
+							</li>
+							<li>
+								<button
+									@click="copyButton"
+									type="button"
+									class="btn btn-flat btn-sm"
+									disabled
+								>
+									<i class="mmi mmi-multiply" aria-hidden="true"></i>
+									{{ buttonText || 'small' }}
+								</button>
+							</li>
+							<li>
+								<button
+									@click="copyButton"
+									type="button"
+									class="btn btn-flat btn-sm"
+									disabled
+								>
+									{{ buttonText || 'small' }}
+									<i class="mmi mmi-multiply" aria-hidden="true"></i>
+								</button>
+							</li>
+							<li>
+								<button
+									type="button"
+									class="btn btn-flat btn-sm btn-circle"
+									disabled
+								>
+									<i class="mmi mmi-close" aria-hidden="true"></i>
+								</button>
+							</li>
+						</ul>
 					</div>
 				</div>
 			</mm-tab-panel>
 		</mm-tabs>
-		<!-- <div class="mt-3">
+		<!-- <div class="button-section mt-3">
 			<h2>Toggle Button</h2>
 			<mm-toggle-button theme="primary" :toggle="false"
 				>Top Stories</mm-toggle-button
@@ -1729,6 +1729,12 @@
 				markdown,
 			}
 		},
+		data() {
+			return {
+				buttonText: '',
+				iconClass: '',
+			}
+		},
 		methods: {
 			copyButton(event) {
 				// console.log(event.target.innerText)
@@ -1756,12 +1762,11 @@
 								.getAttributeNames()
 								.filter((attr) => attr.includes(vueData))
 							child.removeAttribute(childVueAttr)
-							if (child.innerText) {
-								child.innerText = ''
-							}
 						} else {
 							//remove text node
-							node.removeChild(child)
+							if (!this.buttonText) {
+								node.removeChild(child)
+							}
 						}
 					}
 				}
