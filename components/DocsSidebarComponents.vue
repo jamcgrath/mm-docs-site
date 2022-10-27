@@ -67,6 +67,10 @@
 						name: 'Logo',
 						url: 'logo',
 					},
+					{
+						name: 'Toggle Button',
+						url: 'toggle-button',
+					},
 				],
 			}
 		},

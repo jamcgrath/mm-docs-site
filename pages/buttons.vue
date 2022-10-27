@@ -1668,38 +1668,13 @@
 					</div>
 				</div>
 			</mm-tab-panel>
+			<mm-tab-panel id="btn-docs-3" tab-name="Custom Buttons">
+				<div class="markdown" v-html="btnCustomMD"></div>
+			</mm-tab-panel>
+			<mm-tab-panel id="btn-docs-4" tab-name="Buttons CSS">
+				<docs-table :cssStyles="buttonStyles"></docs-table>
+			</mm-tab-panel>
 		</mm-tabs>
-		<!-- <div class="button-section mt-3">
-			<h2>Toggle Button</h2>
-			<mm-toggle-button theme="primary" :toggle="false"
-				>Top Stories</mm-toggle-button
-			>
-			<mm-toggle-button theme="secondary" :toggle="true"
-				>Top Stories</mm-toggle-button
-			>
-			<mm-toggle-button theme="primary" size="lg" :toggle="false"
-				>Top Stories</mm-toggle-button
-			>
-			<mm-toggle-button theme="secondary" size="lg" :toggle="true"
-				>Top Stories</mm-toggle-button
-			>
-			<mm-toggle-button theme="primary" :toggle="false" :round="true"
-				><i aria-hidden="true" class="mmi mmi-close"></i
-				><span class="visually-hidden">close</mm-toggle-button
-			>
-			<mm-toggle-button theme="secondary" :toggle="true" :round="true"
-				><i aria-hidden="true" class="mmi mmi-close"></i
-				><span class="visually-hidden">close</mm-toggle-button
-			>
-			<mm-toggle-button theme="primary" size="lg" :toggle="false" :round="true"
-				><i aria-hidden="true" class="mmi mmi-close"></i
-				><span class="visually-hidden">close</mm-toggle-button
-			>
-			<mm-toggle-button theme="secondary" size="lg" :toggle="true" :round="true"
-				><i aria-hidden="true" class="mmi mmi-close"></i
-				><span class="visually-hidden">close
-			</mm-toggle-button>
-		</div> -->
 	</div>
 </template>
 
@@ -1707,7 +1682,8 @@
 	import MmToggleButton from '~/components/mm-components/toggle-button/MmToggleButton.vue'
 	import MmTabs from '~/components/mm-components/tab-panel/MmTabs.vue'
 	import MmTabPanel from '~/components/mm-components/tab-panel/MmTabPanel.vue'
-	import DocsCode from '~/components/DocsCode.vue'
+	import DocsTable from '~/components/DocsTable.vue'
+	import buttonStyles from '~/mm-css/dist/json/buttons.json'
 
 	//prettier ignore
 	export default {
@@ -1716,14 +1692,16 @@
 			MmToggleButton,
 			MmTabs,
 			MmTabPanel,
-			DocsCode,
+			DocsTable,
 		},
 		async asyncData({ $getMarkdown }) {
 			const slug = 'buttons'
 			const markdown = await $getMarkdown(slug)
+			const btnCustomMD = await $getMarkdown('buttons-custom')
 			return {
 				slug,
 				markdown,
+				btnCustomMD,
 			}
 		},
 		data() {
@@ -1732,7 +1710,17 @@
 				iconClass: '',
 			}
 		},
+		computed: {
+			buttonStyles() {
+				console.log('ereer', buttonStyles)
+				return this.$mapStyles(buttonStyles)
+			},
+		},
 		methods: {
+			// filterStyles(styles) {
+			// 	console.log(styles)
+			// 	return styles
+			// },
 			copyButton(event) {
 				// console.log(event.target.innerText)
 				if (event.shiftKey) {
@@ -1772,7 +1760,7 @@
 		},
 	}
 </script>
-<style scoped>
+<style>
 	.docs-button-list {
 		display: grid;
 		grid-template-columns: auto auto auto 1fr;
@@ -1781,5 +1769,19 @@
 	.button-section {
 		--min: 380px;
 		grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+	}
+	.custom-button-1 {
+		--btn-color: orange;
+	}
+	.custom-button-2 {
+		--btn-color: var(--navy);
+		--btn-bg: var(--citrus);
+	}
+	.custom-button-3 {
+		--btn-color: var(--white);
+		--btn-bg: var(--aqua-dark);
+		--btn-border-color: var(--navy);
+		--btn-border-style: dashed;
+		--btn-border-width: 4px;
 	}
 </style>
