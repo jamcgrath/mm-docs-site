@@ -1767,9 +1767,17 @@
 		gap: var(--space-2);
 	}
 	.button-section {
-		--min: 380px;
-		grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+		--min: 415px;
+		--gap: 1rem;
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--gap);
 	}
+
+	.button-section > * {
+		flex: 1 1 var(--min);
+	}
+
 	.custom-button-1 {
 		--btn-color: orange;
 	}
