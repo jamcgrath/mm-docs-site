@@ -67,7 +67,7 @@
 									type="button"
 									class="btn btn-primary btn-lg btn-circle"
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button>
 							</li>
 							<li>
@@ -105,7 +105,7 @@
 									type="button"
 									class="btn btn-primary btn-med btn-circle"
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button>
 							</li>
 							<li>
@@ -143,7 +143,7 @@
 									type="button"
 									class="btn btn-primary btn-sm btn-circle"
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button>
 							</li>
 						</ul>
@@ -186,7 +186,7 @@
 									type="button"
 									class="btn btn-tonal btn-lg btn-circle"
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button>
 							</li>
 							<li>
@@ -224,7 +224,7 @@
 									type="button"
 									class="btn btn-tonal btn-med btn-circle"
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button>
 							</li>
 							<li>
@@ -262,7 +262,7 @@
 									type="button"
 									class="btn btn-tonal btn-sm btn-circle"
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button>
 							</li>
 						</ul>
@@ -305,7 +305,7 @@
 									type="button"
 									class="btn btn-outline btn-lg btn-circle"
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button>
 							</li>
 							<li>
@@ -343,7 +343,7 @@
 									type="button"
 									class="btn btn-outline btn-med btn-circle"
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button>
 							</li>
 							<li>
@@ -381,7 +381,7 @@
 									type="button"
 									class="btn btn-outline btn-sm btn-circle"
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button>
 							</li>
 						</ul>
@@ -424,7 +424,7 @@
 									type="button"
 									class="btn btn-flat btn-lg btn-circle"
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button>
 							</li>
 							<li>
@@ -462,7 +462,7 @@
 									type="button"
 									class="btn btn-flat btn-med btn-circle"
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button>
 							</li>
 							<li>
@@ -500,7 +500,7 @@
 									type="button"
 									class="btn btn-flat btn-sm btn-circle"
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button>
 							</li>
 						</ul>
@@ -543,7 +543,7 @@
 									type="button"
 									class="btn btn-secondary btn-lg btn-circle"
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button>
 							</li>
 							<li>
@@ -581,7 +581,7 @@
 									type="button"
 									class="btn btn-secondary btn-med btn-circle"
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button>
 							</li>
 							<li>
@@ -619,7 +619,7 @@
 									type="button"
 									class="btn btn-secondary btn-sm btn-circle"
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button>
 							</li>
 						</ul>
@@ -662,7 +662,7 @@
 									type="button"
 									class="btn btn-tonal-secondary btn-lg btn-circle"
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button>
 							</li>
 							<li>
@@ -700,7 +700,7 @@
 									type="button"
 									class="btn btn-tonal-secondary btn-med btn-circle"
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button>
 							</li>
 							<li>
@@ -738,7 +738,7 @@
 									type="button"
 									class="btn btn-tonal-secondary btn-sm btn-circle"
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button>
 							</li>
 						</ul>
@@ -781,7 +781,7 @@
 									type="button"
 									class="btn btn-outline-secondary btn-lg btn-circle"
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button>
 							</li>
 							<li>
@@ -819,7 +819,7 @@
 									type="button"
 									class="btn btn-outline-secondary btn-med btn-circle"
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button>
 							</li>
 							<li>
@@ -857,7 +857,7 @@
 									type="button"
 									class="btn btn-outline-secondary btn-sm btn-circle"
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button>
 							</li>
 						</ul>
@@ -900,7 +900,7 @@
 									type="button"
 									class="btn btn-flat-secondary btn-lg btn-circle"
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button>
 							</li>
 							<li>
@@ -938,7 +938,7 @@
 									type="button"
 									class="btn btn-flat-secondary btn-med btn-circle"
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button>
 							</li>
 							<li>
@@ -976,7 +976,7 @@
 									type="button"
 									class="btn btn-flat-secondary btn-sm btn-circle"
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button>
 							</li>
 						</ul>
@@ -1018,7 +1018,7 @@
 									 @click="copyButton" type="button"
 									class="btn btn-destructive btn-lg btn-circle"
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button> -->
 							</li>
 							<li>
@@ -1055,7 +1055,7 @@
 									 @click="copyButton" type="button"
 									class="btn btn-destructive btn-med btn-circle"
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button> -->
 							</li>
 							<li>
@@ -1092,7 +1092,7 @@
 									 @click="copyButton" type="button"
 									class="btn btn-destructive btn-sm btn-circle"
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button> -->
 							</li>
 						</ul>
@@ -1134,7 +1134,7 @@
 									 @click="copyButton" type="button"
 									class="btn btn-outline-destructive btn-lg btn-circle"
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button> -->
 							</li>
 							<li>
@@ -1171,7 +1171,7 @@
 									 @click="copyButton" type="button"
 									class="btn btn-outline-destructive btn-med btn-circle"
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button> -->
 							</li>
 							<li>
@@ -1208,7 +1208,7 @@
 									 @click="copyButton" type="button"
 									class="btn btn-outline-destructive btn-sm btn-circle"
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button> -->
 							</li>
 						</ul>
@@ -1250,7 +1250,7 @@
 									 @click="copyButton" type="button"
 									class="btn btn-flat-destructive btn-lg btn-circle"
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button> -->
 							</li>
 							<li>
@@ -1287,7 +1287,7 @@
 									 @click="copyButton" type="button"
 									class="btn btn-flat-destructive btn-med btn-circle"
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button> -->
 							</li>
 							<li>
@@ -1324,7 +1324,7 @@
 									 @click="copyButton" type="button"
 									class="btn btn-flat-destructive btn-sm btn-circle"
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button> -->
 							</li>
 						</ul>
@@ -1371,7 +1371,7 @@
 									class="btn btn-lg btn-circle"
 									disabled
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button>
 							</li>
 							<li>
@@ -1413,7 +1413,7 @@
 									class="btn btn-med btn-circle"
 									disabled
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button>
 							</li>
 							<li>
@@ -1455,7 +1455,7 @@
 									class="btn btn-sm btn-circle"
 									disabled
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button>
 							</li>
 						</ul>
@@ -1502,7 +1502,7 @@
 									class="btn btn-outline btn-lg btn-circle"
 									disabled
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button>
 							</li>
 							<li>
@@ -1529,7 +1529,7 @@
 									class="btn btn-outline btn-med btn-circle"
 									disabled
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button>
 							</li>
 							<li>
@@ -1571,7 +1571,7 @@
 									class="btn btn-outline btn-sm btn-circle"
 									disabled
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button>
 							</li>
 						</ul>
@@ -1618,7 +1618,7 @@
 									class="btn btn-flat btn-lg btn-circle"
 									disabled
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button>
 							</li>
 							<li>
@@ -1660,7 +1660,7 @@
 									class="btn btn-flat btn-med btn-circle"
 									disabled
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button>
 							</li>
 							<li>
@@ -1702,7 +1702,7 @@
 									class="btn btn-flat btn-sm btn-circle"
 									disabled
 								>
-									<i class="mmi mmi-close" aria-hidden="true"></i>
+									<i :class="['mmi', buttonIcon]" aria-hidden="true"></i>
 								</button>
 							</li>
 						</ul>
