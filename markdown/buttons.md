@@ -5,7 +5,7 @@
 The default <code class='md-code'>button</code> has no styling.
 
 ```html
-<button>default</button>
+<button type="button">default</button>
 ```
 
 <div class="border solid border-navy p-5 my-5">
@@ -20,7 +20,7 @@ The default <code class='md-code'>button</code> has no styling.
 The btn class adds minimal styling to the button. It is recommended to use this class on all buttons.
 
 ```html
-<button class="btn">btn</button>
+<button type="button" class="btn">btn</button>
 ```
 
 <div class="border solid border-navy p-5 my-5">
@@ -32,18 +32,18 @@ The btn class adds minimal styling to the button. It is recommended to use this 
 ## Btn sizes
 
 <br>
-There are three sizes for buttons. `sm`, `med` and `lg`..
+There are three sizes for buttons. <code class='md-code'>sm</code>, <code class='md-code'>med</code> and <code class='md-code'>lg</code>.
 
 ```html
-<button class="btn btn-sm btn-primary">btn-sm</button>
-<button class="btn btn-med btn-primary">btn-med</button>
-<button class="btn btn-lg btn-primary">btn-lg</button>
+<button type="button" class="btn btn-sm btn-primary">btn-sm</button>
+<button type="button" class="btn btn-med btn-primary">btn-med</button>
+<button type="button" class="btn btn-lg btn-primary">btn-lg</button>
 ```
 
 <div class="border solid border-navy p-5 my-5">
-	<button class="btn btn-sm btn-primary">btn-sm</button>
-	<button class="btn btn-med btn-primary">btn-med</button>
-	<button class="btn btn-lg btn-primary">btn-lg</button>
+	<button type="button" class="btn btn-sm btn-primary">btn-sm</button>
+	<button type="button" class="btn btn-med btn-primary">btn-med</button>
+	<button type="button" class="btn btn-lg btn-primary">btn-lg</button>
 </div>
 
 ---
@@ -109,7 +109,7 @@ To style a button you will need to add additional classes for size and color.
 ## Circle buttons
 
 <br>
-To create a circle button, add the `btn-circle` class to the button.
+To create a circle button, add the <code class='md-code'>btn-circle</code> class to the button.
 
 ```html
 <button type="button" class="btn btn-tonal btn-med btn-circle">
@@ -164,7 +164,7 @@ To make a link look like a button, add the same button classes to an anchor tag.
 ## Buttons that are not buttons
 
 <br>
-IF for some reason you need to make a button that is not a button, use the `role="button"` attribute, `tabindex="0"` and event handlers for `keydown` and `click`. Also be sure to add any other aria attributes as required.
+IF for some reason you need to make a button that is not a button, use the <code class='md-code'>role="button"</code> attribute, <code class='md-code'>tabindex="0"</code> and event handlers for <code class='md-code'>keydown</code> and <code class='md-code'>click</code>. Also be sure to add any other aria attributes as required.
 
 <br>
 <br>
