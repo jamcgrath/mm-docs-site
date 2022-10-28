@@ -1728,7 +1728,6 @@
 
 	//prettier ignore
 	export default {
-		layout: 'layout-components',
 		components: {
 			MmToggleButton,
 			MmTabs,
