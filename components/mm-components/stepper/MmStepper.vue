@@ -2,7 +2,7 @@
 	<div class="mm-stepper" role="group">
 		<button
 			class="stepper-btn btn btn-circle btn-outline"
-			@click="select(), stepDown()"
+			@click="stepDown()"
 			:disabled="disabled"
 			:aria-label="`${stepCount} step${stepCountPlural} down`"
 			tabindex="-1"
@@ -30,7 +30,7 @@
 
 		<button
 			class="stepper-btn btn size-32 btn-circle btn-outline"
-			@click="select(), stepUp()"
+			@click="stepUp()"
 			:disabled="disabled"
 			:aria-label="`${stepCount} step${stepCountPlural} up`"
 			tabindex="-1"

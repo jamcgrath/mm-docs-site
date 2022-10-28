@@ -49,12 +49,7 @@
 
 <script>
 	export default {
-		props: ['filename'],
-		computed: {
-			cssStyles() {
-				return this.$mapStyles(require(`~/mm-css/dist/json/${this.filename}`))
-			},
-		},
+		props: ['cssStyles'],
 		methods: {
 			checkValue(value) {
 				// if there are vendor prefixes the rule is an array.

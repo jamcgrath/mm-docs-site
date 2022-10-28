@@ -7,96 +7,101 @@
 					v-model="searchText"
 					@searchCleared="restoreColors"
 				></mm-input-search>
-				<div class="page-content grid-fluid gap-5">
-					<div
-						class="color-card flex flex-col"
-						v-for="(color, index) in colors"
-						:key="index"
-					>
-						<button
-							class="
-								color-value
-								w-100
-								p-4
-								cursor-pointer
-								flex-1
-								border-0
-								text-left
-								flex
-								a-items-center
-							"
-							:class="[
-								getColor(colorVars[color]),
-								getColor(colorVars[color]).length > 23 ? 'ws-nowrap' : '',
-							]"
-							:style="{ background: `var(${color})` }"
-							@click="$copyToClipboard()"
-							:data-item="colorVars[color]"
+				<template v-for="(colorGroup, index) in colors">
+					<hr v-if="Object.keys(colors)[0] !== index" :key="`hr-${index}`" />
+					<h2 v-if="index" :key="`cgt-${index}`" class="mb-2">
+						{{ `${index.toUpperCase()}` }}
+					</h2>
+					<div class="page-content gap-5 mb-5" :key="`cg-${index}`">
+						<div
+							class="color-card flex flex-col"
+							v-for="(color, index) in colorGroup"
+							:key="index"
+							:data-color="color"
 						>
-							<span class="pointer-events-none">{{ colorVars[color] }}</span>
-							<span class="copy-msg ml-2">copied</span>
-						</button>
-						<ul class="p-3 m-0" @click="$copyToClipboard($event)">
-							<li>
-								<button
-									class="
-										bg-transparent
-										border-0
-										cursor-pointer
-										flex
-										a-items-center
-										ws-nowrap
-									"
-									:data-copy="color"
-								>
-									{{ color }}
-									<span class="copy-msg ml-2">copied</span>
-								</button>
-							</li>
-							<li
-								v-if="!colorVars[color].includes('gradient')"
-								class="mt-1_5 cursor-pointer flex a-items-center ws-nowrap"
+							<div
+								class="w-100 p-1 border-0 text-center box-shadow-med body bold"
+								:class="[getColor(colorVars[color])]"
+								:style="{ background: `var(${color})` }"
 							>
-								<button
-									class="
-										bg-transparent
-										border-0
-										cursor-pointer
-										flex
-										a-items-center
-										ws-nowrap
-									"
-									:data-copy="colorNames[index]"
+								{{ `${color.slice(2).replace('-', ' ')}` }}
+							</div>
+							<ul class="p-3 m-0" @click="$copyToClipboard($event)">
+								<li
+									v-if="!colorVars[color].includes('gradient')"
+									class="mt-2 cursor-pointer flex a-items-center ws-nowrap"
 								>
-									{{ colorNames[index] }}
-									<span class="copy-msg">copied</span>
-								</button>
-							</li>
-							<li class="mt-1_5">
-								<button
-									class="
-										bg-transparent
-										border-0
-										cursor-pointer
-										flex
-										a-items-center
-										ws-nowrap
-									"
-									:data-copy="`${colorNames[index]}-bg`"
-								>
-									{{ `${colorNames[index]}-bg` }}
-									<span class="copy-msg">copied</span>
-								</button>
-							</li>
-						</ul>
+									<button
+										class="
+											bg-transparent
+											border-0
+											cursor-pointer
+											flex
+											a-items-center
+											ws-nowrap
+										"
+										:data-copy="`${color.slice(2)}`"
+									>
+										{{ `${color.slice(2)}` }}
+										<span class="copy-msg">copied</span>
+									</button>
+								</li>
+								<li class="mt-2">
+									<button
+										class="
+											bg-transparent
+											border-0
+											cursor-pointer
+											flex
+											a-items-center
+											ws-nowrap
+										"
+										:data-copy="`${color.slice(2)}-bg`"
+									>
+										{{ `${color.slice(2)}-bg` }}
+										<span class="copy-msg">copied</span>
+									</button>
+								</li>
+								<li class="mt-2 cursor-pointer flex a-items-center ws-nowrap">
+									<button
+										class="
+											bg-transparent
+											border-0
+											cursor-pointer
+											flex
+											a-items-center
+											ws-nowrap
+										"
+										:data-copy="color"
+									>
+										{{ color }}
+										<span class="copy-msg ml-2">copied</span>
+									</button>
+								</li>
+								<li class="mt-2 cursor-pointer flex a-items-center ws-nowrap">
+									<button
+										class="
+											bg-transparent
+											border-0
+											cursor-pointer
+											flex
+											a-items-center
+											ws-nowrap
+											gray-7
+										"
+										:data-copy="colorVars[color]"
+									>
+										{{ colorVars[color] }}
+										<span class="copy-msg ml-2">copied</span>
+									</button>
+								</li>
+							</ul>
+						</div>
 					</div>
-				</div>
+				</template>
 			</mm-tab-panel>
-			<mm-tab-panel id="colors-panel-2" tab-name="Docs3">
-				COLOR CSS table here
-			</mm-tab-panel>
-			<mm-tab-panel id="colors-panel-3" tab-name="CSS">
-				COLOR CSS table here
+			<mm-tab-panel id="colors-panel-2" tab-name="Docs">
+				<div v-html="markdown"></div>
 			</mm-tab-panel>
 		</mm-tabs>
 	</div>
@@ -106,11 +111,6 @@
 	import MmTabs from '~/components/mm-components/tab-panel/MmTabs.vue'
 	import MmTabPanel from '~/components/mm-components/tab-panel/MmTabPanel.vue'
 	import colorsProps from '~/mm-css/dist/json/colors-props.json'
-	import colorsAlerts from '~/mm-css/dist/json/colors-alerts.json'
-	import colorsAlertsBg from '~/mm-css/dist/json/colors-alerts-bg.json'
-	import colorsGray from '~/mm-css/dist/json/colors-gray.json'
-	import colorGrayBg from '~/mm-css/dist/json/colors-gray-bg.json'
-
 	import MmInputSearch from '~/components/mm-components/MmInputSearch.vue'
 
 	export default {
@@ -118,6 +118,14 @@
 			MmTabs,
 			MmTabPanel,
 			MmInputSearch,
+		},
+		async asyncData({ $getMarkdown, params }) {
+			const slug = 'colors'
+			const markdown = await $getMarkdown(slug)
+			return {
+				slug,
+				markdown,
+			}
 		},
 		data() {
 			return {
@@ -129,18 +137,38 @@
 			colorVarNames() {
 				return Object.keys(colorsProps[':root'])
 			},
-			colorNames() {
-				return this.colorVarNames.map((color) => color.slice(2))
-			},
 			colorVars() {
 				return colorsProps[':root']
+			},
+			colorMap() {
+				const sortedColors = new Map()
+				this.colorVarNames.forEach((item) => {
+					const color = item.slice(2).split('-')[0]
+					if (sortedColors.has(color)) {
+						const val = sortedColors.get(color)
+						val.push(item)
+						sortedColors.set(color, val)
+					} else {
+						sortedColors.set(color, [item])
+					}
+				})
+				return Object.fromEntries(sortedColors)
 			},
 		},
 		watch: {
 			searchText(newValue, oldValue) {
-				this.colors = this.colorVarNames.filter((color) =>
-					color.includes(newValue) ? `--${color}` : ''
-				)
+				console.log(this.colorMap)
+				const keys = Object.keys(this.colorMap)
+				const search = keys.filter((key) => key.includes(newValue))
+				let results = {}
+				search.forEach((s) => {
+					results[s] = this.colorMap[s]
+				})
+				if (search.length) {
+					this.colors = results
+				} else {
+					this.colors = this.colorMap
+				}
 			},
 		},
 		methods: {
@@ -154,21 +182,24 @@
 			},
 		},
 		mounted() {
-			this.colors = this.colorVarNames
+			this.colors = this.colorMap
 		},
 	}
 </script>
 
 <style>
 	.page-content {
-		--col-width: 260px;
 		display: grid;
+		grid-template-columns: repeat(auto-fill, 200px);
+		grid-template-rows: repeat(3, auto);
 	}
+
 	.color-card {
 		border: 1px solid var(--gray-4);
 		border-radius: 15px;
 		overflow: hidden;
 	}
+
 	.color-card ul {
 		min-height: 100px;
 	}

@@ -24,6 +24,18 @@
 						url: 'avatar',
 					},
 					{
+						name: 'Flag',
+						url: 'flag',
+					},
+					{
+						name: 'Newsletter',
+						url: 'newsletter',
+					},
+					{
+						name: 'Pagination',
+						url: 'pagination',
+					},
+					{
 						name: 'Stepper',
 						url: 'stepper',
 					},
@@ -34,10 +46,6 @@
 					{
 						name: 'Tabs',
 						url: 'tabs',
-					},
-					{
-						name: 'Buttons',
-						url: 'buttons',
 					},
 					{
 						name: 'Search',
@@ -62,6 +70,10 @@
 					{
 						name: 'Spinner',
 						url: 'spinner',
+           },
+           {
+						name: 'Toggle Button',
+						url: 'toggle-button',
 					},
 				],
 			}

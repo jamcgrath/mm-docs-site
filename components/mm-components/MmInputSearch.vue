@@ -86,7 +86,7 @@
 		font-size: var(--fs);
 	}
 	.c-search-input:hover {
-		--border-color: var(--hover);
+		--border-color: var(--navy-hover);
 	}
 	.c-search-input.has-focus {
 		--border-color: var(--navy-dark);
@@ -99,7 +99,7 @@
 	.search-input[disabled] {
 		cursor: not-allowed;
 	}
-	.mmi {
+	.search-icon .mmi {
 		position: relative;
 		top: 2px;
 	}
