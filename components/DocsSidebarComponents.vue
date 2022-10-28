@@ -68,6 +68,10 @@
 						url: 'logo',
 					},
 					{
+						name: 'Spinner',
+						url: 'spinner',
+           },
+           {
 						name: 'Toggle Button',
 						url: 'toggle-button',
 					},
