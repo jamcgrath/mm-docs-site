@@ -8,7 +8,8 @@
             <mm-progress max-value="5" value="5"></mm-progress>
         </div>
         <div class="flex mb-2">
-            <mm-progress-bar max-value="146" value="73"></mm-progress-bar>
+            <mm-progress-bar max-value="146" value="73" width="290"></mm-progress-bar>
+            <mm-progress-bar value="73"></mm-progress-bar>
         </div>
         <div class="flex">
             <mm-progress-bar value="73"></mm-progress-bar>

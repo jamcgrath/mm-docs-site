@@ -1,6 +1,6 @@
 <template>
     <div role="progressbar" aria-valuemin="0" :aria-valuemax="maxValue" :aria-valuenow="normalizedValue"
-        class="progress-bar" :style="{ height: height + 'px' }">
+        class="progress-bar" :style="styles">
         <div class="progress-bar-background" :style="backgroundStyle">
         </div>
         <div class="progress-bar-active" :style="{ width: activeValue + '%' }">
@@ -22,7 +22,8 @@ export default {
         height: {
             type: [Number, String],
             default: 4,
-        }
+        },
+        width: [Number, String]
     },
     computed: {
         normalizedValue() {
@@ -39,6 +40,13 @@ export default {
                 left: `${this.activeValue}%`,
                 width: `${100 - this.activeValue}%`
             }
+        },
+        styles() {
+            const styles = {
+                height: this.height + 'px'
+            }
+            if (this.width) styles.width = this.width + 'px'
+            return styles
         }
     }
 }
