@@ -1,303 +1,718 @@
 <template>
-	<div class="container">
-		<div class="mm-badge">Badge</div>
-		<div class="mm-badge mm-badge-sm">Badge sm</div>
-		<div class="mm-badge mm-badge-med">Badge med</div>
-		<div class="mm-badge">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>
-		</div>
-		<div class="mm-badge mm-badge-sm">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>
-		</div>
-		<div class="mm-badge mm-badge-med">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>
-		</div>
-		<hr />
-		<div class="mm-badge mm-badge-success">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge
-		</div>
-		<div class="mm-badge mm-badge-sm mm-badge-success">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge sm
-		</div>
-		<div class="mm-badge mm-badge-med mm-badge-success">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge med
-		</div>
-		<div class="mm-badge mm-badge-success">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge<i
-				class="mmi mmi-multiply"
-				aria-hidden="true"
-			></i>
-		</div>
-		<div class="mm-badge mm-badge-sm mm-badge-success">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge sm<i
-				class="mmi mmi-multiply"
-				aria-hidden="true"
-			></i>
-		</div>
-		<div class="mm-badge mm-badge-med mm-badge-success">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge med<i
-				class="mmi mmi-multiply"
-				aria-hidden="true"
-			></i>
-		</div>
-		<div class="mm-badge mm-badge-success">
-			Badge<i class="mmi mmi-multiply" aria-hidden="true"></i>
-		</div>
-		<div class="mm-badge mm-badge-sm mm-badge-success">
-			Badge sm<i class="mmi mmi-multiply" aria-hidden="true"></i>
-		</div>
-		<div class="mm-badge mm-badge-med mm-badge-success">
-			Badge med<i class="mmi mmi-multiply" aria-hidden="true"></i>
-		</div>
-		<hr />
-		<div class="mm-badge mm-badge-error">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge
-		</div>
-		<div class="mm-badge mm-badge-sm mm-badge-error">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge sm
-		</div>
-		<div class="mm-badge mm-badge-med mm-badge-error">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge med
-		</div>
-		<div class="mm-badge mm-badge-error">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge<i
-				class="mmi mmi-multiply"
-				aria-hidden="true"
-			></i>
-		</div>
-		<div class="mm-badge mm-badge-sm mm-badge-error">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge sm<i
-				class="mmi mmi-multiply"
-				aria-hidden="true"
-			></i>
-		</div>
-		<div class="mm-badge mm-badge-med mm-badge-error">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge med<i
-				class="mmi mmi-multiply"
-				aria-hidden="true"
-			></i>
-		</div>
-		<div class="mm-badge mm-badge-error">
-			Badge<i class="mmi mmi-multiply" aria-hidden="true"></i>
-		</div>
-		<div class="mm-badge mm-badge-sm mm-badge-error">
-			Badge sm<i class="mmi mmi-multiply" aria-hidden="true"></i>
-		</div>
-		<div class="mm-badge mm-badge-med mm-badge-error">
-			Badge med<i class="mmi mmi-multiply" aria-hidden="true"></i>
-		</div>
-		<hr />
-		<div class="mm-badge mm-badge-alert">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge
-		</div>
-		<div class="mm-badge mm-badge-sm mm-badge-alert">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge sm
-		</div>
-		<div class="mm-badge mm-badge-med mm-badge-alert">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge med
-		</div>
-		<div class="mm-badge mm-badge-alert">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge<i
-				class="mmi mmi-multiply"
-				aria-hidden="true"
-			></i>
-		</div>
-		<div class="mm-badge mm-badge-sm mm-badge-alert">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge sm<i
-				class="mmi mmi-multiply"
-				aria-hidden="true"
-			></i>
-		</div>
-		<div class="mm-badge mm-badge-med mm-badge-alert">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge med<i
-				class="mmi mmi-multiply"
-				aria-hidden="true"
-			></i>
-		</div>
-		<div class="mm-badge mm-badge-alert">
-			Badge<i class="mmi mmi-multiply" aria-hidden="true"></i>
-		</div>
-		<div class="mm-badge mm-badge-sm mm-badge-alert">
-			Badge sm<i class="mmi mmi-multiply" aria-hidden="true"></i>
-		</div>
-		<div class="mm-badge mm-badge-med mm-badge-alert">
-			Badge med<i class="mmi mmi-multiply" aria-hidden="true"></i>
-		</div>
-		<hr />
-		<div class="mm-badge mm-badge-info">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge
-		</div>
-		<div class="mm-badge mm-badge-sm mm-badge-info">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge sm
-		</div>
-		<div class="mm-badge mm-badge-med mm-badge-info">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge med
-		</div>
-		<div class="mm-badge mm-badge-info">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge<i
-				class="mmi mmi-multiply"
-				aria-hidden="true"
-			></i>
-		</div>
-		<div class="mm-badge mm-badge-sm mm-badge-info">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge sm<i
-				class="mmi mmi-multiply"
-				aria-hidden="true"
-			></i>
-		</div>
-		<div class="mm-badge mm-badge-med mm-badge-info">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge med<i
-				class="mmi mmi-multiply"
-				aria-hidden="true"
-			></i>
-		</div>
-		<div class="mm-badge mm-badge-info">
-			Badge<i class="mmi mmi-multiply" aria-hidden="true"></i>
-		</div>
-		<div class="mm-badge mm-badge-sm mm-badge-info">
-			Badge sm<i class="mmi mmi-multiply" aria-hidden="true"></i>
-		</div>
-		<div class="mm-badge mm-badge-med mm-badge-info">
-			Badge med<i class="mmi mmi-multiply" aria-hidden="true"></i>
-		</div>
-		<hr />
-		<div class="mm-badge mm-badge-warning">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge
-		</div>
-		<div class="mm-badge mm-badge-sm mm-badge-warning">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge sm
-		</div>
-		<div class="mm-badge mm-badge-med mm-badge-warning">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge med
-		</div>
-		<div class="mm-badge mm-badge-warning">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge<i
-				class="mmi mmi-multiply"
-				aria-hidden="true"
-			></i>
-		</div>
-		<div class="mm-badge mm-badge-sm mm-badge-warning">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge sm<i
-				class="mmi mmi-multiply"
-				aria-hidden="true"
-			></i>
-		</div>
-		<div class="mm-badge mm-badge-med mm-badge-warning">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge med<i
-				class="mmi mmi-multiply"
-				aria-hidden="true"
-			></i>
-		</div>
-		<div class="mm-badge mm-badge-warning">
-			Badge<i class="mmi mmi-multiply" aria-hidden="true"></i>
-		</div>
-		<div class="mm-badge mm-badge-sm mm-badge-warning">
-			Badge sm<i class="mmi mmi-multiply" aria-hidden="true"></i>
-		</div>
-		<div class="mm-badge mm-badge-med mm-badge-warning">
-			Badge med<i class="mmi mmi-multiply" aria-hidden="true"></i>
-		</div>
-		<hr />
-		<div class="mm-badge mm-badge-navy-dark">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge
-		</div>
-		<div class="mm-badge mm-badge-sm mm-badge-navy-dark">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge sm
-		</div>
-		<div class="mm-badge mm-badge-med mm-badge-navy-dark">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge med
-		</div>
-		<div class="mm-badge mm-badge-navy-dark">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge<i
-				class="mmi mmi-multiply"
-				aria-hidden="true"
-			></i>
-		</div>
-		<div class="mm-badge mm-badge-sm mm-badge-navy-dark">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge sm<i
-				class="mmi mmi-multiply"
-				aria-hidden="true"
-			></i>
-		</div>
-		<div class="mm-badge mm-badge-med mm-badge-navy-dark">
-			<i class="mmi mmi-multiply" aria-hidden="true"></i>Badge med<i
-				class="mmi mmi-multiply"
-				aria-hidden="true"
-			></i>
-		</div>
-		<div class="mm-badge mm-badge-navy-dark">
-			Badge<i class="mmi mmi-multiply" aria-hidden="true"></i>
-		</div>
-		<div class="mm-badge mm-badge-sm mm-badge-navy-dark">
-			Badge sm<i class="mmi mmi-multiply" aria-hidden="true"></i>
-		</div>
-		<div class="mm-badge mm-badge-med mm-badge-navy-dark">
-			Badge med<i class="mmi mmi-multiply" aria-hidden="true"></i>
-		</div>
+	<div class="component-test">
+		<mm-tabs>
+			<mm-tab-panel id="badge-docs-1" tab-name="Usage" :selected="true">
+				<div class="markdown" v-html="markdown"></div>
+			</mm-tab-panel>
+			<mm-tab-panel id="badge-docs-2" tab-name="Badges">
+				<div class="component-edit flex a-items-start">
+						<div class="grid">
+							<label class="label" for="badgeText">Badge Text</label>
+							<input
+								type="text"
+								id="badgeText"
+								name="badgeText"
+								v-model.trim="badgeText"
+							/>
+						</div>
+						<div class="grid ml-4">
+							<label class="label" for="badgeIcon">Icon</label>
+							<input type="text" id="badgeIcon" name="badgeIcon" v-model="badgeIcon">
+						</div>
+						<div class="grid ml-4">
+							<div class="grid">
+								<label class="label" for="badgeType">Element</label>
+								<input
+									type="text"
+									id="badgeType"
+									name="badgeType"
+									v-model.lazy="badgeEl"
+									placeholder="div span button a"
+								/>
+							</div>
+							<p class="bold caption gray-7">div, span, a, button</p>
+						</div>
+				</div>
+				<div class="component-section mt-3 grid gap-10 ">
+					<div class="m-5 border-b-2 solid border-navy pb-4">
+						<h3 class="mb-3">Default</h3>
+						<ul class="docs-component-list list-reset mt-3">
+							<li>
+								<component
+									:is="badgeEl"
+									@click.prevent="copyButton"
+									:href="badgeEl === 'a' ? '' : false"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-med"
+								>
+									{{ badgeText || 'medium' }}
+								</component>
+							</li>
+							<li>
+								<component
+									:is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' : false"
+									:href="badgeEl === 'a' ? '' : false"
+									class="badge badge-med"
+								>
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									{{ badgeText || 'medium' }}
+								</component>
+							</li>
+							<li>
+								<component
+								:href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-med"
+								>
+									{{ badgeText || 'medium' }}
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl" :type="badgeEl === 'button' ? 'button' :  false" class="badge badge-med">
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-sm"
+								>
+									{{ badgeText || 'small' }}
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-sm"
+								>
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									{{ badgeText || 'small' }}
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-sm"
+								>
+									{{ badgeText || 'small' }}
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-sm"
+								>
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+								</component>
+							</li>
+						</ul>
+					</div>
+					<div class="m-5 border-b-2 solid border-navy pb-4">
+						<h3 class="mb-3">Success</h3>
+						<ul class="docs-component-list list-reset mt-3">
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-success badge-med"
+								>
+									{{ badgeText || ' medium' }}
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-success badge-med"
+								>
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									{{ badgeText || ' medium' }}
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-success badge-med"
+								>
+									{{ badgeText || ' medium' }}
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-success badge-med "
+								>
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-success badge-sm"
+								>
+									{{ badgeText || ' small' }}
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-success badge-sm"
+								>
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									{{ badgeText || ' small' }}
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-success badge-sm"
+								>
+									{{ badgeText || ' small' }}
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-success badge-sm"
+								>
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+								</component>
+							</li>
+						</ul>
+					</div>
+					<div class="m-5 border-b-2 solid border-navy pb-4">
+						<h3 class="mb-3">Error</h3>
+						<ul class="docs-component-list list-reset mt-3">
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-error badge-med"
+								>
+									{{ badgeText || 'medium' }}
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-error badge-med"
+								>
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									{{ badgeText || 'medium' }}
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-error badge-med"
+								>
+									{{ badgeText || 'medium' }}
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-error badge-med "
+								>
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-error badge-sm"
+								>
+									{{ badgeText || 'small' }}
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-error badge-sm"
+								>
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									{{ badgeText || 'small' }}
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-error badge-sm"
+								>
+									{{ badgeText || 'small' }}
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-error badge-sm "
+								>
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+								</component>
+							</li>
+						</ul>
+					</div>
+					<div class="m-5 border-b-2 solid border-navy pb-4">
+						<h3 class="mb-3">Alert</h3>
+						<ul class="docs-component-list list-reset mt-3">
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-alert badge-med"
+								>
+									{{ badgeText || 'medium' }}
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-alert badge-med"
+								>
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									{{ badgeText || 'medium' }}
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-alert badge-med"
+								>
+									{{ badgeText || 'medium' }}
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-alert badge-med "
+								>
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-alert badge-sm"
+								>
+									{{ badgeText || 'small' }}
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-alert badge-sm"
+								>
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									{{ badgeText || 'small' }}
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-alert badge-sm"
+								>
+									{{ badgeText || 'small' }}
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-alert badge-sm"
+								>
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+								</component>
+							</li>
+						</ul>
+					</div>
+					<div class="m-5 border-b-2 solid border-navy pb-4">
+						<h3 class="mb-3">Info</h3>
+						<ul class="docs-component-list list-reset mt-3">
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-info badge-med"
+								>
+									{{ badgeText || 'medium' }}
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-info badge-med"
+								>
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									{{ badgeText || 'medium' }}
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-info badge-med"
+								>
+									{{ badgeText || 'medium' }}
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-info badge-med "
+								>
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-info badge-sm"
+								>
+									{{ badgeText || 'small' }}
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-info badge-sm"
+								>
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									{{ badgeText || 'small' }}
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-info badge-sm"
+								>
+									{{ badgeText || 'small' }}
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-info badge-sm "
+								>
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+								</component>
+							</li>
+						</ul>
+					</div>
+					<div class="m-5 border-b-2 solid border-navy pb-4">
+						<h3 class="mb-3">Warning</h3>
+						<ul class="docs-component-list list-reset mt-3">
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-warning badge-med"
+								>
+									{{ badgeText || 'medium' }}
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-warning badge-med"
+								>
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									{{ badgeText || 'medium' }}
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-warning badge-med"
+								>
+									{{ badgeText || 'medium' }}
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-warning badge-med "
+								>
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-warning badge-sm"
+								>
+									{{ badgeText || 'small' }}
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-warning badge-sm"
+								>
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									{{ badgeText || 'small' }}
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-warning badge-sm"
+								>
+									{{ badgeText || 'small' }}
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-warning badge-sm"
+								>
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+								</component>
+							</li>
+						</ul>
+					</div>
+					<div class="m-5 border-b-2 solid border-navy pb-4">
+						<h3 class="mb-3">Navy Dark</h3>
+						<ul class="docs-component-list list-reset mt-3">
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-navy-dark badge-med"
+								>
+									{{ badgeText || 'medium' }}
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-navy-dark badge-med"
+								>
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									{{ badgeText || 'medium' }}
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-navy-dark badge-med"
+								>
+									{{ badgeText || 'medium' }}
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-navy-dark badge-med "
+								>
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-navy-dark badge-sm"
+								>
+									{{ badgeText || 'small' }}
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-navy-dark badge-sm"
+								>
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									{{ badgeText || 'small' }}
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									@click.prevent="copyButton"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-navy-dark badge-sm"
+								>
+									{{ badgeText || 'small' }}
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+								</component>
+							</li>
+							<li>
+								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl"
+									:type="badgeEl === 'button' ? 'button' :  false"
+									class="badge badge-navy-dark badge-sm "
+								>
+									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+								</component>
+							</li>
+						</ul>
+					</div>
+				</div>
+			</mm-tab-panel>
+			<!-- <mm-tab-panel id="badge-docs-3" tab-name="Custom Buttons">
+				<div class="markdown" v-html="badgeCustomMD"></div>
+			</mm-tab-panel> -->
+			<mm-tab-panel id="badge-docs-4" tab-name="Badge CSS">
+				<docs-table :cssStyles="componentStyles"></docs-table>
+			</mm-tab-panel>
+		</mm-tabs>
 	</div>
 </template>
 
 <script>
-	export default {}
+	import MmTabs from '~/components/mm-components/tab-panel/MmTabs.vue'
+	import MmTabPanel from '~/components/mm-components/tab-panel/MmTabPanel.vue'
+	import DocsTable from '~/components/DocsTable.vue'
+	import badgeStyles from '~/mm-css/dist/json/badges.json'
+
+	//prettier ignore
+	export default {
+		components: {
+			MmTabs,
+			MmTabPanel,
+			DocsTable,
+		},
+		async asyncData({ $getMarkdown }) {
+			const slug = 'badges'
+			const markdown = await $getMarkdown(slug)
+			const badgeCustomMD = await $getMarkdown('buttons-custom')
+			return {
+				slug,
+				markdown,
+				badgeCustomMD,
+			}
+		},
+		data() {
+			return {
+				badgeText: '',
+				badgeIcon: 'mmi-multiply',
+				badgeEl: 'span',
+			}
+		},
+		computed: {
+			componentStyles() {
+				return this.$mapStyles(badgeStyles)
+			},
+		},
+		methods: {
+			copyButton(event) {
+				// console.log(event.target.innerText)
+				if (event.shiftKey) {
+					return this.$copyToClipboard(event.target.classList.value)
+				}
+
+				const clone = event.target.cloneNode(true)
+				const cleanedNode = this.cleanVueAttr(clone)
+				this.$copyToClipboard(cleanedNode.outerHTML, false)
+			},
+			cleanVueAttr(node) {
+				const vueData = 'data-v-'
+				const vueAttr = node
+					.getAttributeNames()
+					.filter((attr) => attr.includes(vueData))
+				node.removeAttribute(vueAttr)
+
+				//remove data-v-* from child nodes and innertext
+				if (node.hasChildNodes) {
+					const nodeChildren = node.childNodes
+					for (const child of nodeChildren) {
+						if (child.nodeType === 1) {
+							const childVueAttr = child
+								.getAttributeNames()
+								.filter((attr) => attr.includes(vueData))
+							child.removeAttribute(childVueAttr)
+						} else {
+							//remove text node
+							if (!this.badgeText) {
+								node.removeChild(child)
+							}
+						}
+					}
+				}
+				return node
+			},
+		},
+	}
 </script>
-
 <style>
-	/* .mm-badge {
-			--badge-padding: var(--space-1) var(--space-2);
-			--badge-fs: var(--overline-small);
-			--badge-lh: 1;
-			--badge-fw: var(--fw-7);
-			--badge-ls: var(--ls-1);
-			--badge-gap: var(--space-1);
-			--badge-border-radius: var(--space-1);
-			--badge-bg: var(--gray-3);
-			--bagdge-color: var(--gray-7);
+	.docs-component-list {
+		display: grid;
+		grid-template-columns: auto auto auto 1fr;
+		gap: var(--space-2);
+	}
+	.component-section {
+		--min: 415px;
+		--gap: 1rem;
+		display: flex;
+		flex-wrap: wrap;
+		gap: var(--gap);
+	}
 
-			background: var(--badge-bg);
-			color: var(--badge-color);
-			padding: var(--badge-padding);
-			font-size: var(--badge-fs);
-			line-height: var(--badge-lh);
-			font-weight: var(--badge-fw);
-			gap: var(--badge-gap);
-			border-radius: var(--badge-border-radius);
-			display: inline-flex;
-			align-items: center;
-			justify-content: center;
-			text-transform: uppercase;
-		}
-		.mm-badge i {
-			position: relative;
-			top: 1px;
-		}
-		.mm-badge-sm {
-			--badge-fs: var(--overline-small);
-		}
-		.mm-badge-med {
-			--badge-fs: var(--overline-big);
-		}
-		.mm-badge-success {
-			--badge-color: var(--success);
-			--badge-bg: var(--success-light);
-		}
-		.mm-badge-error {
-			--badge-color: var(--error);
-			--badge-bg: var(--error-light);
-		}
-		.mm-badge-alert {
-			--badge-color: var(--alert);
-			--badge-bg: var(--alert-light);
-		}
-		.mm-badge-info {
-			--badge-color: var(--info);
-			--badge-bg: var(--info-light);
-		}
-		.mm-badge-warning {
-			--badge-color: var(--warning);
-			--badge-bg: var(--warning-light);
-		}
-		.mm-badge-navy-dark {
-			--badge-color: var(--white);
-			--badge-bg: var(--navy-dark);
-		} */
+	.component-section > * {
+		flex: 1 1 var(--min);
+	}
+	.docs-component-list .badge {
+		cursor: pointer;
+	}
+	.custom-component-1 {
+		--badge-color: orange;
+	}
+	.custom-component-2 {
+		--badge-color: var(--navy);
+		--badge-bg: var(--citrus);
+	}
+	.custom-component-3 {
+		--badge-color: var(--white);
+		--badge-bg: var(--aqua-dark);
+		--badge-border-color: var(--navy);
+		--badge-border-style: dashed;
+		--badge-border-width: 4px;
+	}
 </style>

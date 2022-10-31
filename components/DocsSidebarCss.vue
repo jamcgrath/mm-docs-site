@@ -49,7 +49,7 @@
 			return {
 				excludeList: [
 					'typography',
-					'colors',
+					'colors-',
 					'media-queries',
 					'badges',
 					'buttons',

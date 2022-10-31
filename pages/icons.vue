@@ -98,7 +98,7 @@
 				this.icons = this.iconNames
 			},
 			copyIconClass(icon) {
-				this.$copyToClipboard(`mm-${icon}`, event)
+				this.$copyToClipboard(`mmi-${icon}`, event)
 			},
 			copyIconCode(icon) {
 				const code = `<i class="mmi mmi-${icon}" aria-hidden="true"></i>`

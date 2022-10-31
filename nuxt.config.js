@@ -1,3 +1,4 @@
+var hljs = require('highlight.js')
 export default {
   // Target: https://go.nuxtjs.dev/config-target
   target: 'server',
@@ -15,7 +16,12 @@ export default {
   },
 
   // Global CSS: https://go.nuxtjs.dev/config-css
-  css: ['~/mm-css/dist/styles.css', '~/mm-icons/dist/mm-icons.css'],
+  css: [
+    '~/mm-css/dist/styles.css',
+    '~/mm-icons/dist/mm-icons.css',
+    '~/node_modules/highlight.js/styles/a11y-dark.css',
+    '~/assets/css/main.css',
+  ],
 
   // Plugins to run before rendering page: https://go.nuxtjs.dev/config-plugins
   plugins: [
@@ -40,13 +46,6 @@ export default {
     // https://go.nuxtjs.dev/pwa
     '@nuxtjs/pwa',
     '@nuxtjs/markdownit',
-    [
-      'nuxt-highlightjs',
-      {
-        style: 'monokai',
-        tabReplace: '  ',
-      },
-    ],
   ],
 
   // Axios module configuration: https://go.nuxtjs.dev/config-axios
@@ -62,17 +61,30 @@ export default {
   // Build Configuration: https://go.nuxtjs.dev/config-build
   build: {
     postcss: null,
-    transpile: [
-      'nanoid',
-    ],
+    transpile: ['nanoid'],
   },
 
   markdownit: {
-    preset: 'default',
-    linkify: true,
+    injected: true,
+    html: true,
     breaks: true,
     runtime: true,
-    // use: ['markdown-it-div', 'markdown-it-attrs'],
+    use: ['markdown-it-highlightjs'],
+    highlight: function (str, lang) {
+      if (lang && hljs.getLanguage(lang)) {
+        try {
+          return (
+            '<pre class="hljs p-3 br-8"><code>' +
+            hljs.highlight(lang, str, true).value +
+            '</code></pre>'
+          )
+        } catch (__) {}
+      }
+
+      return (
+        '<pre class="hljs"><code>' + md.utils.escapeHtml(str) + '</code></pre>'
+      )
+    },
   },
   googleFonts: {
     families: {

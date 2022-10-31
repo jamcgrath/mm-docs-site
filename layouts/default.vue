@@ -7,11 +7,10 @@
 		<main class="p-3">
 			<Nuxt />
 		</main>
-		<!-- <docs-off-canvas-sidebar class="default-offcanvas">
-		</docs-off-canvas-sidebar> -->
 		<docs-footer class="default-footer z-10 fixed b-0 w-100"></docs-footer>
 	</div>
 </template>
+
 <script>
 	import DocsSidebar from '~/components/DocsSidebarCss.vue'
 	import DocsOffCanvasSidebar from '~/components/DocsOffCanvasSidebar.vue'
@@ -27,65 +26,6 @@
 		},
 	}
 </script>
+
 <style>
-	.default-wrap {
-		display: grid;
-		grid-template-columns: 200px 1fr;
-		grid-template-rows: auto 1fr auto;
-		grid-template-areas:
-			'header header'
-			'sidebar content'
-			'footer footer';
-		grid-gap: 0;
-		height: 100vh;
-	}
-	.default-header {
-		grid-area: header;
-	}
-	.default-sidebar {
-		grid-area: sidebar;
-		height: calc(100% - 80px);
-	}
-	.default-footer {
-		grid-area: footer;
-	}
-	main,
-	.default-offcanvas {
-		grid-area: content;
-		border-right: 1px solid var(--gray-5);
-		padding-bottom: ;
-	}
-	main {
-		border-left: 1px solid var(--gray-5);
-		padding-bottom: 40px;
-	}
-	.default-offcanvas {
-		justify-self: end;
-		position: absolute;
-		transform: translateX(100%);
-		transition: transform 200ms ease;
-		will-change: transform;
-	}
-	.default-wrap:has(> .open-ocs) .default-offcanvas {
-		transform: translateX(0);
-	}
-
-	.copy-msg {
-		display: none;
-		font-size: var(--caption);
-		font-family: 'IBM Plex Mono', monospace;
-		font-weight: normal;
-		font-style: normal;
-		text-decoration-line: underline;
-		text-underline-offset: 4px;
-		text-transform: lowercase;
-		letter-spacing: normal;
-	}
-	.copied > .copy-msg {
-		display: inline-block;
-	}
-
-	a {
-		color: var(--pressed);
-	}
 </style>

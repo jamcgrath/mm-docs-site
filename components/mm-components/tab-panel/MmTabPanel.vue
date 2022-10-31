@@ -13,11 +13,14 @@
 	export default {
 		data() {
 			return {
-				isSelected: false,
+				isSelected: null,
 			}
 		},
 		mounted() {
 			this.isSelected = this.$el.hasAttribute('selected')
+			if (this.isSelected) {
+				this.$el.removeAttribute('selected')
+			}
 		},
 	}
 </script>
