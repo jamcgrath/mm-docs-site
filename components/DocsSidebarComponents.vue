@@ -68,13 +68,17 @@
 						url: 'logo',
 					},
 					{
-						name: 'Spinner',
-						url: 'spinner',
-           },
-           {
 						name: 'Toggle Button',
 						url: 'toggle-button',
 					},
+					{
+						name: 'Spinner',
+						url: 'spinner',
+					},
+					{
+						name: 'Progress Indicator',
+						url: 'progressIndicator',
+					}
 				],
 			}
 		},
