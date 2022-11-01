@@ -24,6 +24,14 @@
 						url: 'avatar',
 					},
 					{
+						name: 'Flag',
+						url: 'flag',
+					},
+					{
+						name: 'Newsletter',
+						url: 'newsletter',
+					},
+					{
 						name: 'Pagination',
 						url: 'pagination',
 					},
@@ -62,6 +70,18 @@
 					{
 						name: 'Divider',
 						url: 'divider',
+					},
+					{
+						name: 'Toggle Button',
+						url: 'toggle-button',
+					},
+					{
+						name: 'Spinner',
+						url: 'spinner',
+					},
+					{
+						name: 'Progress Indicator',
+						url: 'progressIndicator',
 					},
 				],
 			}
