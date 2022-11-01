@@ -22,6 +22,9 @@
 						<li class="mt-3 pl-2">
 							<nuxt-link to="/buttons">Buttons</nuxt-link>
 						</li>
+						<li class="mt-3 pl-2">
+							<nuxt-link to="/divider">Divider</nuxt-link>
+						</li>
 					</ul>
 				</li>
 				<li class="mt-6">
@@ -53,6 +56,7 @@
 					'media-queries',
 					'badges',
 					'buttons',
+					'divider',
 				],
 			}
 		},

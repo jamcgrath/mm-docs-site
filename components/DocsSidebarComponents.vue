@@ -68,10 +68,6 @@
 						url: 'logo',
 					},
 					{
-						name: 'Divider',
-						url: 'divider',
-					},
-					{
 						name: 'Toggle Button',
 						url: 'toggle-button',
 					},
