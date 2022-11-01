@@ -78,6 +78,10 @@
 					{
 						name: 'Progress Indicator',
 						url: 'progressIndicator',
+					},
+					{
+						name: 'Tooltip',
+						url: 'tooltip',
 					}
 				],
 			}
