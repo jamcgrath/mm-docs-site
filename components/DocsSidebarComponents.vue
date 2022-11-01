@@ -78,7 +78,7 @@
 					{
 						name: 'Progress Indicator',
 						url: 'progressIndicator',
-					}
+					},
 				],
 			}
 		},
