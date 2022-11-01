@@ -3,13 +3,6 @@
 		<mm-tab-panel id="divider-tab-3" tab-name="Usage">
 			<div class="markdown" v-html="markdown"></div>
 		</mm-tab-panel>
-		<mm-tab-panel id="divider-tab-1" tab-name="Divider" selected="true">
-			<div class="div-thin mt-5"></div>
-			<div class="div-thick mt-5"></div>
-			<div class="div-zigzag mt-5"></div>
-			<div class="div-wavy mt-5"></div>
-			<div class="div-dot mt-5"></div>
-		</mm-tab-panel>
 		<mm-tab-panel id="divider-tab-2" tab-name="CSS">
 			<docs-table :cssStyles="divStyles"></docs-table>
 		</mm-tab-panel>
