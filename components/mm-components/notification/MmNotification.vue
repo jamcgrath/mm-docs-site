@@ -50,6 +50,7 @@ export default {
             const value = this.value
             if (type === 'notification') {
                 if (format === 'podcast') return `<span class="label_med navy-dark">${value.name}</span> new episode: ${value.title}`
+                return `<span class="label_med navy-dark">${value.name}</span>: ${value.title}`
             } else if (type === 'author') {
                 let label = {
                     article: 'article by',

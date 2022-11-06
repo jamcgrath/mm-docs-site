@@ -21,6 +21,8 @@
             link: '#',
             read: true
         }"></mm-notification>
+        <mm-notification type="notification" format="article" @click="notif" @menu="menu"></mm-notification>
+
     </div>
 </template>
 <script>
