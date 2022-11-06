@@ -4,7 +4,7 @@
 			<li v-show="pages > 5 && model > 3">
 				<button
 					type="button"
-					class="btn btn-pagination btn-med box-shadow-med arrow"
+					class="btn btn-pagination btn-med shadow-med arrow"
 					@click="model--"
 				>
 					<i aria-hidden="true" class="mmi mmi-chevron-left icon"></i>
@@ -14,7 +14,7 @@
 			<li v-show="pages > 5 && model > 5">
 				<button
 					type="button"
-					class="btn btn-med box-shadow-med medium ml-1 btn-pagination"
+					class="btn btn-med shadow-med medium ml-1 btn-pagination"
 					@click="model -= 5"
 				>
 					...<span class="visually-hidden">Previous 5 pages</span>
@@ -23,7 +23,7 @@
 			<li v-for="i in paginator" :key="'btn' + i">
 				<button
 					type="button"
-					class="btn btn-med box-shadow-med medium m-1 width-40 btn-pagination"
+					class="btn btn-med shadow-med medium m-1 width-40 btn-pagination"
 					:class="{
 						'btn-secondary': i + 1 === model,
 						'gray-7': i + 1 !== model,
@@ -38,7 +38,7 @@
 			<li v-show="pages > 5 && model < pages - 5">
 				<button
 					type="button"
-					class="btn btn-med box-shadow-med medium mr-1 btn-pagination"
+					class="btn btn-med shadow-med medium mr-1 btn-pagination"
 					@click="model += 5"
 				>
 					...<span class="visually-hidden">Next 5 pages</span>
@@ -47,7 +47,7 @@
 			<li v-show="pages > 5 && model < pages - 3">
 				<button
 					type="button"
-					class="btn btn-pagination btn-med box-shadow-med arrow"
+					class="btn btn-pagination btn-med shadow-med arrow"
 					@click="model++"
 				>
 					<i aria-hidden="true" class="mmi mmi-chevron-right icon"></i
