@@ -7,23 +7,32 @@
 		@mouseleave="hideTooltip"
 	>
 		<slot></slot>
-		<span
-			role="tooltip"
-			:id="tooltipId"
-			class="
-				tooltip-label
-				pointer-events-none
-				label
-				br-8
-				py-1
-				px-3
-				text-center
-				shadow-med
-			"
-			:class="[`tooltip-${theme}`, `tooltip-${align}`]"
-			ref="tooltipLabel"
-			>{{ tooltipText }}</span
-		>
+
+		<transition name="tooltip-fade" @enter="enter">
+			<span
+				v-if="displayTooltip"
+				role="tooltip"
+				:id="tooltipId"
+				class="
+					tooltip-label
+					pointer-events-none
+					label
+					br-8
+					py-1
+					px-3
+					text-center
+					shadow-med
+					z-10
+				"
+				:class="[
+					`tooltip-${theme}`,
+					alignment,
+					!displayTooltip ? 'tooltip-label-hide' : '',
+				]"
+				ref="tooltip"
+				>{{ tooltipText }}</span
+			>
+		</transition>
 	</div>
 </template>
 
@@ -34,7 +43,7 @@
 				type: String,
 				default: 'tooltip-hint',
 			},
-			showTip: {
+			tooltipVisible: {
 				type: Boolean,
 				default: false,
 			},
@@ -50,105 +59,123 @@
 				type: String,
 				default: 'bottom' /*  Possible values - bottom, top, left , right*/,
 			},
-			offset: {
-				type: String,
-				default: 'none' /*  Possible values - none, left , right */,
-			},
 		},
 		data() {
 			return {
-				showLabel: true,
-				toolTipEl: null,
+				displayTooltip: false,
+				slotEl: null,
 			}
 		},
 		computed: {
-			tooltipTheme() {
-				if (this.theme == 'light') {
-					return 'tooltip-theme-light'
+			alignment() {
+				//create the alignment class only for top and bottom.
+				// left and right can't be created with only css so they are not necessary
+				if (this.align === 'top' || this.align === 'bottom') {
+					return `tooltip-${this.align}`
 				}
-			},
-			computedClass() {
-				var className = ''
-				if (this.theme == 'dark') {
-					className = 'tooltip-pad-dark'
-				} else {
-					className = 'tooltip-pad-white'
-				}
-				if (this.offset == 'none') {
-					if (this.align == 'up') {
-						className = className + ' tooltip-pad-up'
-					} else if (this.align == 'left') {
-						className = className + ' tooltip-pad-left'
-					} else if (this.align == 'right') {
-						className = className + ' tooltip-pad-right'
-					} else {
-						className = className + ' tooltip-pad-down'
-					}
-				} else {
-					var finalEnd = ''
-					var defaultAlign = 'down'
-					if (this.align != 'up' && this.align != 'down') {
-						finalEnd = this.offset + '-' + defaultAlign
-					} else {
-						finalEnd = this.offset + '-' + this.align
-					}
-					className = className + ' ' + 'tooltip-pad-' + finalEnd
-				}
-				console.log('Final classname = ' + className)
-				return className
 			},
 		},
-		beforeMount() {},
 		mounted() {
-			// this.showLabel = false
-			this.toolTipEl = this.$el.firstChild
-			this.toolTipEl.setAttribute('aria-describedby', this.tooltipId)
-			document.addEventListener('keydown', this.globalEsc)
-			if (this.align === 'left' || this.align === 'right') {
-				this.positionToolTip()
+			if (this.tooltipVisible) {
+				this.displayTooltip = true
 			}
+			this.slotEl = this.$el.firstChild
+			this.slotEl.setAttribute('aria-describedby', this.tooltipId)
+			document.addEventListener('keydown', this.globalEsc)
 		},
 		beforeDestroy() {
 			document.removeEventListener('keydown', this.globalEsc)
 		},
 		methods: {
-			positionToolTip() {
-				console.log('yolo')
-				const { width: labelWidth, height: labelHeight } =
-					this.$refs.tooltipLabel.getBoundingClientRect()
-				const { width: ttElWidth, height: ttElHeight } =
-					this.toolTipEl.getBoundingClientRect()
+			enter(el, done) {
+				if (this.align === 'left' || this.align === 'right') {
+					this.positionTooltip(el)
+				}
+				this.checkXPosition(el)
+				this.checkYPosition(el)
+				this.checkToOffset(el)
+
+				done()
+			},
+			checkYPosition(el) {
+				const winHeight = window.innerHeight
+				const { top, bottom } = el.getBoundingClientRect()
+
+				if (top < 0) {
+					el.classList.replace('tooltip-top', 'tooltip-bottom')
+				}
+				if (bottom > winHeight) {
+					el.classList.replace('tooltip-bottom', 'tooltip-top')
+				}
+			},
+			checkXPosition(el) {
+				const winWidth = window.innerWidth
+				const { left, right } = el.getBoundingClientRect()
+				if (left < 0 || right > winWidth) {
+					this.removeAllCssProps(el)
+					el.classList.add('tooltip-bottom')
+				}
+			},
+			checkToOffset(el) {
+				const winWidth = window.innerWidth
+				const {
+					width: slotElWidth,
+					left: slotElLeft,
+					right: slotElRight,
+				} = this.slotEl.getBoundingClientRect()
+				const {
+					width: elWidth,
+					right: elRight,
+					left: elLeft,
+				} = el.getBoundingClientRect()
+
+				if (elWidth > slotElWidth) {
+					if (elLeft < 0) {
+						el.style.setProperty('--tooltip-translateX', `translateX(0)`)
+						el.style.setProperty('--tooltip-x', '0')
+					}
+					if (elRight > winWidth) {
+						const slotWindowOffset = winWidth - slotElRight
+						const elOffsetWidth = elWidth - slotElWidth
+						const elWindowOffset = winWidth - elRight
+						const offset = slotWindowOffset + elOffsetWidth + elWindowOffset
+
+						el.style.setProperty(
+							'--tooltip-translateX',
+							`translateX(-${offset}px)`
+						)
+					}
+				}
+			},
+			positionTooltip(el) {
+				const tooltipWidth = el.getBoundingClientRect().width
+				const slotElWidth = this.slotEl.getBoundingClientRect().width
 				const triangleHeight = 9
+
 				let x = 0
-				let y = 0
 				switch (this.align) {
 					case 'left':
-						x = (labelWidth + triangleHeight) * -1
-						y = ttElHeight / 2 - labelHeight / 2
+						x = (tooltipWidth + triangleHeight) * -1
 						break
 					case 'right':
-						x = ttElWidth + triangleHeight
-						y = ttElHeight / 2 - labelHeight / 2
+						x = slotElWidth + triangleHeight
 						break
 				}
-				console.log('here', x, y)
-				this.$refs.tooltipLabel.style.setProperty(
-					'--tooltip-pos',
-					`translate(${x}px, -50%)`
-				)
-				// console.log(x, y)
-				// this.toolTipPos = {
-				// 	x,
-				// 	y,
-				// }
+				el.style.setProperty('--tooltip-translateX', `translateX(${x}px)`)
+				el.style.setProperty('--tooltip-translateY', `translateY(-50%)`)
+				el.style.setProperty('--tooltip-y', '50%')
+			},
+			removeAllCssProps(el) {
+				//style.removeProperty will remove item at a specified index
+				while (el.style.item(0)) {
+					el.style.removeProperty(el.style.item(0))
+				}
 			},
 			showTooltip() {
-				this.showLabel = true
-				// const { x, y } = this.toolTipPos
-				// this.$nextTick(() => this.positionToolTip())
+				this.displayTooltip = true
 			},
 			hideTooltip() {
-				this.showLabel = false
+				this.displayTooltip = false
 			},
 			globalEsc(e) {
 				if ((e.keyCode || e.which) === 27) {
@@ -160,52 +187,59 @@
 </script>
 
 <style scoped>
+	.tooltip-fade-enter-active,
+	.tooltip-fade-leave-active {
+		opacity: 1;
+	}
+
+	.tooltip-fade-enter-from,
+	.tooltip-fade-leave-to {
+		opacity: 0;
+	}
 	.tooltip-label {
 		--tooltip-bg: var(--navy-dark);
 		--tooltip-color: var(--white);
-		--tooltip-pos: translate(-50%);
-		--tooltip-top: calc(100% + 9px);
-		--tooltip-left: 50%;
+		--tooltip-translateX: translateX(0);
+		--tooltip-translateY: translateY(0);
+		--tooltip-x: 0;
+		--tooltip-y: 0;
 		position: absolute;
 		background: var(--tooltip-bg);
 		color: var(--tooltip-color);
 		line-height: var(--lh-125);
 		display: inline-block;
-		left: var(--tooltip-left);
-		top: var(--tooltip-top);
-		transform: var(--tooltip-pos);
+		left: var(--tooltip-x);
+		top: var(--tooltip-y);
+		transform: var(--tooltip-translateX) var(--tooltip-translateY);
 		max-width: 200px;
 		width: max-content;
-		display: hidden;
-		opacity: 1;
 	}
+
 	.tooltip-bottom {
-		top: var(--tooltip-top);
+		--tooltip-y: calc(100% + 9px);
+		--tooltip-x: 50%;
+		--tooltip-translateX: translateX(-50%);
 	}
 	.tooltip-top {
+		--tooltip-y: calc(100% + 9px);
+		--tooltip-x: 50%;
+		--tooltip-translateX: translateX(-50%);
 		top: unset;
-		bottom: var(--tooltip-top);
+		bottom: var(--tooltip-y);
 	}
-
-	.tooltip-right,
-	.tooltip-left {
-		--tooltip-left: 0;
-		--tooltip-top: 50%;
-	}
-
 	/* .tooltip-label:before {
-																						  content: '';
-																						  display: block;
-																						  width: 0;
-																						  height: 0;
-																						  position: absolute;
-																						  border-style: solid;
-																						  border-width: 9px 5.195px 0 5.195px;
-																						  border-color: var(--navy-dark) transparent transparent transparent;
-																						  bottom: -9px;
-																						  left: 50%;
-																						  transform: translateX(-50%);
-																						} */
+																																																																																																																																											content: '';
+																																																																																																																																											display: block;
+																																																																																																																																											width: 0;
+																																																																																																																																											height: 0;
+																																																																																																																																											position: absolute;
+																																																																																																																																											border-style: solid;
+																																																																																																																																											border-width: 9px 5.195px 0 5.195px;
+																																																																																																																																											border-color: var(--navy-dark) transparent transparent transparent;
+																																																																																																																																											bottom: -9px;
+																																																																																																																																											left: 50%;
+																																																																																																																																											transform: translateX(-50%);
+																																																																																																																																										} */
 
 	.tooltip-light {
 		--tooltip-bg: var(--white);
