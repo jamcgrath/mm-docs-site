@@ -1,13 +1,14 @@
 <template>
-    <div role="link" class="mm-notification flex p-4" :class="getBackgroundColor">
+    <div class="mm-notification flex p-4" :class="getBackgroundColor">
         <div class="mm-notification-display flex mr-4" v-if="checkIfImageOrIcon === 'icon'" :class="getBorderRadius">
             <i aria-hidden="true" class="m-auto mmi" :class="value.display"></i>
         </div>
         <img v-if="checkIfImageOrIcon === 'image'" alt="" :src="value.display" class="mm-notification-display flex mr-4"
             :class="getBorderRadius" :style="{ 'background-color': 'var(--gray-4)' }" />
         <div class="flex flex-1 flex-col">
-            <a :href="value.link" class="mm-notification-title label gray-6 regular" v-html="titleValue"
-                @click="$emit('click', value)"></a>
+            <nuxt-link class="mm-notification-title label gray-6 regular" :to="value.to" v-html="titleValue"
+                @click.native="$emit('click', value)">
+            </nuxt-link>
             <div class="flex a-items-center gray-5 overline-small_semibold">
                 <div class="flex-1">{{ value.time }}</div>
                 <button class="btn btn-sm btn-circle a-self-end relative" :class="getBackgroundColor" aria-label="menu"
@@ -37,7 +38,7 @@ export default {
                     title: 'sit amet, consectetur adipiscing elit.',
                     name: 'Lorem ipsum',
                     time: '2 hours ago',
-                    link: '#',
+                    to: '#',
                     read: false
                 }
             }
@@ -48,23 +49,26 @@ export default {
             const type = this.type.toLowerCase()
             const format = this.format.toLowerCase()
             const value = this.value
-            if (type === 'notification') {
-                if (format === 'podcast') return `<span class="label_med navy-dark">${value.name}</span> new episode: ${value.title}`
-                return `<span class="label_med navy-dark">${value.name}</span>: ${value.title}`
-            } else if (type === 'author') {
+
+            if (type === 'notification' && format === 'podcast') {
+                return `<span class="label_med navy-dark">${value.name}</span> new episode: ${value.title}`
+            } else if (type === 'author' && ['article', 'podcast', 'video'].includes(format)) {
                 let label = {
                     article: 'article by',
                     podcast: 'podcast with',
                     video: 'video featuring'
                 }
                 return `New ${label[format]} <span class="label_med navy-dark">${value.name}</span>: ${value.title}`
-            } else if (type === 'subscriber') {
+            } else if (type === 'subscriber' && ['article', 'podcast', 'video'].includes(format)) {
                 let label = {
                     article: 'article by',
                     podcast: 'episode of',
                 }
-                if (format === 'video') return `New subscriber exclusive video: <span class="label_med navy-dark">${value.title}</span>`
-                return `New subscriber exclusive ${label[format]} <span class="label_med navy-dark">${value.name}</span>: ${value.title}`
+                if (format === 'video') {
+                    return `New subscriber exclusive video: <span class="label_med navy-dark">${value.title}</span>`
+                } else {
+                    return `New subscriber exclusive ${label[format]} <span class="label_med navy-dark">${value.name}</span>: ${value.title}`
+                }
             } else {
                 return `<span class="label_med navy-dark">${value.name}</span>: ${value.title}`
             }
@@ -76,9 +80,12 @@ export default {
         getBorderRadius() {
             const type = this.type.toLowerCase()
             const format = this.format.toLowerCase()
-            if ((type === 'notification' && format === 'podcast') ||
-                (type === 'subscriber' && (format === 'podcast' || format === 'video'))) return 'br-12'
-            return 'br-100'
+
+            if (['notification', 'subscriber'].includes(type) && ['podcast', 'video'].includes(format)) {
+                return 'br-12'
+            } else {
+                return 'br-100'
+            }
         },
         getBackgroundColor() {
             return this.value.read ? 'gray-2-bg' : 'grape-10-bg'
@@ -109,7 +116,6 @@ export default {
     display: -webkit-box;
     -webkit-box-orient: vertical;
 }
-
 
 .mm-notification .mm-notification-title::after {
     content: '';

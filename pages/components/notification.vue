@@ -6,21 +6,28 @@
             title: 'The episode title goes here',
             name: 'Mamamia Out Loud',
             time: '2 hours ago',
-            link: 'https://mamamia.com.au/',
+            to: '#',
             read: true
         }" @click="notif" @menu="menu"></mm-notification>
-        <mm-notification type="subscriber" format="podcast" @click="notif" @menu="menu"></mm-notification>
-        <mm-notification type="subscriber" format="video" @click="notif" @menu="menu"></mm-notification>
-        <mm-notification type="author" format="video" @click="notif" @menu="menu"></mm-notification>
-        <mm-notification type="author" format="article" @click="notif" @menu="menu"></mm-notification>
-        <mm-notification type="author" format="podcast" @click="notif" @menu="menu" :value="{
+        <mm-notification type="subscriber" format="podcast" :value="{
             display: 'https://picsum.photos/201/300',
             title: 'Dolor sit amet, consectetur adipiscing elit. Sed ullamcorper pharetra felis eget cursus. Pellentesque ipsum massa, posuere ut tellus ac, luctus varius sapien. Nulla eget ligula sed elit tincidunt pulvinar. ',
             name: 'Lorem ipsum',
             time: '3 hours ago',
-            link: '#',
+            to: '#',
             read: true
-        }"></mm-notification>
+        }" @click="notif" @menu="menu"></mm-notification>
+        <mm-notification type="subscriber" format="video" :value="{
+            display: 'mmi-video',
+            title: 'The episode title goes here',
+            name: 'Mamamia Out Loud',
+            time: '2 hours ago',
+            to: '/components/notification',
+            read: false
+        }" @click="notif" @menu="menu"></mm-notification>
+        <mm-notification type="author" format="video" @click="notif" @menu="menu"></mm-notification>
+        <mm-notification type="author" format="article" @click="notif" @menu="menu"></mm-notification>
+        <mm-notification type="author" format="podcast" @click="notif" @menu="menu"></mm-notification>
     </div>
 </template>
 <script>
@@ -33,7 +40,7 @@ export default {
     },
     methods: {
         notif(value) {
-            value.read = true;
+            value.read = true
         },
         menu() {
             alert('...')
