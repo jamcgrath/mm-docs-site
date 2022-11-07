@@ -79,6 +79,10 @@
 						name: 'Progress Indicator',
 						url: 'progressIndicator',
 					},
+					{
+						name: 'Notification',
+						url: 'notification',
+					},
 				],
 			}
 		},
