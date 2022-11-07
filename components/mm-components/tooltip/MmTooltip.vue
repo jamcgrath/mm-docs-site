@@ -132,19 +132,14 @@
 				if (elWidth > slotElWidth) {
 					if (elLeft < 0) {
 						el.style.setProperty('--tooltip-translateX', `translateX(0)`)
-						el.style.setProperty('--tooltip-x', '0')
 					}
 					if (elRight > winWidth) {
-						const slotWindowOffset = winWidth - slotElRight
-						const elOffsetWidth = elWidth - slotElWidth
-						const elWindowOffset = winWidth - elRight
-						const offset = slotWindowOffset + elOffsetWidth + elWindowOffset
-
 						el.style.setProperty(
 							'--tooltip-translateX',
-							`translateX(-${offset}px)`
+							`translateX(-${elWidth - slotElWidth}px)`
 						)
 					}
+					el.style.setProperty('--tooltip-x', '0')
 				}
 			},
 			positionTooltip(el) {
@@ -228,18 +223,18 @@
 		bottom: var(--tooltip-y);
 	}
 	/* .tooltip-label:before {
-																																																																																																																																											content: '';
-																																																																																																																																											display: block;
-																																																																																																																																											width: 0;
-																																																																																																																																											height: 0;
-																																																																																																																																											position: absolute;
-																																																																																																																																											border-style: solid;
-																																																																																																																																											border-width: 9px 5.195px 0 5.195px;
-																																																																																																																																											border-color: var(--navy-dark) transparent transparent transparent;
-																																																																																																																																											bottom: -9px;
-																																																																																																																																											left: 50%;
-																																																																																																																																											transform: translateX(-50%);
-																																																																																																																																										} */
+																																																																																																																																																	content: '';
+																																																																																																																																																	display: block;
+																																																																																																																																																	width: 0;
+																																																																																																																																																	height: 0;
+																																																																																																																																																	position: absolute;
+																																																																																																																																																	border-style: solid;
+																																																																																																																																																	border-width: 9px 5.195px 0 5.195px;
+																																																																																																																																																	border-color: var(--navy-dark) transparent transparent transparent;
+																																																																																																																																																	bottom: -9px;
+																																																																																																																																																	left: 50%;
+																																																																																																																																																	transform: translateX(-50%);
+																																																																																																																																																} */
 
 	.tooltip-light {
 		--tooltip-bg: var(--white);
