@@ -100,6 +100,10 @@ export default {
     min-height: 85px;
 }
 
+.mm-notification:hover {
+    background-color: var(--grape-20);
+}
+
 .mm-notification-display {
     position: relative;
     width: 52px;
