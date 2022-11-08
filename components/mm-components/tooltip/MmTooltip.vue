@@ -8,22 +8,14 @@
 	>
 		<slot></slot>
 
-		<transition name="tooltip-fade" @enter="enter">
+		<transition name="tooltip-fade" @enter="enter" @leave="check">
 			<span
+				@mouseenter="userOnTooltip"
+				@mouseleave="userOffTooltip"
 				v-if="displayTooltip"
 				role="tooltip"
 				:id="tooltipId"
-				class="
-					tooltip-label
-					pointer-events-none
-					label
-					br-8
-					py-1
-					px-3
-					text-center
-					shadow-med
-					z-10
-				"
+				class="tooltip-label label br-8 py-1 px-3 text-center shadow-med z-10"
 				:class="[
 					`tooltip-${theme}`,
 					alignment,
@@ -64,6 +56,7 @@
 			return {
 				displayTooltip: false,
 				slotEl: null,
+				mouseOnTooltip: false,
 			}
 		},
 		computed: {
@@ -87,6 +80,22 @@
 			document.removeEventListener('keydown', this.globalEsc)
 		},
 		methods: {
+			userOnTooltip() {
+				this.mouseOnTooltip = true
+			},
+			userOffTooltip() {
+				if (!this.displayTooltip) {
+					this.mouseOnTooltip = false
+				}
+				// this.hideTooltip()
+			},
+			check() {
+				// if (this.mouseOnTooltip) {
+				// 	this.displayTooltip = true
+				// } else {
+				// 	this.hideTooltip()
+				// }
+			},
 			enter(el, done) {
 				if (this.align === 'left' || this.align === 'right') {
 					this.positionTooltip(el)
@@ -159,6 +168,9 @@
 				}
 			},
 			showTooltip() {
+				if (this.mouseOnTooltip) {
+					this.mouseOnTooltip = false
+				}
 				this.displayTooltip = true
 			},
 			hideTooltip() {
@@ -174,6 +186,12 @@
 </script>
 
 <style scoped>
+	.tooltip-label:before {
+		content: '';
+		position: absolute;
+		inset: -9px;
+		z-index: -1;
+	}
 	.tooltip-fade-enter-active,
 	.tooltip-fade-leave-active {
 		opacity: 1;

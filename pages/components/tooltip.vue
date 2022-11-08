@@ -104,10 +104,10 @@
 	.main-sidebar,
 	.default-footer,
 	.default-header {
-		display: none !important;
+		/* display: none !important; */
 	}
 	.default-wrap {
-		display: block !important;
+		/* display: block !important; */
 		padding: 0;
 	}
 	.tooltip-container-gray {
