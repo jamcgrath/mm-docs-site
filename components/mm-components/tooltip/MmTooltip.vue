@@ -214,19 +214,6 @@
 		top: unset;
 		bottom: var(--tooltip-y);
 	}
-	/* .tooltip-label:before {
-																																																																																																																																																					content: '';
-																																																																																																																																																					display: block;
-																																																																																																																																																					width: 0;
-																																																																																																																																																					height: 0;
-																																																																																																																																																					position: absolute;
-																																																																																																																																																					border-style: solid;
-																																																																																																																																																					border-width: 9px 5.195px 0 5.195px;
-																																																																																																																																																					border-color: var(--navy-dark) transparent transparent transparent;
-																																																																																																																																																					bottom: -9px;
-																																																																																																																																																					left: 50%;
-																																																																																																																																																					transform: translateX(-50%);
-																																																																																																																																																				} */
 
 	.tooltip-light {
 		--tooltip-bg: var(--white);

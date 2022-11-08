@@ -67,7 +67,7 @@
 			<mm-tooltip
 				tooltipId="tooltipId6"
 				theme="light"
-				align="bottom"
+				align="right"
 				tooltipText="Showing what a longer tooltip would show in this view"
 			>
 				<button class="btn btn-primary btn-lg information-button">test</button>
@@ -77,7 +77,7 @@
 			<mm-tooltip
 				tooltipId="tooltipId7"
 				theme="light"
-				align="bottom"
+				align="left"
 				tooltipText="Showing what a longer tooltip would show in this view"
 			>
 				<button class="btn btn-primary btn-lg information-button">I</button>
