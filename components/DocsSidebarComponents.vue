@@ -80,9 +80,17 @@
 						url: 'progressIndicator',
 					},
 					{
+						name: 'Tooltip',
+						url: 'tooltip',
+					},
+					{
+						name: 'Notification',
+						url: 'notification',
+					},
+					{
 						name: 'Textarea',
 						url: 'textarea',
-					},
+					}
 				],
 			}
 		},
