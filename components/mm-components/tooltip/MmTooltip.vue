@@ -40,6 +40,7 @@
 				default: false,
 			},
 			tooltipText: {
+				/* should never have a link or focusable element */
 				type: String,
 				default: 'This is the help text in the tooltip',
 			},
@@ -49,7 +50,7 @@
 			},
 			align: {
 				type: String,
-				default: 'bottom' /*  Possible values - bottom, top, left , right*/,
+				default: 'bottom' /*  Possible values - bottom, top, left, right */,
 			},
 		},
 		data() {
@@ -61,8 +62,8 @@
 		},
 		computed: {
 			alignment() {
-				//create the alignment class only for top and bottom.
-				// left and right can't be created with only css so they are not necessary
+				// create the alignment class only for top and bottom.
+				// left and right can't be created with only css so don't need to check
 				if (this.align === 'top' || this.align === 'bottom') {
 					return `tooltip-${this.align}`
 				}

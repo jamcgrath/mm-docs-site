@@ -101,15 +101,6 @@
 </script>
 
 <style>
-	.main-sidebar,
-	.default-footer,
-	.default-header {
-		/* display: none !important; */
-	}
-	.default-wrap {
-		/* display: block !important; */
-		padding: 0;
-	}
 	.tooltip-container-gray {
 		background-color: var(--gray-2);
 		height: 100vh;
