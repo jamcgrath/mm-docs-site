@@ -82,7 +82,11 @@
 					{
 						name: 'Tooltip',
 						url: 'tooltip',
-					}
+					},
+					{
+						name: 'Notification',
+						url: 'notification',
+					},
 				],
 			}
 		},

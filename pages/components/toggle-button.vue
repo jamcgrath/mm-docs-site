@@ -1,5 +1,5 @@
 <template>
-	<div class="button-section mt-3">
+	<div class="toggle-button-section mt-3">
 		<h2>Toggle Button</h2>
 		<mm-toggle-button theme="primary" :toggle="false"
 			>Top Stories</mm-toggle-button
