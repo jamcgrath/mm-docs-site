@@ -3,7 +3,7 @@
 		<!-- <div class="absolute">
 			<mm-tooltip
 				tooltipId="tooltipId1"
-				theme="light"
+				theme="dark"
 				align="top"
 				tooltipText="Showing what happens when the tooltip has lots of text"
 			>
@@ -16,7 +16,7 @@
 		<div class="absolute">
 			<mm-tooltip
 				tooltipId="tooltipId2"
-				theme="light"
+				theme="dark"
 				align="left"
 				tooltipText="Showing what happens when the tooltip has lots of text"
 			>
@@ -29,7 +29,7 @@
 		<div class="absolute">
 			<mm-tooltip
 				tooltipId="tooltipId3"
-				theme="light"
+				theme="dark"
 				align="right"
 				tooltipText="Showing what happens when the tooltip has lots of text"
 			>
@@ -42,7 +42,7 @@
 		<div>
 			<mm-tooltip
 				tooltipId="tooltipId4"
-				theme="light"
+				theme="dark"
 				align="bottom"
 				tooltipText="Showing what"
 			>
@@ -54,7 +54,7 @@
 		<div class="mt-20">
 			<mm-tooltip
 				tooltipId="tooltipId5"
-				theme="light"
+				theme="dark"
 				align="top"
 				tooltipText="Showing what"
 			>
@@ -66,7 +66,7 @@
 		<div class="mt-20 absolute" style="right: 20px">
 			<mm-tooltip
 				tooltipId="tooltipId6"
-				theme="light"
+				theme="dark"
 				align="right"
 				tooltipText="Showing what a longer tooltip would show in this view"
 			>
