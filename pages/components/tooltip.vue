@@ -1,44 +1,5 @@
 <template>
 	<div class="tooltip-container-gray relative">
-		<!-- <div class="absolute">
-			<mm-tooltip
-				tooltipId="tooltipId1"
-				theme="dark"
-				align="top"
-				tooltipText="Showing what happens when the tooltip has lots of text"
-			>
-				<button class="btn btn-primary btn-lg information-button">
-					I should show a tooltip
-				</button>
-			</mm-tooltip>
-		</div>
-		<hr />
-		<div class="absolute">
-			<mm-tooltip
-				tooltipId="tooltipId2"
-				theme="dark"
-				align="left"
-				tooltipText="Showing what happens when the tooltip has lots of text"
-			>
-				<button class="btn btn-primary btn-lg information-button">
-					I should show a tooltip
-				</button>
-			</mm-tooltip>
-		</div>
-		<hr />
-		<div class="absolute">
-			<mm-tooltip
-				tooltipId="tooltipId3"
-				theme="dark"
-				align="right"
-				tooltipText="Showing what happens when the tooltip has lots of text"
-			>
-				<button class="btn btn-primary btn-lg information-button">
-					I should show a tooltip
-				</button>
-			</mm-tooltip>
-		</div>
-		<hr /> -->
 		<div>
 			<mm-tooltip
 				tooltipId="tooltipId4"
