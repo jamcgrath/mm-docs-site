@@ -8,7 +8,7 @@
 	>
 		<slot></slot>
 
-		<transition name="tooltip-fade" @enter="enter" @leave="check">
+		<transition name="tooltip-fade" @enter="enter">
 			<span
 				@mouseenter="userOnTooltip"
 				@mouseleave="userOffTooltip"
@@ -87,14 +87,6 @@
 				if (!this.displayTooltip) {
 					this.mouseOnTooltip = false
 				}
-				// this.hideTooltip()
-			},
-			check() {
-				// if (this.mouseOnTooltip) {
-				// 	this.displayTooltip = true
-				// } else {
-				// 	this.hideTooltip()
-				// }
 			},
 			enter(el, done) {
 				if (this.align === 'left' || this.align === 'right') {
@@ -171,10 +163,17 @@
 				if (this.mouseOnTooltip) {
 					this.mouseOnTooltip = false
 				}
-				this.displayTooltip = true
+				setTimeout(() => {
+					this.displayTooltip = true
+				}, 300)
 			},
 			hideTooltip() {
-				this.displayTooltip = false
+				setTimeout(() => {
+					this.displayTooltip = false
+					if (this.mouseOnTooltip) {
+						this.mouseOnTooltip = false
+					}
+				}, 300)
 			},
 			globalEsc(e) {
 				if ((e.keyCode || e.which) === 27) {
