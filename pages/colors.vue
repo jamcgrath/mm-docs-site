@@ -20,7 +20,7 @@
 							:data-color="color"
 						>
 							<div
-								class="w-100 p-1 border-0 text-center box-shadow-med body bold"
+								class="w-100 p-1 border-0 text-center shadow-med body bold"
 								:class="[getColor(colorVars[color])]"
 								:style="{ background: `var(${color})` }"
 							>
