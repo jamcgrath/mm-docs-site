@@ -142,8 +142,4 @@
 		width: 32px;
 		height: 32px;
 	}
-	.stepper-btn i {
-		position: relative;
-		top: 2px;
-	}
 </style>
