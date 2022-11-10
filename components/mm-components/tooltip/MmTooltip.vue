@@ -169,6 +169,9 @@
 				}
 			},
 			showTooltip() {
+				if (this.tooltipVisible) {
+					return
+				}
 				if (this.mouseOnTooltip) {
 					this.mouseOnTooltip = false
 				}
@@ -177,6 +180,9 @@
 				}, 300)
 			},
 			hideTooltip() {
+				if (this.tooltipVisible) {
+					return
+				}
 				setTimeout(() => {
 					this.displayTooltip = false
 					if (this.mouseOnTooltip) {

@@ -13,7 +13,7 @@
 			class="search-input border-0 mr-2 w-100"
 			type="search"
 			placeholder="Search"
-			@value="value"
+			:value="value"
 			@input="$emit('input', $event.target.value)"
 			@focus="focusInput"
 			@blur="blurInput"
