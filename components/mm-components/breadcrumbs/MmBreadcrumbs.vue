@@ -16,7 +16,7 @@
 					{{ item.text }}
 				</nuxt-link>
 				<div
-					class="px-1_5 breadcrumbs-item-divider"
+					class="px-2 breadcrumbs-item-divider"
 					v-if="index < items.length - 1"
 				>
 					<i
@@ -102,7 +102,6 @@
 	.breadcrumbs-item {
 		display: inline-flex;
 		align-items: center;
-		padding: 3px;
 	}
 
 	.breadcrumbs-item-link {
@@ -111,6 +110,8 @@
 		border-radius: 8px;
 		padding: 4px 12px;
 		height: 28px;
+		display: inline-flex;
+		align-items: center;
 	}
 
 	.breadcrumbs-item-link:hover {
@@ -142,5 +143,10 @@
 
 	.mmi-slash:before {
 		content: '\002f';
+	}
+	.breadcrumbs-item-divider .mmi-slash {
+		font-size: 1.5rem;
+		position: releative;
+		top: -4px;
 	}
 </style>
