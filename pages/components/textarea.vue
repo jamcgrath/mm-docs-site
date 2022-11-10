@@ -1,9 +1,11 @@
 <template>
     <div>
         <mm-textarea class="mb-4" label="Label"></mm-textarea>
-        <mm-textarea class="mb-4 success" label="Label"></mm-textarea>
-        <mm-textarea class="mb-4 error" label="Label"></mm-textarea>
+        <mm-textarea class="mb-4" label="Label" required></mm-textarea>
         <mm-textarea class="mb-4" label="Label" disabled></mm-textarea>
+        <mm-textarea class="mb-4" label="Label" :resize="false"></mm-textarea>
+        <mm-textarea class="mb-4" label="Label" :resize="false" required></mm-textarea>
+        <mm-textarea class="mb-4" label="Label" :resize="false" disabled></mm-textarea>
     </div>
 </template>
 
@@ -17,7 +19,3 @@ export default {
     }
 }
 </script>
-
-<style scoped>
-
-</style>
