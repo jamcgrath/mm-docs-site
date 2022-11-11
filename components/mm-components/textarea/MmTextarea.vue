@@ -93,8 +93,8 @@
 </script>
 <style scoped>
 	/* if classNames prop is present .mm-textarea-label will not exist. .
-						mm-textarea-label's purpose is for custom styling of a label
-					*/
+		mm-textarea-label's purpose is for custom styling of a label
+	*/
 	.mm-textarea-label {
 		color: var(--textarea-label-color);
 		font-size: var(--textarea-label-fs);
@@ -104,6 +104,7 @@
 		letter-spacing: var(--textarea-label-ls);
 		line-height: var(--textarea-lh);
 	}
+
 	.mm-textarea {
 		--textarea-max-width: auto;
 		--textarea-min-height: 120px;
@@ -127,19 +128,20 @@
 		--textarea-border-color: var(--gray-4);
 	}
 
-	[disabled].mm-textarea:hover {
-		--textarea-border-color: transparent !important;
-	}
 	.mm-textarea:disabled {
 		color: var(--gray-6) !important;
 		background: var(--gray-4) !important;
 	}
 
-	.mm-textarea[data-state='success'] {
+	[disabled].mm-textarea:hover {
+		--textarea-border-color: transparent !important;
+	}
+
+	[data-state='success'].mm-textarea {
 		--textarea-border-color: var(--success);
 	}
 
-	.mm-textarea[data-state='error'] {
+	[data-state='error'].mm-textarea {
 		--textarea-border-color: var(--error);
 	}
 </style>
