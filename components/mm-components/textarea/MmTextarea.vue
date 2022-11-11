@@ -137,11 +137,11 @@
 		--textarea-border-color: transparent !important;
 	}
 
-	[data-state='success'].mm-textarea {
+	[data-valid='success'].mm-textarea {
 		--textarea-border-color: var(--success);
 	}
 
-	[data-state='error'].mm-textarea {
+	[data-valid='error'].mm-textarea {
 		--textarea-border-color: var(--error);
 	}
 </style>
