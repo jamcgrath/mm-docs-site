@@ -14,12 +14,7 @@
 					class="v-align-baseline my-3"
 				>
 					<td class="p-3">
-						<mm-tooltip
-							:id="$nanoid()"
-							:tooltipText="tooltipText"
-							align="top"
-							:tooltipVisible="true"
-						>
+						<mm-tooltip :id="$nanoid()" :tooltipText="tooltipText" align="top">
 							<button
 								class="
 									btn
