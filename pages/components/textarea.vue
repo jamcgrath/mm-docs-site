@@ -6,6 +6,7 @@
 			label="Label"
 			:showLabel="true"
 			classNames="citrus title-1"
+			placeHolder="place holder for textarea"
 		></mm-textarea>
 		<mm-textarea class="mb-4" label="Label" required></mm-textarea>
 		<mm-textarea class="mb-4" label="Label" disabled></mm-textarea>

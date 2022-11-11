@@ -25,12 +25,14 @@
 			:value="value"
 			:name="name"
 			@input="$emit('input', $event.target.value)"
+			:data-valid="valid"
 		></textarea>
 	</div>
 </template>
 <script>
 	export default {
 		props: {
+			id: String,
 			showLabel: {
 				type: Boolean,
 				default: false,
@@ -46,6 +48,7 @@
 			minlength: [Number, String],
 			maxlength: [Number, String],
 			autocomplete: {
+				//off or on
 				type: String,
 				default: 'off',
 			},
@@ -70,6 +73,11 @@
 				default: true,
 			},
 			name: String,
+			valid: {
+				// Success, Error
+				type: String,
+				default: '',
+			},
 		},
 		data() {
 			return {
@@ -77,7 +85,7 @@
 			}
 		},
 		mounted() {
-			if (!this.$el.hasAttribute('id')) {
+			if (!this.id) {
 				this.randomId = this.$nanoid()
 			}
 		},
@@ -121,11 +129,13 @@
 		background: var(--gray-4) !important;
 	}
 
-	.mm-textarea:valid {
+	.mm-textarea:valid,
+	.mm-textarea[data-state='success'] {
 		--textarea-border-color: var(--success);
 	}
 
-	.mm-textarea:invalid {
+	.mm-textarea:invalid,
+	.mm-textarea[data-state='error'] {
 		--textarea-border-color: var(--error);
 	}
 </style>
