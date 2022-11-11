@@ -13,23 +13,30 @@
 					:key="index"
 					class="v-align-baseline my-3"
 				>
-					<td class="pb-3">
-						<button
-							class="
-								btn-custom
-								p-4
-								cursor-pointer
-								flex-1
-								border-0
-								text-left
-								flex
-								a-items-center
-								bg-transparent
-							"
-							@click="$copyToClipboard(rules[0])"
+					<td class="p-3">
+						<mm-tooltip
+							:id="$nanoid()"
+							:tooltipText="tooltipText"
+							align="top"
+							:tooltipVisible="true"
 						>
-							{{ rules[0] }} <span class="copy-msg">copied</span>
-						</button>
+							<button
+								class="
+									btn
+									p-4
+									cursor-pointer
+									flex-1
+									border-0
+									text-left
+									flex
+									a-items-center
+									bg-transparent
+								"
+								@click="copyToClipboard(rules[0])"
+							>
+								{{ rules[0] }}
+							</button>
+						</mm-tooltip>
 					</td>
 					<td class="pb-3">
 						<ul class="list-reset">
@@ -48,13 +55,27 @@
 </template>
 
 <script>
+	import MmToolTip from '~/components/mm-components/tooltip/MmTooltip.vue'
+
 	export default {
+		components: { MmToolTip },
 		props: ['cssStyles'],
+		data() {
+			return {
+				defaultText: 'Click to copy',
+				tooltipText: 'Click to copy',
+			}
+		},
 		methods: {
 			checkValue(value) {
 				// if there are vendor prefixes the rule is an array.
 				// get the last value of the array which is un-prefixed
 				return Array.isArray(value) ? value[value.length - 1] : value
+			},
+			copyToClipboard(txt) {
+				this.$copyToClipboard(txt)
+				this.tooltipText = 'copied'
+				setTimeout(() => (this.tooltipText = this.defaultText), 1000)
 			},
 		},
 	}
