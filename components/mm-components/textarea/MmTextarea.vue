@@ -1,100 +1,131 @@
 <template>
-  <textarea
-    class="mm-textarea label"
-    :class="{ 'resize-none': !resize }"
-    :style="styles"
-    :form="form"
-    :aria-label="label"
-    :placeholder="label"
-    :required="required"
-    :disabled="disabled"
-    :readonly="readonly"
-    :minlength="minlength"
-    :maxlength="maxlength"
-    :autocomplete="autocomplete"
-    :spellcheck="spellcheck"
-    :value="value"
-    @input="$emit('input', $event.target.value)"
-  ></textarea>
+	<div>
+		<label
+			:for="id || randomId"
+			:class="[
+				{ 'visually-hidden': !showLabel },
+				classNames && showLabel ? classNames : 'mm-textarea-label',
+			]"
+			ref="textareaLabel"
+			>{{ label }}</label
+		>
+		<textarea
+			:id="id || randomId"
+			class="mm-textarea label br-12"
+			:class="{ 'resize-none': !resize }"
+			:form="form"
+			:placeholder="placeHolder"
+			:required="required"
+			:disabled="disabled"
+			:readonly="readonly"
+			:minlength="minlength"
+			:maxlength="maxlength"
+			:autocomplete="autocomplete"
+			:spellcheck="spellcheck"
+			:value="value"
+			:name="name"
+			@input="$emit('input', $event.target.value)"
+		></textarea>
+	</div>
 </template>
 <script>
-export default {
-  props: {
-    value: String,
-    form: String,
-    label: String,
-    minlength: [Number, String],
-    maxlength: [Number, String],
-    autocomplete: {
-      type: String,
-      default: 'off',
-    },
-    spellcheck: {
-      type: [Boolean, String],
-      default: 'default',
-    },
-    required: {
-      type: Boolean,
-      default: false,
-    },
-    disabled: {
-      type: Boolean,
-      default: false,
-    },
-    readonly: {
-      type: Boolean,
-      default: false,
-    },
-    resize: {
-      type: Boolean,
-      default: true,
-    },
-    width: [Number, String],
-    height: {
-      type: [Number, String],
-      default: 120,
-    },
-  },
-  computed: {
-    styles() {
-      const styles = {}
-      if (this.width) styles.width = this.width + 'px'
-      if (this.height) styles.height = this.height + 'px'
-      return styles
-    },
-  },
-}
+	export default {
+		props: {
+			showLabel: {
+				type: Boolean,
+				default: false,
+			},
+			classNames: String,
+			value: String,
+			form: String,
+			label: {
+				type: String,
+				required: true,
+			},
+			placeHolder: String,
+			minlength: [Number, String],
+			maxlength: [Number, String],
+			autocomplete: {
+				type: String,
+				default: 'off',
+			},
+			spellcheck: {
+				type: [Boolean, String],
+				default: 'default',
+			},
+			required: {
+				type: Boolean,
+				default: false,
+			},
+			disabled: {
+				type: Boolean,
+				default: false,
+			},
+			readonly: {
+				type: Boolean,
+				default: false,
+			},
+			resize: {
+				type: Boolean,
+				default: true,
+			},
+			name: String,
+		},
+		data() {
+			return {
+				randomId: null,
+			}
+		},
+		mounted() {
+			if (!this.$el.hasAttribute('id')) {
+				this.randomId = this.$nanoid()
+			}
+		},
+	}
 </script>
 <style scoped>
-.mm-textarea {
-  width: 100%;
-  min-height: 120px;
-  border-radius: 12px;
-  color: var(--navy-dark);
-  border: 1px solid var(--gray-4);
-  padding: 12px 16px 0 16px;
-}
+	.mm-textarea-label {
+		color: var(--textarea-label-color);
+		font-size: var(--textarea-label-fs);
+		font-weight: var(--textarea-label-fw);
+		padding: var(--textarea-label-padding);
+		margin: var(--textarea-label-margin);
+		letter-spacing: var(--textarea-label-ls);
+		line-height: var(--textarea-lh);
+	}
+	.mm-textarea {
+		--textarea-max-width: auto;
+		--textarea-min-height: 120px;
+		--textarea-border-color: var(--gray-4);
+		--textarea-color: var(--navy-dark);
+		width: 100%;
+		max-width: var(--textarea-max-width);
+		min-height: var(--textarea-min-height);
+		color: var(--textarea-color);
+		border: 1px solid var(--textarea-border-color);
+		padding: var(--space-3) var(--space-4) 0 var(--space-4);
+	}
 
-.mm-textarea:hover {
-  border: 1px solid var(--navy-hover);
-}
+	.mm-textarea:hover {
+		--textarea-border-color: var(--navy-hover);
+	}
 
-.mm-textarea:focus,
-.mm-textarea:active {
-  outline: none;
-  border: 1px solid var(--gray-4);
-}
+	.mm-textarea:focus,
+	.mm-textarea:active {
+		outline: none;
+		--textarea-border-color: var(--gray-4);
+	}
 
-.mm-textarea:disabled {
-  color: var(--gray-6);
-  background: var(--gray-4);
-}
+	.mm-textarea:disabled {
+		color: var(--gray-6) !important;
+		background: var(--gray-4) !important;
+	}
 
-.mm-textarea:valid {
-  border: 1px solid var(--success);
-}
+	.mm-textarea:valid {
+		--textarea-border-color: var(--success);
+	}
 
-.mm-textarea:invalid {
-  border: 1px solid var(--error);
-}
+	.mm-textarea:invalid {
+		--textarea-border-color: var(--error);
+	}
 </style>
