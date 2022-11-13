@@ -133,15 +133,17 @@
 
 				if (width > slotWidth) {
 					if (left < 0) {
+						console.log(el)
 						el.style.setProperty('--tooltip-translateX', `translateX(0)`)
+						el.style.setProperty('--tooltip-x', '0')
 					}
 					if (right > winWidth) {
 						el.style.setProperty(
 							'--tooltip-translateX',
 							`translateX(-${width - slotWidth}px)`
 						)
+						el.style.setProperty('--tooltip-x', '0')
 					}
-					el.style.setProperty('--tooltip-x', '0')
 				}
 			},
 			positionTooltip(el) {
@@ -169,6 +171,9 @@
 				}
 			},
 			showTooltip() {
+				if (this.tooltipVisible) {
+					return
+				}
 				if (this.mouseOnTooltip) {
 					this.mouseOnTooltip = false
 				}
@@ -177,6 +182,9 @@
 				}, 300)
 			},
 			hideTooltip() {
+				if (this.tooltipVisible) {
+					return
+				}
 				setTimeout(() => {
 					this.displayTooltip = false
 					if (this.mouseOnTooltip) {

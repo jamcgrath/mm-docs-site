@@ -88,6 +88,10 @@
 						url: 'notification',
 					},
 					{
+						name: 'Textarea',
+						url: 'textarea',
+					},
+					{
 						name: 'Radio',
 						url: 'radio',
 					},
