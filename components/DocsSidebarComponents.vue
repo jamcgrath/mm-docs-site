@@ -87,6 +87,10 @@
 						name: 'Notification',
 						url: 'notification',
 					},
+					{
+						name: 'Radio',
+						url: 'radio',
+					},
 				],
 			}
 		},
