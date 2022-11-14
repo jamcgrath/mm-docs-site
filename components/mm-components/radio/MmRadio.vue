@@ -59,11 +59,13 @@ export default {
 </script>
 <style scoped>
 .mm-radio {
-  display: flex;
-  gap: var(--space-2);
+  display: grid;
+  grid-template-columns: 1em auto;
+  gap: 8px;
 }
 
 .mm-radio-input[type='radio'] {
+  background: var(--white);
   border-radius: 100%;
   border: 1px solid var(--gray-6);
   -webkit-appearance: none;
@@ -85,7 +87,7 @@ export default {
 .mm-radio-input[type='radio'][disabled]:checked {
   background: var(--gray-6);
   border: 7px solid var(--gray-3);
-  outline: 1px solid var(--gray-6);
+  box-shadow: 0 0 0 1px var(--gray-6);
 }
 
 .mm-radio-input[type='radio']:focus-visible {
