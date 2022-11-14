@@ -2,9 +2,9 @@
 	<div>
 		<label for="search" class="visually-hidden">Search</label>
 		<div
-			class="c-search-input flex a-items-center br-12"
+			class="mm-search-input flex a-items-center br-12"
 			:class="{ disabled }"
-			ref="cSearchInput"
+			ref="mmSearchInput"
 		>
 			<div class="search-icon mr-2">
 				<i class="mmi mmi-search navy-dark" aria-hidden="true"></i>
@@ -62,42 +62,42 @@
 				this.$emit('searchCleared')
 			},
 			focusInput() {
-				console.log(this.$refs.cSearchInput)
-				this.$refs.cSearchInput.classList.add('has-focus')
+				console.log(this.$refs.mmSearchInput)
+				this.$refs.mmSearchInput.classList.add('has-focus')
 			},
 			blurInput() {
-				this.$refs.cSearchInput.classList.remove('has-focus')
+				this.$refs.mmSearchInput.classList.remove('has-focus')
 			},
 		},
 	}
 </script>
 
 <style scoped>
-	.c-search-input {
-		--border-color: var(--gray-4);
-		--bg: var(--white);
-		--color: var(--navy-dark);
-		--placeholder-color: var(--gray-7);
-		--fs: var(--body);
-		--padding: 12px 14px;
+	.mm-search-input {
+		--input-border-color: var(--gray-4);
+		--input-bg: var(--white);
+		--input-color: var(--navy-dark);
+		--input-placeholder-color: var(--gray-7);
+		--input-fs: var(--body);
+		--input-padding: 12px 14px;
 
-		border: 1px solid var(--border-color);
-		background: var(--bg);
-		padding: var(--padding);
-		color: var(--color);
-		font-size: var(--fs);
+		border: 1px solid var(--input-border-color);
+		background: var(--input-bg);
+		padding: var(--input-padding);
+		color: var(--input-color);
+		font-size: var(--input-fs);
 	}
-	.c-search-input:hover {
-		--border-color: var(--navy-hover);
+	.mm-search-input:hover {
+		--input-border-color: var(--navy-hover);
 	}
-	.c-search-input.has-focus {
-		--border-color: var(--navy-dark);
+	.mm-search-input.has-focus {
+		--input-border-color: var(--navy-dark);
 	}
-	.c-search-input.disabled {
-		--bg: var(--gray-3);
-		--border-color: var(--gray-4);
+	.mm-search-input.disabled {
+		--input-bg: var(--gray-3);
+		--input-border-color: var(--gray-4);
 	}
-	.c-search-input.disabled,
+	.mm-search-input.disabled,
 	.search-input[disabled] {
 		cursor: not-allowed;
 	}
@@ -109,7 +109,7 @@
 		color: inherit;
 	}
 	.search-input::placeholder {
-		color: var(--placeholder-color);
+		color: var(--input-placeholder-color);
 	}
 	.search-input:focus {
 		outline: none;
