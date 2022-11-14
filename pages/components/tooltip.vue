@@ -18,7 +18,6 @@
 				theme="dark"
 				align="top"
 				tooltipText="Showing what"
-				:tooltipVisible="true"
 			>
 				<button class="btn btn-primary btn-lg information-button">
 					I should show a tooltip
@@ -31,7 +30,6 @@
 				theme="dark"
 				align="right"
 				tooltipText="Showing what a longer tooltip would show in this view"
-				:tooltipVisible="true"
 			>
 				<button class="btn btn-primary btn-lg information-button">test</button>
 			</mm-tooltip>
@@ -42,7 +40,6 @@
 				theme="dark"
 				align="left"
 				tooltipText="Showing what a longer tooltip would show in this view"
-				:tooltipVisible="true"
 			>
 				<button class="btn btn-primary btn-lg information-button">I</button>
 			</mm-tooltip>
