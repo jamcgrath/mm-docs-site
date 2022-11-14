@@ -115,4 +115,8 @@
 	#search::-webkit-search-cancel-button {
 		display: none;
 	}
+
+	.search-icon .mmi {
+		--mmi-top-safari: 3px;
+	}
 </style>

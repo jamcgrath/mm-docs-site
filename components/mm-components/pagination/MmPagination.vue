@@ -108,10 +108,6 @@
 		--btn-bg: var(--grape);
 		--btn-color: var(--white);
 	}
-	.btn-pagination:hover {
-		/* --btn-bg: var(--grape-10); */
-		/* --btn-color: var(--gray-7); */
-	}
 
 	.btn-pagination:active {
 		--btn-bg: var(--grape-light);
@@ -119,11 +115,6 @@
 	.btn-pagination:focus,
 	.btn-pagination[aria-current]:focus {
 		--btn-focus-color: var(--grape-40);
-	}
-
-	.icon {
-		position: relative;
-		top: 2px;
 	}
 
 	.arrow {

@@ -142,4 +142,7 @@
 		width: 32px;
 		height: 32px;
 	}
+	.stepper-btn .mmi {
+		--mm-top-safari: -3px;
+	}
 </style>
