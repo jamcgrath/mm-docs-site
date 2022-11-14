@@ -1,36 +1,38 @@
 <template>
-	<div
-		class="c-search-input flex a-items-center br-12"
-		:class="{ disabled }"
-		ref="cSearchInput"
-	>
-		<div class="search-icon mr-2">
-			<i class="mmi mmi-search navy-dark" aria-hidden="true"></i>
-		</div>
+	<div>
 		<label for="search" class="visually-hidden">Search</label>
-		<input
-			id="search"
-			class="search-input border-0 mr-2 w-100"
-			type="search"
-			placeholder="Search"
-			:value="value"
-			@input="$emit('input', $event.target.value)"
-			@focus="focusInput"
-			@blur="blurInput"
-			ref="searchInput"
-			:disabled="disabled"
-		/>
-		<button
-			ref="clearSearchButton"
-			:class="{ invisible: !showClear }"
-			@click="clearSearch"
+		<div
+			class="c-search-input flex a-items-center br-12"
+			:class="{ disabled }"
+			ref="cSearchInput"
 		>
-			<i
-				aria-hidden="true"
-				class="mmi mmi-multiply-incircle-filled body gray-6"
-			></i>
-			<span class="visually-hidden">Clear</span>
-		</button>
+			<div class="search-icon mr-2">
+				<i class="mmi mmi-search navy-dark" aria-hidden="true"></i>
+			</div>
+			<input
+				id="search"
+				class="search-input border-0 mr-2 w-100"
+				type="search"
+				placeholder="Search"
+				:value="value"
+				@input="$emit('input', $event.target.value)"
+				@focus="focusInput"
+				@blur="blurInput"
+				ref="searchInput"
+				:disabled="disabled"
+			/>
+			<button
+				ref="clearSearchButton"
+				:class="{ invisible: !showClear }"
+				@click="clearSearch"
+			>
+				<i
+					aria-hidden="true"
+					class="mmi mmi-multiply-incircle-filled body gray-6"
+				></i>
+				<span class="visually-hidden">Clear</span>
+			</button>
+		</div>
 	</div>
 </template>
 
