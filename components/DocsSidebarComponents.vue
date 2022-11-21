@@ -99,6 +99,10 @@
 						name: 'Post It',
 						url: 'postIt',
 					},
+					{
+						name: 'Modal',
+						url: 'modal',
+					},
 				],
 			}
 		},
