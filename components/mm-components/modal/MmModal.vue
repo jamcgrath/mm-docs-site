@@ -36,6 +36,7 @@ export default {
   data() {
     return {
       randomId: null,
+      backElementFocus: null,
     }
   },
   mounted() {
@@ -82,6 +83,7 @@ export default {
   watch: {
     value(newValue) {
       if (newValue) {
+        this.backElementFocus = document.activeElement;
         this.$nextTick(() => {
           document.addEventListener('keydown', (event) => {
             const isEscapePressed =
@@ -97,6 +99,7 @@ export default {
         document.querySelector('body').classList.add('overflow-hidden')
       } else {
         document.querySelector('body').classList.remove('overflow-hidden')
+        this.backElementFocus.focus()
       }
     },
   },
@@ -118,6 +121,7 @@ export default {
   width: 500px;
   min-height: 214px;
   z-index: 999;
+  outline:none;
 }
 
 .mm-modal-close {
