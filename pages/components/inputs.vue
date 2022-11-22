@@ -1,13 +1,43 @@
 <template>
 	<div class="input-page">
 		<mm-input
-			name="test"
-			label="label for text"
+			name="testtext"
+			label="Text input"
 			placeholder="label"
 			class="test"
 			:showLabel="true"
 			v-model="text"
 			type="text"
+		>
+		</mm-input>
+		<mm-input
+			name="testcolor"
+			label="color browser default"
+			placeholder="label"
+			class="test"
+			:showLabel="true"
+			v-model="text"
+			type="color"
+		>
+		</mm-input>
+		<mm-input
+			name="testdate"
+			label="date browser default"
+			placeholder="label"
+			class="test"
+			:showLabel="true"
+			v-model="text"
+			type="date"
+		>
+		</mm-input>
+		<mm-input
+			name="testemail"
+			label="email no validation"
+			placeholder="label"
+			class="test"
+			:showLabel="true"
+			v-model="text"
+			type="email"
 		>
 		</mm-input>
 	</div>
