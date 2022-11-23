@@ -95,6 +95,10 @@
 						name: 'Radio',
 						url: 'radio',
 					},
+					{
+						name: 'Inputs',
+						url: 'inputs',
+					},
 				],
 			}
 		},
