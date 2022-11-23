@@ -1,18 +1,9 @@
 <template>
-  <div
-    v-if="value"
-    :id="id || randomId"
-    class="mm-modal-backdrop"
-    @click="close"
-  >
-    <div class="mm-modal" tabindex="-1" role="dialog" @click.stop="">
+  <div v-if="value" :id="id || randomId" class="mm-modal-backdrop" @click="close">
+    <div class="mm-modal" tabindex="-1" role="dialog" aria-labelledby="modal dialog" @click.stop="">
       <div class="mm-modal-head title-5">
         <slot name="head"></slot>
-        <button
-          type="button"
-          class="btn btn-med btn-circle mm-modal-close"
-          @click="close"
-        >
+        <button type="button" class="btn btn-med btn-circle mm-modal-close" @click="close">
           <i aria-hidden="true" class="mmi mmi-close mm-modal-close-icon"></i>
           <span class="visually-hidden">Close</span>
         </button>
@@ -121,7 +112,7 @@ export default {
   width: 500px;
   min-height: 214px;
   z-index: 999;
-  outline:none;
+  outline: none;
 }
 
 .mm-modal-close {
