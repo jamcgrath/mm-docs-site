@@ -99,6 +99,10 @@
 						name: 'Inputs',
 						url: 'inputs',
 					},
+					{
+						name: 'Post It',
+						url: 'postIt',
+					},
 				],
 			}
 		},
