@@ -1,15 +1,18 @@
 <template>
   <div v-if="value" :id="id || randomId" class="mm-modal-backdrop" @click="close">
-    <div class="mm-modal" tabindex="-1" role="dialog" aria-labelledby="modal dialog" @click.stop="">
-      <div class="mm-modal-head title-5">
+    <div class="mm-modal" tabindex="-1" role="dialog" aria-labelledby="modal dialog" @click.stop="" :style="styles">
+      <div class="mm-modal-head" :class="$slots.head && 'title-5'" v-if="!!$slots.head || !hideClose">
         <slot name="head"></slot>
-        <button type="button" class="btn btn-med btn-circle mm-modal-close" @click="close">
+        <button type="button" class="btn btn-med mm-modal-close" @click="close" v-if="!hideClose">
           <i aria-hidden="true" class="mmi mmi-close mm-modal-close-icon"></i>
           <span class="visually-hidden">Close</span>
         </button>
       </div>
-      <div class="mm-modal-base body">
+      <div v-if="!!$slots.base" class="mm-modal-base body">
         <slot name="base"></slot>
+      </div>
+      <div v-if="!!$slots.action" class="mm-modal-action">
+        <slot name="action"></slot>
       </div>
     </div>
   </div>
@@ -23,11 +26,15 @@ export default {
       default: false,
     },
     width: [String, Number],
+    hideClose: {
+      type: Boolean,
+      default: false
+    }
   },
   data() {
     return {
       randomId: null,
-      backElementFocus: null,
+      backElementFocus: null
     }
   },
   mounted() {
@@ -94,6 +101,15 @@ export default {
       }
     },
   },
+  computed: {
+    styles() {
+      if (this.width) {
+        return {
+          width: this.width + 'px'
+        }
+      }
+    }
+  }
 }
 </script>
 <style scoped>
@@ -109,55 +125,40 @@ export default {
 .mm-modal {
   margin: 1.75rem auto;
   position: relative;
-  width: 500px;
-  min-height: 214px;
+  width: 573px;
   z-index: 999;
   outline: none;
+  background: var(--white);
+  border-radius: 8px;
+  padding: 28px 32px;
 }
 
 .mm-modal-close {
-  background: var(--gray-3);
-  border-radius: 100px;
   position: absolute;
-  width: 32px;
-  height: 32px;
-  right: 16px;
-  top: 16px;
+  width: 40px;
+  height: 40px;
+  right: -24px;
+  top: -20px;
 }
 
 .mm-modal-close-icon {
-  position: absolute;
-  width: 16px;
-  height: 16px;
-  left: 8px;
-  top: 8px;
+  color: var(--gray-7);
+  font-size: 1.5rem;
 }
 
 .mm-modal-head {
-  width: 100%;
-  min-height: 80px;
-  border: 1px solid var(--gray-3);
-  border-radius: 8px 8px 0px 0px;
   display: flex;
-  position: relative;
-  background: var(--white);
-  flex-direction: row;
-  justify-content: center;
+  flex-direction: column;
   align-items: center;
-  padding: 24px 32px;
   font-weight: 600;
   color: var(--navy-dark);
 }
 
-.mm-modal-base {
+.mm-modal-head,
+.mm-modal-base,
+.mm-modal-action {
   position: relative;
   width: 100%;
-  min-height: 134px;
-  border-width: 0px 1px 1px 1px;
-  border-style: solid;
-  border-color: var(--gray-3);
-  border-radius: 0px 0px 8px 8px;
-  background: var(--white);
-  padding: 24px 32px;
+  padding: 20px 0;
 }
 </style>
