@@ -1,6 +1,6 @@
 <template>
   <div v-if="value" :id="id || randomId" class="mm-modal-backdrop" @click="close">
-    <div class="mm-modal" tabindex="-1" role="dialog" aria-labelledby="modal dialog" @click.stop="" :style="styles">
+    <div class="mm-modal" tabindex="-1" role="dialog" :aria-labelledby="ariaLabelledBy" :aria-label="ariaLabel" @click.stop="" :style="styles">
       <div class="mm-modal-head" :class="$slots.head && 'title-5'" v-if="!!$slots.head || !hideClose">
         <slot name="head"></slot>
         <button type="button" class="btn btn-med mm-modal-close" @click="close" v-if="!hideClose">
@@ -29,7 +29,15 @@ export default {
     hideClose: {
       type: Boolean,
       default: false
-    }
+    },
+    ariaLabel: {
+     type: [String, Boolean],
+      default: false
+    },
+    ariaLabelledBy: {
+      type: [String, Boolean],
+      default: false
+    },
   },
   data() {
     return {
