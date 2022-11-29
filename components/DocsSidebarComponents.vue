@@ -103,6 +103,10 @@
 						name: 'Post It',
 						url: 'postIt',
 					},
+					{
+						name: 'Slider',
+						url: 'slider',
+					},
 				],
 			}
 		},

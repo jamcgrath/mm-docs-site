@@ -1,0 +1,148 @@
+<template>
+    <div role="slider" tabindex="0" :aria-valuemin="min" :aria-valuenow="value" :aria-valuemax="max"
+        aria-labelledby="slider" class="mm-slider" :id="id || randomId" :style="styles">
+        <span class="tooltip label" :id="`tooltip_${id || randomId}`" v-if="displayTooltip" v-show="showTooltip">{{ value }}</span>
+        <input type="range" class="mm-slider-input" :id="`mm-slider-input_${id || randomId}`" :value="value" :min="min"
+            :max="max" :step="step" :disabled="disabled" @input="sliderProgress($event.target.value)">
+    </div>
+</template>
+<script>
+export default {
+    props: {
+        id: String,
+        value: [String, Number],
+        min: {
+            type: [String, Number],
+            default: 0
+        },
+        max: {
+            type: [String, Number],
+            default: 100
+        },
+        step: {
+            type: [String, Number],
+            default: 1
+        },
+        disabled: {
+            type: Boolean,
+            default: false
+        },
+        width: [String, Number],
+        displayTooltip: {
+            type: Boolean,
+            default: true
+        }
+    },
+    data() {
+        return {
+            randomId: null,
+            showTooltip: false,
+        }
+    },
+    mounted() {
+        if (!this.id) {
+            this.randomId = this.$nanoid()
+        }
+
+        this.$nextTick(() => {
+            if (this.value > 0) {
+                this.sliderProgress(this.value)
+            }
+
+            if (this.displayTooltip) {
+                const slider = document.getElementById(`mm-slider-input_${this.id || this.randomId}`)
+
+                slider.addEventListener('mousedown', () => {
+                    this.showTooltip = true;
+                });
+
+                slider.addEventListener('mouseup', () => {
+                    this.showTooltip = false;
+                });
+            }
+        })
+    },
+    methods: {
+        sliderProgress(value) {
+            const fillValue = ((value - this.min) * 100) / (this.max - this.min)
+            const slider = document.getElementById(`mm-slider-input_${this.id || this.randomId}`)
+            const fill = this.disabled ? '--gray-6' : '--grape'
+            slider.style.background = `linear-gradient(90deg, var(${fill}) ${fillValue}%, var(--gray-3) ${fillValue + 0.1}%)`
+
+            if (this.displayTooltip) {
+                const tooltip = document.getElementById(`tooltip_${this.id || this.randomId}`)
+                tooltip.style.left = `calc(${fillValue}% + (${7 - fillValue * 0.15}px))`
+            }
+
+            this.$emit('input', value)
+        }
+    },
+    computed: {
+        styles() {
+            if (this.width) {
+                return {
+                    width: this.width + 'px'
+                }
+            }
+        }
+    }
+}
+</script>
+<style>
+.mm-slider {
+    position: relative;
+    width: 100%;
+}
+
+.mm-slider-input {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 100%;
+    height: 2px;
+    border-radius: 12px;
+    background: var(--gray-3);
+    outline: none;
+}
+
+.mm-slider-input::-webkit-slider-thumb {
+    -webkit-appearance: none;
+    appearance: none;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--white);
+    border: 7px solid var(--grape);
+    cursor: pointer;
+}
+
+.mm-slider-input:active::-webkit-slider-thumb {
+    cursor: grabbing;
+}
+
+.mm-slider-input:disabled::-webkit-slider-thumb {
+    border: 7px solid var(--gray-6);
+    cursor: not-allowed;
+}
+
+.tooltip {
+    background: var(--navy-dark);
+    color: var(--white);
+    padding: 3px 12px;
+    position: absolute;
+    border-radius: 4px;
+    transform: translateX(-50%);
+    bottom: 20px;
+    height: 26px;
+    max-width: 66px;
+}
+
+.tooltip::after {
+    content: "";
+    position: absolute;
+    bottom: -5px;
+    left: 40%;
+    border-left: 5px solid transparent;
+    border-right: 5px solid transparent;
+    border-top: 5px solid var(--navy-dark);
+}
+</style>
