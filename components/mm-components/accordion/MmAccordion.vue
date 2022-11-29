@@ -1,27 +1,28 @@
 <template>
 	<div class="w-100">
 		<button
-			type="button"
-			:aria-expanded="isOpen"
-			class="accordion-trigger w-100"
+			:aria-expanded="`${isOpen}`"
+			class="
+				accordion-trigger
+				w-100
+				title-6_semibold
+				flex
+				j-content-between
+				a-items-center
+				navy
+			"
 			:aria-controls="panelId"
 			:id="buttonId"
 			@click="toggle"
 		>
-			<div class="accordion-title title-6_semibold flex w-100 navy">
-				<div class="flex-1 text-left">
-					<slot name="title">
-						{{ title }}
-					</slot>
-				</div>
+			<slot name="title">
+				{{ title }}
+			</slot>
 
-				<div class="pl-6">
-					<i
-						aria-hidden="true"
-						:class="`mmi mmi-${isOpen ? 'minus' : 'plus'}-incircle`"
-					></i>
-				</div>
-			</div>
+			<i
+				aria-hidden="true"
+				:class="`mmi mmi-${isOpen ? 'minus' : 'plus'}-incircle`"
+			></i>
 		</button>
 		<div
 			:id="panelId"
@@ -31,13 +32,13 @@
 			:class="{
 				hidden: !isOpen,
 			}"
+			:aria-hidden="`${!isOpen}`"
 		>
-			<slot>
+			<slot name="content">
 				Pulvinar consequat eget bibendum morbi hac sit est, elit. Quis nisi
 				tellus vestibulum tempus.
 			</slot>
 		</div>
-		<div class="divider mt-6 gray-3-bg"></div>
 	</div>
 </template>
 
@@ -54,8 +55,8 @@
 		},
 		data() {
 			return {
-				buttonId: this.$nanoid(),
-				panelId: this.$nanoid(),
+				buttonId: null,
+				panelId: null,
 				isOpen: this.initialOpen || false,
 			}
 		},
@@ -64,11 +65,17 @@
 				this.isOpen = !this.isOpen
 			},
 		},
+		mounted() {
+			this.buttonId = this.$nanoid()
+			this.panelId = this.$nanoid()
+		},
 	}
 </script>
 
 <style scoped>
-	.divider {
-		height: 1px;
+	.accordion-trigger:focus {
+		outline: 2px solid currentColor;
+		outline-offset: 2px;
+		border-radius: 4px;
 	}
 </style>
