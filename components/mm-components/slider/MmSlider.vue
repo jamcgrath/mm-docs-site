@@ -1,12 +1,15 @@
 <template>
     <div role="slider" tabindex="0" :aria-valuemin="min" :aria-valuenow="value" :aria-valuemax="max"
         aria-labelledby="slider" class="mm-slider" :id="id || randomId" :style="styles">
-        <span class="tooltip label" :id="`tooltip_${id || randomId}`" v-if="displayTooltip" v-show="showTooltip">{{ value }}</span>
+        <span class="tooltip label" :id="`tooltip_${id || randomId}`" v-if="displayTooltip" v-show="showTooltip">{{
+                value
+        }}</span>
         <input type="range" class="mm-slider-input" :id="`mm-slider-input_${id || randomId}`" :value="value" :min="min"
             :max="max" :step="step" :disabled="disabled" @input="sliderProgress($event.target.value)">
     </div>
 </template>
 <script>
+
 export default {
     props: {
         id: String,
@@ -31,12 +34,18 @@ export default {
         displayTooltip: {
             type: Boolean,
             default: true
+        },
+        timeoutTooltip: {
+            type: Boolean,
+            default: true
         }
     },
     data() {
         return {
             randomId: null,
             showTooltip: false,
+            idTimeout: null,
+            ms: 1000,
         }
     },
     mounted() {
@@ -51,14 +60,19 @@ export default {
 
             if (this.displayTooltip) {
                 const slider = document.getElementById(`mm-slider-input_${this.id || this.randomId}`)
-
                 slider.addEventListener('mousedown', () => {
-                    this.showTooltip = true;
-                });
-
+                    if (this.timeoutTooltip) {
+                        this.tooltipTimeout()
+                    } else {
+                        this.showTooltip = true
+                    }
+                })
                 slider.addEventListener('mouseup', () => {
                     this.showTooltip = false;
-                });
+                    if (this.timeoutTooltip) {
+                        clearInterval(this.idTimeout)
+                    }
+                })
             }
         })
     },
@@ -71,11 +85,23 @@ export default {
 
             if (this.displayTooltip) {
                 const tooltip = document.getElementById(`tooltip_${this.id || this.randomId}`)
-                tooltip.style.left = `calc(${fillValue}% + (${7 - fillValue * 0.15}px))`
+                tooltip.style.left = `calc(${fillValue}% + (${8 - fillValue * 0.15}px))`
             }
 
             this.$emit('input', value)
+        },
+        tooltipTimeout() {
+            this.showTooltip = true
+            clearTimeout(this.idTimeout)
+
+            this.idTimeout = setTimeout(() => {
+                if (this.showTooltip) {
+                    this.showTooltip = false
+                    clearTimeout(this.idTimeout)
+                }
+            }, this.ms);
         }
+
     },
     computed: {
         styles() {
@@ -83,6 +109,13 @@ export default {
                 return {
                     width: this.width + 'px'
                 }
+            }
+        }
+    },
+    watch: {
+        value(newValue) {
+            if (newValue && this.timeoutTooltip) {
+                this.tooltipTimeout()
             }
         }
     }
@@ -131,7 +164,7 @@ export default {
     position: absolute;
     border-radius: 4px;
     transform: translateX(-50%);
-    bottom: 20px;
+    bottom: 23px;
     height: 26px;
     max-width: 66px;
 }
@@ -139,10 +172,10 @@ export default {
 .tooltip::after {
     content: "";
     position: absolute;
-    bottom: -5px;
+    bottom: -7px;
     left: 40%;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
-    border-top: 5px solid var(--navy-dark);
+    border-top: 7px solid var(--navy-dark);
 }
 </style>
