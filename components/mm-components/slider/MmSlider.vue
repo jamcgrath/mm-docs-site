@@ -1,7 +1,7 @@
 <template>
     <div role="slider" tabindex="0" :aria-valuemin="min" :aria-valuenow="value" :aria-valuemax="max"
         aria-labelledby="slider" class="mm-slider" :id="id || randomId" :style="styles">
-        <span class="tooltip label" :id="`tooltip_${id || randomId}`" v-if="displayTooltip" v-show="showTooltip">{{
+        <span class="mm-slider-tooltip label" :id="`tooltip_${id || randomId}`" v-if="displayTooltip" v-show="showTooltip">{{
                 value
         }}</span>
         <input type="range" class="mm-slider-input" :id="`mm-slider-input_${id || randomId}`" :value="value" :min="min"
@@ -157,7 +157,7 @@ export default {
     cursor: not-allowed;
 }
 
-.tooltip {
+.mm-slider-tooltip {
     background: var(--navy-dark);
     color: var(--white);
     padding: 3px 12px;
@@ -169,7 +169,7 @@ export default {
     max-width: 66px;
 }
 
-.tooltip::after {
+.mm-slider-tooltip::after {
     content: "";
     position: absolute;
     bottom: -7px;
