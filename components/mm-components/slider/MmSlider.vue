@@ -1,9 +1,10 @@
 <template>
     <div role="slider" tabindex="0" :aria-valuemin="min" :aria-valuenow="value" :aria-valuemax="max"
         aria-labelledby="slider" class="mm-slider" :id="id || randomId" :style="styles">
-        <span class="mm-slider-tooltip label" :id="`tooltip_${id || randomId}`" v-if="displayTooltip" v-show="showTooltip">{{
-                value
-        }}</span>
+        <span class="mm-slider-tooltip label" :id="`tooltip_${id || randomId}`" v-if="displayTooltip"
+            v-show="showTooltip">{{
+                    value
+            }}</span>
         <input type="range" class="mm-slider-input" :id="`mm-slider-input_${id || randomId}`" :value="value" :min="min"
             :max="max" :step="step" :disabled="disabled" @input="sliderProgress($event.target.value)">
     </div>
@@ -60,14 +61,19 @@ export default {
 
             if (this.displayTooltip) {
                 const slider = document.getElementById(`mm-slider-input_${this.id || this.randomId}`)
-                slider.addEventListener('mousedown', () => {
+                const addMultipleEventListener = (element, events, handler) => {
+                    events.forEach(e => element.addEventListener(e, handler))
+                }
+
+                addMultipleEventListener(slider, ['mousedown', 'touchstart'], () => {
                     if (this.timeoutTooltip) {
                         this.tooltipTimeout()
                     } else {
                         this.showTooltip = true
                     }
                 })
-                slider.addEventListener('mouseup', () => {
+
+                addMultipleEventListener(slider, ['mouseup', 'touchend'], () => {
                     this.showTooltip = false;
                     if (this.timeoutTooltip) {
                         clearInterval(this.idTimeout)
@@ -85,7 +91,7 @@ export default {
 
             if (this.displayTooltip) {
                 const tooltip = document.getElementById(`tooltip_${this.id || this.randomId}`)
-                tooltip.style.left = `calc(${fillValue}% + (${8 - fillValue * 0.15}px))`
+                tooltip.style.left = `calc(${fillValue}% + (${6.15 - fillValue * 0.15}px))`
             }
 
             this.$emit('input', value)
@@ -100,8 +106,7 @@ export default {
                     clearTimeout(this.idTimeout)
                 }
             }, this.ms);
-        }
-
+        },
     },
     computed: {
         styles() {
@@ -164,7 +169,7 @@ export default {
     position: absolute;
     border-radius: 4px;
     transform: translateX(-50%);
-    bottom: 23px;
+    bottom: 20px;
     height: 26px;
     max-width: 66px;
 }
@@ -172,7 +177,7 @@ export default {
 .mm-slider-tooltip::after {
     content: "";
     position: absolute;
-    bottom: -7px;
+    bottom: -6px;
     left: 40%;
     border-left: 5px solid transparent;
     border-right: 5px solid transparent;
