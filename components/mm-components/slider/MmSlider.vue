@@ -5,7 +5,7 @@
             v-show="showTooltip">{{
                     value
             }}</span>
-        <input type="range" class="mm-slider-input" :id="`mm-slider-input_${id || randomId}`" :value="value" :min="min"
+        <input type="range" class="mm-slider-input" :id="`input_${id || randomId}`" :value="value" :min="min"
             :max="max" :step="step" :disabled="disabled" @input="sliderProgress($event.target.value)">
     </div>
 </template>
@@ -60,7 +60,7 @@ export default {
             }
 
             if (this.displayTooltip) {
-                const slider = document.getElementById(`mm-slider-input_${this.id || this.randomId}`)
+                const slider = document.getElementById(`input_${this.id || this.randomId}`)
                 const addMultipleEventListener = (element, events, handler) => {
                     events.forEach(e => element.addEventListener(e, handler))
                 }
@@ -85,7 +85,7 @@ export default {
     methods: {
         sliderProgress(value) {
             const fillValue = ((value - this.min) * 100) / (this.max - this.min)
-            const slider = document.getElementById(`mm-slider-input_${this.id || this.randomId}`)
+            const slider = document.getElementById(`input_${this.id || this.randomId}`)
             const fill = this.disabled ? '--gray-6' : '--grape'
             slider.style.background = `linear-gradient(90deg, var(${fill}) ${fillValue}%, var(--gray-3) ${fillValue + 0.1}%)`
 
