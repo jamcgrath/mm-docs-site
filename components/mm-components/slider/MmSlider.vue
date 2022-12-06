@@ -21,6 +21,7 @@
 			@blur="showTooltip = false"
 			:aria-label="ariaLabel"
 			:aria-labelledby="ariaLabelledby"
+			:aria-valuetext="value"
 		/>
 	</div>
 </template>
