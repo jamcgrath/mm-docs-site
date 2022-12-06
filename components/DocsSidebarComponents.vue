@@ -107,6 +107,10 @@
 						name: 'Modal',
 						url: 'modal',
 					},
+					{
+						name: 'Slider',
+						url: 'slider',
+					}
 				],
 			}
 		},
