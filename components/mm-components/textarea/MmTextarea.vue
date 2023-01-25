@@ -93,8 +93,8 @@
 </script>
 <style scoped>
 	/* if classNames prop is present .mm-textarea-label will not exist. .
-		mm-textarea-label's purpose is for custom styling of a label
-	*/
+			mm-textarea-label's purpose is for custom styling of a label
+		*/
 	.mm-textarea-label {
 		color: var(--textarea-label-color);
 		font-size: var(--textarea-label-fs);
@@ -114,7 +114,7 @@
 		max-width: var(--textarea-max-width);
 		min-height: var(--textarea-min-height);
 		color: var(--textarea-color);
-		border: 1px solid var(--textarea-border-color);
+		border: 2px solid var(--textarea-border-color);
 		padding: var(--space-3) var(--space-4) 0 var(--space-4);
 	}
 

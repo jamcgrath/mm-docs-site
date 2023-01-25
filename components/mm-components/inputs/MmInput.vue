@@ -154,7 +154,7 @@
 	.mm-input {
 		--input-color: var(--navy-dark);
 		--input-border-color: var(--gray-4);
-		border: 1px solid var(--input-border-color);
+		border: 2px solid var(--input-border-color);
 		background: var(--input-bg, var(--white));
 		color: var(--input-color);
 		grid-template-columns: var(--input-grid-cols, auto 1fr auto);
