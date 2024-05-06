@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
 	<div class="page-mm-icons">
 		<mm-tabs>
 			<mm-tab-panel id="Icon-panel-1" tab-name="Icons" selected="true">
@@ -115,4 +115,4 @@
 	.icon-item {
 		border: 1px solid;
 	}
-</style>
+</style> -->

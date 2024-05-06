@@ -10,9 +10,9 @@
             >Typography</nuxt-link
           >
         </li>
-        <li class="mt-3">
+        <!-- <li class="mt-3">
           <nuxt-link to="/icons" class="copy_semibold">Icons</nuxt-link>
-        </li>
+        </li> -->
         <li class="mt-6">
           <span class="copy_semibold">UI</span>
           <ul class="list-reset">
