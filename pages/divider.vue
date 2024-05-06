@@ -1,4 +1,4 @@
-<template>
+<!-- <template>
 	<mm-tabs>
 		<mm-tab-panel id="divider-tab-3" tab-name="Usage">
 			<div class="markdown" v-html="markdown"></div>
@@ -35,4 +35,4 @@
 			},
 		},
 	}
-</script>
+</script> -->

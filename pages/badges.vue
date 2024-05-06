@@ -56,7 +56,7 @@
 									:href="badgeEl === 'a' ? '' : false"
 									class="badge badge-med"
 								>
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 									{{ badgeText || 'medium' }}
 								</component>
 							</li>
@@ -68,12 +68,12 @@
 									class="badge badge-med"
 								>
 									{{ badgeText || 'medium' }}
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 								</component>
 							</li>
 							<li>
 								<component :href="badgeEl === 'a' ? '' : false" :is="badgeEl" :type="badgeEl === 'button' ? 'button' :  false" class="badge badge-med">
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 								</component>
 							</li>
 							<li>
@@ -91,7 +91,7 @@
 									:type="badgeEl === 'button' ? 'button' :  false"
 									class="badge badge-sm"
 								>
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 									{{ badgeText || 'small' }}
 								</component>
 							</li>
@@ -102,7 +102,7 @@
 									class="badge badge-sm"
 								>
 									{{ badgeText || 'small' }}
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 								</component>
 							</li>
 							<li>
@@ -111,7 +111,7 @@
 									:type="badgeEl === 'button' ? 'button' :  false"
 									class="badge badge-sm"
 								>
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 								</component>
 							</li>
 						</ul>
@@ -134,7 +134,7 @@
 									:type="badgeEl === 'button' ? 'button' :  false"
 									class="badge badge-success badge-med"
 								>
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 									{{ badgeText || ' medium' }}
 								</component>
 							</li>
@@ -145,7 +145,7 @@
 									class="badge badge-success badge-med"
 								>
 									{{ badgeText || ' medium' }}
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 								</component>
 							</li>
 							<li>
@@ -154,7 +154,7 @@
 									:type="badgeEl === 'button' ? 'button' :  false"
 									class="badge badge-success badge-med "
 								>
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 								</component>
 							</li>
 							<li>
@@ -172,7 +172,7 @@
 									:type="badgeEl === 'button' ? 'button' :  false"
 									class="badge badge-success badge-sm"
 								>
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 									{{ badgeText || ' small' }}
 								</component>
 							</li>
@@ -183,7 +183,7 @@
 									class="badge badge-success badge-sm"
 								>
 									{{ badgeText || ' small' }}
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 								</component>
 							</li>
 							<li>
@@ -192,7 +192,7 @@
 									:type="badgeEl === 'button' ? 'button' :  false"
 									class="badge badge-success badge-sm"
 								>
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 								</component>
 							</li>
 						</ul>
@@ -214,7 +214,7 @@
 									:type="badgeEl === 'button' ? 'button' :  false"
 									class="badge badge-error badge-med"
 								>
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 									{{ badgeText || 'medium' }}
 								</component>
 							</li>
@@ -225,7 +225,7 @@
 									class="badge badge-error badge-med"
 								>
 									{{ badgeText || 'medium' }}
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 								</component>
 							</li>
 							<li>
@@ -233,7 +233,7 @@
 									:type="badgeEl === 'button' ? 'button' :  false"
 									class="badge badge-error badge-med "
 								>
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 								</component>
 							</li>
 							<li>
@@ -251,7 +251,7 @@
 									:type="badgeEl === 'button' ? 'button' :  false"
 									class="badge badge-error badge-sm"
 								>
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 									{{ badgeText || 'small' }}
 								</component>
 							</li>
@@ -262,7 +262,7 @@
 									class="badge badge-error badge-sm"
 								>
 									{{ badgeText || 'small' }}
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 								</component>
 							</li>
 							<li>
@@ -271,7 +271,7 @@
 									:type="badgeEl === 'button' ? 'button' :  false"
 									class="badge badge-error badge-sm "
 								>
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 								</component>
 							</li>
 						</ul>
@@ -294,7 +294,7 @@
 									:type="badgeEl === 'button' ? 'button' :  false"
 									class="badge badge-alert badge-med"
 								>
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 									{{ badgeText || 'medium' }}
 								</component>
 							</li>
@@ -305,7 +305,7 @@
 									class="badge badge-alert badge-med"
 								>
 									{{ badgeText || 'medium' }}
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 								</component>
 							</li>
 							<li>
@@ -314,7 +314,7 @@
 									:type="badgeEl === 'button' ? 'button' :  false"
 									class="badge badge-alert badge-med "
 								>
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 								</component>
 							</li>
 							<li>
@@ -332,7 +332,7 @@
 									:type="badgeEl === 'button' ? 'button' :  false"
 									class="badge badge-alert badge-sm"
 								>
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 									{{ badgeText || 'small' }}
 								</component>
 							</li>
@@ -343,7 +343,7 @@
 									class="badge badge-alert badge-sm"
 								>
 									{{ badgeText || 'small' }}
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 								</component>
 							</li>
 							<li>
@@ -352,7 +352,7 @@
 									:type="badgeEl === 'button' ? 'button' :  false"
 									class="badge badge-alert badge-sm"
 								>
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 								</component>
 							</li>
 						</ul>
@@ -375,7 +375,7 @@
 									:type="badgeEl === 'button' ? 'button' :  false"
 									class="badge badge-info badge-med"
 								>
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 									{{ badgeText || 'medium' }}
 								</component>
 							</li>
@@ -386,7 +386,7 @@
 									class="badge badge-info badge-med"
 								>
 									{{ badgeText || 'medium' }}
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 								</component>
 							</li>
 							<li>
@@ -394,7 +394,7 @@
 									:type="badgeEl === 'button' ? 'button' :  false"
 									class="badge badge-info badge-med "
 								>
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 								</component>
 							</li>
 							<li>
@@ -412,7 +412,7 @@
 									:type="badgeEl === 'button' ? 'button' :  false"
 									class="badge badge-info badge-sm"
 								>
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 									{{ badgeText || 'small' }}
 								</component>
 							</li>
@@ -423,7 +423,7 @@
 									class="badge badge-info badge-sm"
 								>
 									{{ badgeText || 'small' }}
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 								</component>
 							</li>
 							<li>
@@ -431,7 +431,7 @@
 									:type="badgeEl === 'button' ? 'button' :  false"
 									class="badge badge-info badge-sm "
 								>
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 								</component>
 							</li>
 						</ul>
@@ -454,7 +454,7 @@
 									:type="badgeEl === 'button' ? 'button' :  false"
 									class="badge badge-warning badge-med"
 								>
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 									{{ badgeText || 'medium' }}
 								</component>
 							</li>
@@ -465,7 +465,7 @@
 									class="badge badge-warning badge-med"
 								>
 									{{ badgeText || 'medium' }}
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 								</component>
 							</li>
 							<li>
@@ -473,7 +473,7 @@
 									:type="badgeEl === 'button' ? 'button' :  false"
 									class="badge badge-warning badge-med "
 								>
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 								</component>
 							</li>
 							<li>
@@ -491,7 +491,7 @@
 									:type="badgeEl === 'button' ? 'button' :  false"
 									class="badge badge-warning badge-sm"
 								>
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 									{{ badgeText || 'small' }}
 								</component>
 							</li>
@@ -502,7 +502,7 @@
 									class="badge badge-warning badge-sm"
 								>
 									{{ badgeText || 'small' }}
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 								</component>
 							</li>
 							<li>
@@ -510,7 +510,7 @@
 									:type="badgeEl === 'button' ? 'button' :  false"
 									class="badge badge-warning badge-sm"
 								>
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 								</component>
 							</li>
 						</ul>
@@ -533,7 +533,7 @@
 									:type="badgeEl === 'button' ? 'button' :  false"
 									class="badge badge-navy-dark badge-med"
 								>
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 									{{ badgeText || 'medium' }}
 								</component>
 							</li>
@@ -544,7 +544,7 @@
 									class="badge badge-navy-dark badge-med"
 								>
 									{{ badgeText || 'medium' }}
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 								</component>
 							</li>
 							<li>
@@ -552,7 +552,7 @@
 									:type="badgeEl === 'button' ? 'button' :  false"
 									class="badge badge-navy-dark badge-med "
 								>
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 								</component>
 							</li>
 							<li>
@@ -570,7 +570,7 @@
 									:type="badgeEl === 'button' ? 'button' :  false"
 									class="badge badge-navy-dark badge-sm"
 								>
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 									{{ badgeText || 'small' }}
 								</component>
 							</li>
@@ -581,7 +581,7 @@
 									class="badge badge-navy-dark badge-sm"
 								>
 									{{ badgeText || 'small' }}
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 								</component>
 							</li>
 							<li>
@@ -589,7 +589,7 @@
 									:type="badgeEl === 'button' ? 'button' :  false"
 									class="badge badge-navy-dark badge-sm "
 								>
-									<i :class="['mmi', badgeIcon]" aria-hidden="true"></i>
+									
 								</component>
 							</li>
 						</ul>
